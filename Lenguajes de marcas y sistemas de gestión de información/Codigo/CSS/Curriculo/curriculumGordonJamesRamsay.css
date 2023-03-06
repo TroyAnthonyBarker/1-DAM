@@ -1,0 +1,48 @@
+div {
+    overflow: hidden;
+    margin: 10px;
+    margin-right: 2px;
+}
+.container {
+    background-color: lightgray;
+    border: 2px solid black;
+    margin-left: 24%;
+    margin-right: 24%;
+}
+.left {
+    float: left;
+    width: auto;
+}
+.right {
+    float: right;
+    width: auto;
+}
+p {
+    text-align: justify;
+}
+h3 {
+    margin-left: 5px;
+}
+
+::-webkit-scrollbar {
+    width: auto;
+}
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #2898ee; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #072f4e91;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: aliceblue; 
+  }
+
+  ::-webkit-scrollbar-corner {
+    background: #072f4e;
+  }

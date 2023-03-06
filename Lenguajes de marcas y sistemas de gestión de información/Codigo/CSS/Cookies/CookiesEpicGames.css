@@ -1,0 +1,55 @@
+#containerCookies{
+    display: flex;
+    position: fixed;
+    /* visibility: hidden; */
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(128, 128, 128, 0.455);
+    backdrop-filter: blur(10px);
+    z-index: 1000000000000000;
+    justify-content: center;
+    align-items: center;
+}
+
+#containerCookies article{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 75%;
+    align-items: center;
+    background-color: #282828;
+    border: #fff solid 5px;
+    border-radius: 25px;
+    font-size: 1.3em;
+}
+
+#containerCookies section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    color: aliceblue;
+    width: 90%;
+}
+
+.necessary {
+    position: relative;
+}
+
+.necessary::before {
+    content: '*';
+    color: aliceblue;
+    position: absolute;
+    right: -10px;
+}
+
+#containerCookies button {
+    margin: 5px;
+    font-size: 1em;
+}
+
+#containerCookies .containerButtons {
+    justify-content: right;
+}

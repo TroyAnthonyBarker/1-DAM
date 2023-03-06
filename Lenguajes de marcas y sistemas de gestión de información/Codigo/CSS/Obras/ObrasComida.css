@@ -1,0 +1,71 @@
+article,
+section {
+  display: flex;
+  overflow: hidden;
+  margin: 10px;
+  margin-right: 2px;
+  padding: 10px;
+  flex-wrap: wrap;
+}
+
+article {
+  background-color: #2898eeb2;
+  border: 2px solid #1f547e;
+  border-radius: 1em;
+  backdrop-filter: blur(10px);
+  width: 75%;
+  text-align: center;
+  padding: 10px;
+  justify-content: center;
+}
+
+
+section {
+  width: 25%;
+  min-width: 250px;
+  text-align: justify;
+  justify-content: space-between;
+}
+
+.article_garlic_butter_baked_chicken_breast_07::before {
+  content: 'Garlic Butter Baked Chicken Breast';
+  font-weight: bold;
+  font-size: 2em;
+  width: 100%;
+}
+
+.garlic_butter_baked_chicken_breast_07 {
+  border: 5px dashed black;
+  padding: 15px;
+  background-color: rgba(240, 248, 255, 0.75);
+}
+
+section h3 {
+  align-self: flex-end;
+  text-align: right;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+.article_honey_garlic_chicken_breast_07::before {
+  content: 'Honey Garlic Chicken Breast';
+  font-weight: bold;
+  font-size: 2em;
+  width: 100%;
+}
+
+.honey_garlic_chicken_breast_07 {
+  border: 5px dashed black;
+  padding: 15px;
+  background-color: rgba(255, 248, 220, 0.75);
+}
+
+section p::first-letter {
+  text-transform: uppercase;
+  font-size: 3em;
+  float: left;
+  margin-top: -10px;
+  margin-right: 5px;
+  margin-bottom: 0px;
+}

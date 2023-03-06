@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../CSS/Comun/Comun.css">
+    <link rel="stylesheet" href="../../CSS/Calendario/CalendarioComida.css">
+    <script src="../../JS/Calendario/jquery-3.6.3.js"></script>
+    <script src="../../JS/Calendario/EventoComida.js"></script>
+    <title>Calendario</title>
+</head>
+<body>
+    <header></header>
+    <script src="../../js/Comun/Comun.js"></script>
+    <main>
+        <div id="cambiaCalendario"></div>
+        <button onclick="showCreateEvento()">Create Event</button>
+    </main>
+    <div id="containerCrearEvento">
+        <article>
+            <form action="" method="post" onsubmit="createEvento()">
+                <section class="x">
+                    <img src="../../IMG/Calendario/X.png" alt="X" onclick="hideCreateEvento()">
+                </section>
+                <p class="titulos">Create Event</p>
+                <section>
+                    <p class="subtitulos">Date</p>
+                    <div id="contenedorFecha">
+                        <!--<input type="number" name="dia" id="dia" placeholder="* Day"> /
+                        <input type="number" name="mes" id="mes" placeholder="* Month"> /
+                        <input type="number" name="anyo" id="anyo" placeholder="* Year">-->
+                        <input type="date" name="" id="fechaEvento" required>
+                    </div>
+                </section>
+                <section>
+                    <p class="subtitulos">Name</p>
+                    <input type="text" name="nombre" id="nombreEvento" required placeholder="* Name">
+                </section>
+                <section>
+                    <p class="subtitulos">Description</p>
+                    <textarea name="descripcion" id="descripcionEvento" placeholder="Description"></textarea>
+                </section>
+                <section>
+                    <button type="reset">Clear</button>
+                    <button type="submit">Create</button> 
+                </section> 
+            </form>
+        </article>
+    </div>
+    <script src="../../JS/Historia/HistoriaComida.js"></script>
+    <script src="../../JS/Calendario/CalendarioComida.js"></script>
+    <footer></footer>
+</body>
+</html>

@@ -1,0 +1,245 @@
+article,
+section {
+  overflow: hidden;
+  margin: 10px;
+  margin-right: 2px;
+  padding: 5px;
+}
+
+h4 {
+  text-align: left;
+}
+
+p {
+  text-align: justify;
+  margin: 10px;
+}
+
+article {
+  background-color: #2898eeb2;
+  border: 2px solid #1f547e;
+  border-radius: 1em;
+  backdrop-filter: blur(10px);
+  margin-left: 15%;
+  margin-right: 15%;
+  text-align: center;
+  padding: 10px;
+}
+
+article h1 {
+  width: 100%;
+}
+
+section {
+  text-align: justify;
+  display: flex;
+  justify-content: space-around;
+}
+
+/*GRAFICO Nivel de hambre*/
+
+.chart-skills {
+  position: relative;
+  width: 350px;
+  height: 175px;
+  overflow: hidden;
+}
+
+.chart-skills::before,
+.chart-skills::after {
+  position: absolute;
+}
+
+.chart-skills::before {
+  content: 'Hunger levels';
+  transform: translateX(60%);
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: aliceblue;
+}
+
+.chart-skills li {
+  position: absolute;
+  list-style: none;
+  top: 100%;
+  left: 1;
+  width: 300px;
+  height: 150px;
+  border: 1px #1f547e solid;
+  border-top: none;
+  border-bottom-left-radius: 437px;
+  border-bottom-right-radius: 437px;
+  transform-origin: 50% 0;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  padding: 2px;
+}
+
+.chart-skills li:nth-child(1) {
+  z-index: 10;
+  background-image: linear-gradient(to left, blue, firebrick);
+  animation-name: rotate-one;
+  animation-delay: .4s;
+}
+
+.chart-skills li:nth-child(2) {
+  z-index: 9;
+  background-image: linear-gradient(to left, blue, rgb(255, 102, 0));
+  animation-name: rotate-two;
+  animation-delay: .4s;
+}
+
+.chart-skills li:nth-child(3) {
+  z-index: 8;
+  background-image: linear-gradient(to left, blue, rgb(255, 166, 0));
+  animation-name: rotate-three;
+  animation-delay: .4s;
+}
+
+.chart-skills li:nth-child(4) {
+  z-index: 7;
+  background-image: linear-gradient(to left, blue, rgb(255, 230, 0));
+  animation-name: rotate-four;
+  animation-delay: .4s;
+}
+
+.chart-skills li:nth-child(5) {
+  z-index: 6;
+  background-image: linear-gradient(to left, blue, green);
+  animation-name: rotate-five;
+  animation-delay: .4s;
+}
+
+.chart-skills li:nth-child(6) {
+  z-index: 5;
+  background-image: linear-gradient(to left, blue, rgb(255, 230, 0));
+  animation-name: rotate-six;
+  animation-delay: .4s;
+}
+
+.chart-skills li:nth-child(7) {
+  z-index: 4;
+  background-image: linear-gradient(to left, blue, rgb(255, 166, 0));
+  animation-name: rotate-seven;
+  animation-delay: .4s;
+}
+
+.chart-skills li:nth-child(8) {
+  z-index: 3;
+  background-image: linear-gradient(to left, blue, rgb(255, 102, 0));
+  animation-name: rotate-eight;
+  animation-delay: .4s;
+}
+
+.chart-skills li:nth-child(9) {
+  z-index: 2;
+  background-image: linear-gradient(to left, blue, rgb(255, 102, 0));
+  animation-name: rotate-nine;
+  animation-delay: .4s;
+}
+
+.chart-skills li:nth-child(10) {
+  z-index: 1;
+  background-image: linear-gradient(to left, blue, firebrick);
+  animation-name: rotate-ten;
+  animation-delay: .4s;
+}
+
+/*Rotación*/
+@keyframes rotate-one {
+  100% {
+    transform: rotate(18deg);
+  }
+}
+
+@keyframes rotate-two {
+  100% {
+    transform: rotate(36deg);
+  }
+}
+
+@keyframes rotate-three {
+  100% {
+    transform: rotate(54deg);
+  }
+}
+
+@keyframes rotate-four {
+  100% {
+    transform: rotate(72deg);
+  }
+}
+
+@keyframes rotate-five {
+  100% {
+    transform: rotate(108deg);
+  }
+}
+
+@keyframes rotate-six {
+  100% {
+    transform: rotate(126deg);
+  }
+}
+
+@keyframes rotate-seven {
+  100% {
+    transform: rotate(144deg);
+  }
+}
+
+@keyframes rotate-eight {
+  100% {
+    transform: rotate(153deg);
+  }
+}
+
+@keyframes rotate-nine {
+  100% {
+    transform: rotate(162deg);
+  }
+}
+
+@keyframes rotate-ten {
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+/*------Formula--------*/
+/**
+  * x% => x/100 * 180
+  */
+
+/* Grafico 2  */
+#Nutricion {
+  max-width: 500px;
+}
+
+@media screen and (max-width: 1585px) {
+  .chart-skills {
+    width: 175px;
+    height: 110px;
+    font-size: small;
+  }
+
+  .chart-skills::before {
+    transform: translateX(10%);
+  }
+
+  .chart-skills li {
+    width: 150px;
+    height: 75px;
+  }
+
+}
+
+@media screen and (max-width: 1385px) {
+  section {
+    flex-flow: column;
+    align-items: center;
+  }
+}

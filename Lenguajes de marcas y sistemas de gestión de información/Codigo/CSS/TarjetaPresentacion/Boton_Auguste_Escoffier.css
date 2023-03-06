@@ -1,0 +1,35 @@
+.Auguste_Escoffier_19 {
+    background-color: whitesmoke;
+    background-size: cover;
+    border: 3px solid black;
+    overflow: hidden;
+    width: 150px;
+}
+
+.Auguste_Escoffier_19 section {
+    padding: 5px;
+}
+
+.rectangulo_19 {
+    height: 50px;
+    background-color: rgb(229, 226, 125);
+}
+
+.foto_19 {
+    position: relative;
+    top: 10px;
+    left: 50%;
+    margin-left: -37px;
+    border-radius: 50%;
+    width: 75px;
+
+}
+
+.descripcion_19 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.button_19 {
+    text-align: center;
+}

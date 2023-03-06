@@ -1,0 +1,106 @@
+article,
+section {
+  display: flex;
+  overflow: hidden;
+  margin: 10px;
+  margin-right: 2px;
+  padding: 10px;
+  flex-flow: column wrap;
+}
+
+article {
+  background-color: #2898eeb2;
+  border: 2px solid #1f547e;
+  border-radius: 1em;
+  backdrop-filter: blur(10px);
+  width: 40%;
+  text-align: center;
+  padding: 10px;
+  min-width: 550px;
+  max-width: 940px;
+}
+
+section {
+  text-align: left;
+}
+
+main li {
+  list-style-type: none;
+  padding: 5px;
+  text-align: justify;
+  margin: 5px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding-left: 35px;
+}
+
+iframe {
+  width: 480px;
+  height: 270px;
+}
+
+.Video_07 {
+  display: flex;
+  align-self: center;
+  background-image: url('../../IMG/Comparativa/TV.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 500px;
+  height: 300px;
+  padding-left: 20px;
+  padding-top: 3px;
+}
+
+.chicken_07 {
+  background-image: url(../../IMG/Comparativa/chicken.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding-left: 35px;
+}
+
+.SaltPepper_07 {
+  background-image: url(../../IMG/Comparativa/Salt&Pepper.png);
+}
+
+.flour_07 {
+  background-image: url(../../IMG/Comparativa/Flour.png);
+}
+
+.butter_07 {
+  background-image: url(../../IMG/Comparativa/butter.png);
+}
+
+.oliveoil_07 {
+  background-image: url(../../IMG/Comparativa/Olive_oil.png);
+}
+
+.garlic_07 {
+  background-image: url(../../IMG/Comparativa/Garlic.png);
+}
+
+.applesider_07 {
+  background-image: url(../../IMG/Comparativa/Applesider.png);
+}
+
+.soysauce_07 {
+  background-image: url(../../IMG/Comparativa/Soysauce.png);
+}
+
+.honey_07 {
+  background-image: url(../../IMG/Comparativa/Honey.png);
+}
+
+.paprika_07 {
+  background-image: url(../../IMG/Comparativa/Paprika.png);
+}
+
+.seasoning_07 {
+  background-image: url(../../IMG/Comparativa/Seasoning.png);
+}
+
+.parsley_07 {
+  background-image: url(../../IMG/Comparativa/parsley.png);
+}

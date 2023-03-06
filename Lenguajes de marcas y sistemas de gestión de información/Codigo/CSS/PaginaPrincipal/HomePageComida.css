@@ -1,0 +1,159 @@
+html, body {
+    min-width: 800px;
+}
+
+body {
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+main iframe {
+    min-width: 750px;
+    min-height: 1200px;
+}
+
+#cienMontaditosAnuncio {
+    display: flex;
+    justify-content: center;
+}
+
+#cienMontaditosAnuncio, #cienMontaditosAnuncio img {
+    width: 95%;
+}
+
+#cienMontaditosVideo {
+    width: 100%;
+    height: 60%;
+}
+
+.fullPageWidth {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+main {
+    max-width: 70%;
+    padding: 10px;
+}
+
+aside {
+    width: 20%;
+    padding: 10px;
+    background-color: #2898eeb2;
+    border: 2px solid #1f547e;
+    border-radius: 1em;
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+
+footer {
+    flex-flow: row wrap;
+    justify-content: right;
+}
+
+aside article {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#leftAside article:nth-child(1) {
+    height: 70%;
+}
+
+#leftAside article:nth-child(2) {
+    height: 30%;
+}
+
+aside li img {
+    position: absolute;
+    width: 250px;
+    height: 150px;
+}
+
+aside li a {
+    display: flex;
+    position: relative;
+    width: 240px;
+    height: 140px;
+    text-align: center;
+    background: linear-gradient(transparent 0%, black 80%, black 100%);
+    align-items: flex-end;
+    justify-content: center;
+    padding: 5px;
+    text-decoration: none;
+    color: aliceblue;
+    visibility: hidden;
+}
+
+img:hover~a, a:hover {
+    visibility: visible;
+}
+
+aside li {
+    padding: 5px;
+    list-style: none;
+}
+
+@media screen and (max-width: 1400px) {
+    aside {
+        width: 90%;
+        flex-direction: row;
+    }
+
+    #rightAside {
+        align-items: flex-start;
+    }
+
+    #leftAside {
+        padding: 0%;
+        width: 70%;
+        min-width: 770px;
+    }
+
+    #leftAside article{
+        justify-content: stretch;
+        width: 40%;
+        padding: auto;
+        margin: 0%;
+    }
+
+    #leftAside article:nth-child(1) {
+        height: 90%;
+    }
+    
+    #leftAside article:nth-child(2) {
+        height: 90%;
+    }
+
+    #cienMontaditosVideo {
+        height: 100%;
+    }
+
+    #cienMontaditosAnuncio, #cienMontaditosAnuncio img {
+        width: 60%;
+        height: 100%;
+    }
+
+    main, main iframe {
+        width: 100%;
+        min-width: 770px;
+    }
+    
+}
+
+@media screen and (max-width: 1150px) {
+    #rightAside {
+        flex-direction: column;
+        min-width: 770px;
+        padding: 0%;
+    }
+}

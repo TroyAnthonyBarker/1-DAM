@@ -1,0 +1,46 @@
+html,
+body {
+  height: 100%;
+}
+
+article,
+section {
+  overflow: hidden;
+  margin: 10px;
+  margin-right: 2px;
+  padding: 5px;
+}
+
+article {
+  background-color: #2898eeb2;
+  border: 2px solid #1f547e;
+  border-radius: 1em;
+  backdrop-filter: blur(10px);
+  margin-left: 15%;
+  margin-right: 15%;
+  text-align: center;
+  padding: 10px;
+}
+
+tr {
+  border-top: 1em yellow dashed;
+  border-bottom: 1em orange dashed;
+  padding: 1em 0px;
+}
+
+td {
+  border-left: 1em red dotted;
+  border-right: 1em purple dotted;
+}
+
+tr,
+td {
+  display: flex;
+  justify-content: space-around;
+  text-align: justify;
+}
+
+p {
+  text-align: center;
+  font-size: 4em;
+}

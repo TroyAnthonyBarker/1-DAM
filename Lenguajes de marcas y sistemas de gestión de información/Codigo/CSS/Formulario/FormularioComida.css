@@ -1,0 +1,114 @@
+article,
+section {
+  display: flex;
+  overflow: hidden;
+  margin: 10px;
+  margin-right: 2px;
+  flex-wrap: wrap;
+}
+
+form {
+  padding: 0%;
+  margin: 0%;
+  width: 75%;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+article {
+  flex-direction: row;
+  background-color: #2898eeb2;
+  border: 2px solid #1f547e;
+  border-radius: 1em;
+  backdrop-filter: blur(10px);
+  justify-content: center;
+  padding: 10px;
+  width: 100%;
+  min-width: 315px;
+}
+
+p {
+  text-align: justify;
+  width: 75%;
+}
+
+section {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  margin: 0%;
+  flex-flow: column wrap;
+  text-align: left;
+}
+
+input,
+select {
+  padding: 0px 5px;
+  border: none;
+  font-size: large;
+  background-color: #e4f1fcb7;
+}
+
+input {
+  text-align: left;
+  width: 200px;
+}
+
+select {
+  appearance: none;
+  text-align: right;
+  width: 60px;
+}
+
+.Row {
+  flex-direction: row;
+}
+
+.Row *:first-child {
+  width: 100%;
+}
+
+.Pagamento {
+  flex-direction: row;
+  width: 125px;
+}
+
+.Pagamento * {
+  width: auto;
+}
+
+p * {
+  width: auto;
+}
+
+label {
+  font-size: normal;
+  font-weight: bold;
+  margin-right: 3px;
+}
+
+.PersonalData,
+.Address {
+  width: 45%;
+}
+
+.FullSpace {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 94%;
+}
+
+input[type=submit],
+input[type=reset] {
+  background-color: #284eee;
+  color: aliceblue;
+  padding: 5px;
+}
+
+a {
+  color: aliceblue;
+}

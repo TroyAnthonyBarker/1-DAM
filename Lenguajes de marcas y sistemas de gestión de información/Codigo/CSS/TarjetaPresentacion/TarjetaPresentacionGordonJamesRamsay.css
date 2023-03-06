@@ -1,0 +1,34 @@
+.GordonRamsay_07 {
+    width: 150px;
+    text-align: center;
+    border: 3px solid black;
+    background-color: white;
+}
+
+.GordonRamsay_07 img {
+    width: 90px;
+    padding: 5px;
+    border-radius: 100%;
+
+}
+
+.GordonRamsay_07 p {
+    text-align: center;
+}
+
+.GordonRamsay_07 section {
+    padding: 5px;
+}
+
+.GordonRamsay_07 .contenido_07 {
+    margin-top: 35px;
+}
+
+.GordonRamsay_07 button {
+    background-color: lightblue;
+}
+
+.GordonRamsay_07 .imagen_07 {
+    background-color: violet;
+    height: 37px;
+}

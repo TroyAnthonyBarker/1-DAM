@@ -1,0 +1,61 @@
+/*
+@font-face {
+    font-family:MADETOMMY;
+    src: url(../../font/curriculo/Made_Tommy_Regular.otf);}
+*/
+.body_13 {
+    background-color: #ffffff;
+    background-size: cover;
+    border: 3px solid black;
+    border-bottom: 3px solid black;
+    overflow: hidden;
+    width: 150px;
+    height: 350px;
+    align-items: top;
+}
+
+
+.header_13 {
+    text-align: center;
+    background-color: blueviolet;
+    margin: 0px;
+    height: 45px;
+}
+
+.h1_13 {
+    text-align: center;
+    font-family: MADETOMMY;
+    font-size: 20px;
+    margin-top: 50px;
+    border: none;
+}
+
+.h2_13 {
+    text-align: center;
+    font-family: MADETOMMY;
+    font-size: 16px;
+}
+
+.section_13 {
+    font-family: MADETOMMY;
+    font-size: 16px;
+    text-align: justify;
+    margin: 5px;
+
+}
+
+.button_13 {
+    margin-top: 15%;
+    margin-left: 25%;
+    margin-right: 40%;
+    border: 1px solid black;
+}
+
+.img_13 {
+    border-radius: 50%;
+    padding: 10px;
+    padding: 15px;
+    border-radius: 50%;
+    width: 75px;
+    margin: auto;
+}

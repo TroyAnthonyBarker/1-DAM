@@ -1,0 +1,82 @@
+article {
+    display: flex;
+    border: 2px solid #1f547e;
+    border-radius: 1em;
+    flex-flow: column wrap;
+    background-color: #2898eeb2;
+    padding: 10px;
+    width: 50%;
+    justify-content: center;
+    padding-left: 10%;
+    padding-right: 10%;
+    min-width: 195px;
+    backdrop-filter: blur(10px);
+}
+
+h2 {
+    text-align: center;
+    font-size: 2em;
+}
+
+section,
+section p {
+    display: flex;
+    padding: 10px;
+}
+
+.Sir_07 p,
+.Madam_07 p {
+    border-radius: 50%;
+    padding: 15%;
+}
+
+.Waiter_07 p {
+    border-radius: 15px 0px 15px 15px;
+    padding: 15%;
+    background-color: lightblue;
+    border: 2px solid blue;
+}
+
+.Madam_07,
+.Sir_07 {
+    max-width: 50%;
+    padding: 10px;
+    align-self: flex-start;
+    text-align: center;
+}
+
+.Waiter_07 {
+    text-align: center;
+    align-self: flex-end;
+    padding: 10px;
+    max-width: 50%;
+}
+
+.Madam_07 p {
+    background-color: lightgreen;
+    border: 2px solid green;
+}
+
+.Sir_07 p {
+    background-color: lightgoldenrodyellow;
+    border: 2px solid gold;
+}
+
+.Waiter_07::after {
+    content: 'Waiter';
+    font-weight: bold;
+}
+
+.Sir_07::before {
+    content: 'Sir';
+    font-weight: bold;
+    padding-top: 50px;
+    padding-right: 5px;
+}
+
+.Madam_07::before {
+    content: 'Madam';
+    font-weight: bold;
+    padding-top: 50px;
+    padding-right: 5px;
+}

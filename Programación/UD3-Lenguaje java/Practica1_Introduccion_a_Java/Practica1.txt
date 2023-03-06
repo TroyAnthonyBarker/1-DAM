@@ -1,0 +1,143 @@
+1. Dados los siguientes identificadores, indicar si son válidos o no. Justificar las respuestas.
+    a) mi variable ► No valido, debido a que tiene un espacio
+    b) num_de_cte ► Sí valido
+    c) ____programa ► Sí valido
+    d) $alguna ► No valido, debido a que contiene un caracter especial 
+    e) 3tema ► No valido, debido a que contiene un caracter númerico
+    f) cierto? ► No valido, debido a que contiene un caracter especial
+    g) númerodeCliente ► Sí valido, no recomendado debido a que no todos los idiomas tienen acentos 
+    h) jose~ ► No valido, debido a que contiene un caracter especial
+    i) año ► Sí valido, no recomendado debido a que no todos los idiomas tienen acentos
+    j) PI ► Sí valido, no recomendado debido a que es una variable constante de la libreria Math
+    k) int ► No valido, debido a que es una cadena de declaración
+
+
+/** 2. Escribe un programa que dé los “buenos días”. */
+
+/** 3. Escribe un programa que calcule y muestre el área de un cuadrado de lado igual a 5. */
+
+/** 4. Muestra un mensaje de bienvenida por consola según el nombre que se haya introducido. Por ejemplo: si introduzco “Carles”, me aparezca “Bienvenido Carles”. */
+
+/** 5. Escribe un programa que calcule el área de un cuadrado cuyo lado se introduce por teclado. */
+
+/** 6. Pedir el radio de un círculo y calcular su área. A = PI+r2 */
+
+/** 7. Escribe un programa que lea dos números, calcule y muestre el valor de sus suma, resta, producto y división. */
+
+/** 8. Indica los errores presentes en el siguiente código:
+1. /                                                               
+2. operadoresaritmeticos.java
+3. Programa que muestra el uso de los operadores aritméticos
+4. /
+5. public class operadoresaritmeticos {
+6.  public static main(String[] args)
+7.  short x = 7;
+8.  int y = 5;
+9.  float f1 = 13.5;
+10. float f2 = 8f;
+11. System.out.println("El valor de x es ", x, " y el valor de y es", y);
+12. System.out.println("El resultado de x + y es " + (x + y));
+13. System.out.println("El resultado de x - y es " + (x - y));
+14. System.out.printf("\n%s%s\n","División entera:","x / y = ",(x/y));
+15. System.out.println("Resto de la división entera: x % y = " + (x % y));
+16. System.out.printf("El valor de f1 es %f y el de f2 es %f\n",f1,f2);
+17. System.out.println("El resultado de f1 / f2 es " + (f1 / f2))
+18. }
+
+Los comentarios estan incorrecots se escriben "/** comentario */"
+Falta poner void y abrir main
+Los strings se concatenan con + no con ,
+
+1. /**                                                               
+2. operadoresaritmeticos.java
+3. Programa que muestra el uso de los operadores aritméticos
+4. */
+5. public class operadoresaritmeticos {
+6. public static void main(String[] args){
+7.  short x = 7;
+8.  int y = 5;
+9.  float f1 = 13;
+10. float f2 = 8f;
+11. System.out.println("El valor de x es " + x + " y el valor de y es " + y);
+12. System.out.println("El resultado de x + y es " + (x + y));
+13. System.out.println("El resultado de x - y es " + (x - y));
+14. System.out.printf("%s%s\n", "División entera:", " x / y = " + (x/y));
+15. System.out.println("Resto de la división entera: " + x + " % " + y + " = " + (x % y));
+16. System.out.printf("El valor de f1 es %f y el de f2 es %f\n", f1,f2);
+17. System.out.println("El resultado de f1 / f2 es " + (f1 / f2));
+18. } 
+19. }
+*/
+
+/** 9. Dado el siguiente programa, modifícalo para utilizar las variables que se indican. El tipo de dato elegido debe ser el de menos bits posibles que puedan representar el valor. Justifica tu elección.
+public class ejerciciovariables {
+    public enum sexo {V,M}
+public static void main(String[ ] args) {
+        /**DATOS */
+        /**Si un empleado está casado o no.*/
+        Boolean casado;
+        /**Valor máximo no modificable: 999999.*/
+        final int maximo = 999999;
+        /**Día de la semana*/
+        byte diasem;
+        /**Día del año.*/
+        short diaanual;
+        /**Sexo: con dos valores posibles 'V' o 'M'*/
+        sexo genero;
+        /**Milisegundos transcurridos desde el 01/01/1970 hasta nuestros días.*/
+        long miliseg;
+        /**Almacenar el total de una factura*/
+        float totalfactura;
+        /**Población mundial del planeta tierra.*/
+        long poblacion;
+}
+}
+a) Si un empleado está casado o no.
+    Boolean casado;
+b) Valor máximo no modificable: 999999.
+    final int maximo = 999999
+c) Día de la semana
+    byte diasem[] = {1,2,3,4,5,6,7};
+d) Día del año.
+    short diaanual;
+e) Sexo: con dos valores posibles 'V' o 'M'
+    public enum sexo {V,M}
+    sexo genero;
+f) Milisegundos transcurridos desde el 01/01/1970 hasta nuestros días.
+    long miliseg;
+g) Almacenar el total de una factura
+    float totalfactura;
+h) Población mundial del planeta tierra.
+    long poblacion;
+*/
+
+/** 10. Realiza las siguientes modificaciones en el programa anterior:
+a) Añade comentarios, entre otros:
+• Nombre de clase, descripción y autor
+• Comentario para la clase main y para cada una de las llaves de cierre
+b) Utiliza el operador de asignación para inicializar las variables a los valores que se indican en los mensajes.
+c) Utiliza la secuencia de escape correspondiente para generar un tabulador al principio de cada línea salvo de la primera
+d) Mostrar el siguiente resultado:
+• Usando sólo la orden println:
+----- EJERCICIO DE VARIABLES Y TIPOS DE DATOS -----
+El valor de la variable casado es true
+El valor de la variable MAXIMO es 999999
+El valor de la variable diasem es 1
+El valor de la variable diaanual es 300
+El valor de la variable miliseg es 1298332800000
+El valor de la variable totalfactura es 10350.678
+El valor de la variable poblacion es 6775235741
+El valor de la variable sexo es M
+• Usando sólo la orden printf:
+----- EJERCICIO DE VARIABLES Y TIPOS DE DATOS -----
+El valor de la variable casado es true
+El valor de la variable MAXIMO es 999999
+El valor de la variable diasem es 1
+El valor de la variable diaanual es 300
+El valor de la variable miliseg es 1298332800000
+El valor de la variable totalfactura es 10350,677734
+El valor de la variable totalfactura en notación científica es 1.035068E+04
+El valor de la variable poblacion es 6775235741
+El valor de la variable sexo es M 
+*/
+

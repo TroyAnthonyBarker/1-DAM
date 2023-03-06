@@ -1,0 +1,22 @@
+article,
+section {
+  display: flex;
+  overflow: hidden;
+  margin: 10px;
+  margin-right: 2px;
+  flex-wrap: wrap;
+}
+
+article {
+  flex-direction: column;
+  background-color: #2898eeb2;
+  border: 2px solid #1f547e;
+  border-radius: 1em;
+  backdrop-filter: blur(10px);
+  min-width: fit-content;
+  width: 75%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../CSS/Formulario/FormularioComida.css">
+    <link rel="stylesheet" href="../../CSS/Comun/Comun.css">
+    <link rel="shortcut icon" href="../../IMG/Comun/ComidaFavicon.ico" type="image/x-icon">
+
+    <title>Formulario</title>
+</head>
+
+<body>
+    <header></header>
+    <script src="../../js/Comun/Comun.js"></script>
+
+    <main>
+        <form action="" method="get" enctype="text/plain" autocomplete="on">
+            <article class="PersonalData">
+                <h3>PERSONAL DATA</h3>
+                <section>
+                    <label for="Name">*Name:</label>
+                    <input type="text" id="Name" placeholder="Name" required>
+                </section>
+                <section>
+                    <label for="Surname">*Surname:</label>
+                    <input type="text" id="Surname" placeholder="Surname" required>
+                </section>
+                <section>
+                    <label for="Email">*E-mail:</label>
+                    <input type="email" name="" id="Email" placeholder="Comida@gmail.es" required>
+                </section>
+                <section class="Row">
+                    <label for="Phone">*Phone number:</label>
+                    <select name="" id="Extension">
+                        <option value="+34" selected>+34</option>
+                        <option value="+35">+35</option>
+                        <option value="+44">+44</option>
+                        <option value="+33">+33</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <input type="tel" name="" id="Phone" placeholder="654987123" minlength="9" maxlength="9" required>
+                </section>
+                <section>
+                    <label for="BirthDate">*Date of Birth:</label>
+                    <input type="date" name="" id="BirthDate" value="2000-01-01" required>
+                </section>
+            </article>
+            <article class="Address">
+                <h3>ADDRESS</h3>
+                <section class="Row">
+                    <label for="Street">Street:</label>
+                    <Select>
+                        <option value="Street">St</option>
+                        <option value="Avenue">Av</option>
+                        <option value="Square">Sqr</option>
+                        <option value="Urbanization">Urb</option>
+                        <option value="Other">Other</option>
+                    </Select>
+                    <input type="text" name="" id="Street" placeholder="Cervantes">
+                </section>
+                <section>
+                    <label for="City">City:</label>
+                    <input name="" id="City" list="CityOptions" placeholder="Villajoyosa">
+                    <datalist id="CityOptions">
+                        <option value="Villajoyosa">La vila joiosa</option>
+                        <option value="Finestrat">Finestrat</option>
+                        <option value="Alfaz">Alfaz del Pi</option>
+                        <option value="Bradford">Bradford</option>
+                        <option value="London">Londres</option>
+                        <option value="Leeds">Leeds</option>
+                    </datalist>
+                </section>
+                <section>
+                    <label for="Province">Province:</label>
+                    <input id="Province" list="ProvinceOptions" placeholder="Alicante">
+                    <datalist id="ProvinceOptions">
+                        <option value="Alicante">Alicante</option>
+                        <option value="Valencia">Valencia</option>
+                        <option value="Castellón">Castellón</option>
+                    </datalist>
+                </section>
+                <section>
+                    <label for="Country">Country:</label>
+                    <input id="Country" list="CountryOptions" placeholder="Spain">
+                    <datalist id="CountryOptions">
+                        <option value="England">Inglaterra</option>
+                        <option value="Spain">España</option>
+                    </datalist>
+                </section>
+                <section>
+                    <label for="PoastCode">Poast Code:</label>
+                    <select name="" id="PoastCode">
+                        <option value="03570" selected>03570</option>
+                        <option value="03509">03509</option>
+                        <option value="03580">03580</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </section>
+            </article>
+            <article class="FullSpace">
+                <h3>*PAGAMENT</h3>
+                <section class="Pagamento">
+                    <input type="radio" name="Pagament" id="Visa" checked required>
+                    <label for="Visa">Visa</label>
+                </section>
+                <section class="Pagamento">
+                    <input type="radio" name="Pagament" id="Paypal" required>
+                    <label for="Paypal">Paypal</label>
+                </section>
+                <section class="Pagamento">
+                    <input type="radio" name="Pagament" id="Mastercard" required>
+                    <label for="Mastercard">MasterCard</label>
+                </section>
+            </article>
+            <article class="FullSpace">
+                <p>
+                    <input type="checkbox" name="Policy" id="Policy" required>
+                    *I have read and agree to the <a href="../Politica/PoliticaComida.html">Privacy Policy</a>
+                </p>
+                <p>
+                    <input type="submit" value="Send">
+                    <input type="reset" value="Reset">
+                </p>
+            </article>
+
+        </form>
+
+    </main>
+    <footer>
+    </footer>
+</body>
+
+</html>

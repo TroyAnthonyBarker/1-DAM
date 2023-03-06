@@ -1,0 +1,977 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+  }
+
+  /* ----- BARRA DE DESPLAZAMIENTO ----- */
+
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: #EE2852;
+  }
+   
+  ::-webkit-scrollbar-thumb {
+    background: #18203E;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #5a000f; 
+  }
+  
+  ::-webkit-scrollbar-corner {
+    background: #072f4e;
+  }
+
+  ::-webkit-scrollbar-thumb {
+  background-color: #18203E; 
+  border-radius: 10px;
+  }
+
+/*.barrascroll {
+  z-index: 276;
+  float: right;
+  height: 100%;
+  width: -12px;
+  background-color: #EE2852;
+}*/
+  /* -----                         ----- */
+
+  /* -----         General          ----- */
+  body {
+    background-image: url();
+    background-position: fixed;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    height: 600px;
+    /*background-color: #333;*/
+    background-image: url('../../../img/paginaPrincipal/EG_img/fondoEpic.png');
+    background-size: 100%;
+  }
+
+  footer {
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 0%;
+    background-color: #EE2852;
+  }
+
+  .footdiv {
+    padding-top: 10px;
+    width: 100%;
+  }
+
+  /* ---------- */
+  
+  /* ---------- */
+
+  .lineafina02 {
+    margin-top: 20px;
+    width: 100%;
+    height: 5px;
+    background-color: #ffffff;
+  }
+
+  .subfooter02 {
+    margin-top: 0;
+    width: 100%;
+    height: 65px;
+    background-color: #18203E;
+    align-items: center;
+  }
+
+  .lineafooter02 {
+    margin-top: 0;
+    width: 100%;
+    height: 10px;
+    background-color: #ffffff;
+  }
+
+  /* -----             Fuentes de texto            ----- */
+  @font-face {
+    font-family: 'Heroesassemble';
+    src: url('../../../font/paginaPrincipal/FuentesEG/heroesassemble2.ttf');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Seagram';
+    src: url('../../../font/paginaPrincipal/FuentesEG/Seagramtfb.ttf');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'IHateCS';
+    src: url('../../../font/paginaPrincipal/FuentesEG/IHATCS__.TTF');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'StarRockets';
+    src: url('../../../font/paginaPrincipal/FuentesEG/StarRocketsDemoRegular.ttf');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  .normal02 {
+    font-family: "Open Sans", sans-serif;
+    font-weight: bolder;
+  }
+
+
+  /* -----            Parte Superior             ----- */
+
+  
+  .menu02 {
+    margin-top: 0;
+    width: 100%;
+    height: 100px;
+    background-color: #EE2852;
+  }
+
+  .cripto02 {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+  }
+
+  
+  .linea02 {
+    margin-top: 0;
+    width: 100%;
+    height: 10px;
+    background-color: #ffffff;
+  }
+  
+  .submenu02 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 85px;
+    background-color: #18203E;
+  }
+  /* -----            Carrusel            ----- */
+  .carrusel_02 {
+    z-index: 342354545;
+    display: flex;
+    position: relative;
+      margin-top: -140px;
+      height: 500px;
+      background-color: #4d4d4d;
+      margin-left: 20%;
+      overflow: hidden;
+      border: 4px solid #18203E;
+      border-top-right-radius: 30px;
+      border-bottom-left-radius: 30px;
+      border-top-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+  }
+  /* -----            Video y Anuncio Izquierda             ----- */
+
+  .btn02 {
+    background: #18203E;
+	color: #fff;
+    padding: 15px 25px;
+    text-decoration: none;
+    cursor: pointer;
+	transition: .3s ease all;
+	border-radius: 5px;
+	display: flex;
+  position: absolute;
+	overflow: hidden;
+  margin-bottom: 10%;
+}
+
+a {
+  bottom: 0;
+}
+
+.btn02:hover {
+    color:#18203E;
+    background-color: #fff;
+}
+
+/* ----- Botón noticias -----*/
+
+.btnnoticia02 {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  align-items: center;
+  background: #18203E;
+  color: #fff;
+  padding: 15px 25px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: .3s ease all;
+  border-radius: 5px;
+  margin-bottom: 10%;
+}
+
+a {
+bottom: 0;
+}
+
+.btnnoticia02:hover {
+  color:#18203E;
+  background-color: #fff;
+}
+
+  .video02 {
+    z-index: 1;
+    display: flex;
+    position: relative;
+      margin-top: 70px;
+      margin-left: 4%;
+      width: 14%;
+  }
+
+  iframe {
+
+    border: 4px solid #18203E;
+
+  }
+
+  @media screen and (max-width: 800px) { /* La regla CSS se aplicará cuando la pantalla sea menor de 600px de ancho */
+    .video_02 {
+        width: 90%; /* El ancho del div será del 90% del ancho de la pantalla */
+        padding: 1%; /* Los márgenes internos del div serán del 1% del ancho de la pantalla */
+    }
+  }
+
+  @media screen and (min-width: 500px) { /* La regla CSS se aplicará cuando la pantalla sea menor de 600px de ancho */
+    .video_02 {
+        width: 90%; /* El ancho del div será del 90% del ancho de la pantalla */
+        padding: 1%; /* Los márgenes internos del div serán del 1% del ancho de la pantalla */
+    }
+  }
+
+.anuncio02 {
+  width: 340px;
+  z-index: 1;
+    float: left;
+    display: flex;
+    position: relative;
+      margin-top: 90px;
+      margin-left: 4%;
+      width: 15%;
+      border: 4px solid #18203E;
+      height: 568px;
+    /*  background-image: url("../../img/paginaPrincipal/EG_img/anunciofortnite.png");
+      background-size: 100%;
+      background-repeat: no-repeat;*/
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+@media screen and (max-width: 100px) { /* La regla CSS se aplicará cuando la pantalla sea menor de 600px de ancho */
+  .anuncio02 {
+      width: 20%; /* El ancho del div será del 90% del ancho de la pantalla */
+      padding: 1%; /* Los márgenes internos del div serán del 1% del ancho de la pantalla */
+  }
+}
+
+.temperatura {
+  width: 90%;
+  z-index: 1;
+    float: left;
+    display: flex;
+    position: relative;
+
+      margin-left: 4%;
+      width: 15%;
+      border: 4px solid #18203E;
+      height: auto;
+      background-image: url("../../img/paginaPrincipal/EG_img/anunciofortnite.png");
+      background-size: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.botonan02 {
+  margin-top: 95%;
+  width: 60%;
+  height: 20px;
+  margin-bottom: 0;
+  
+}
+
+.redirfort {
+  padding: 10px 20px;
+  background-color: blue;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.redirfort:hover {
+  background-color: darkblue;
+}
+
+.tiempo02 {
+  margin-left: 4%;
+  margin-top: -350px;
+  width: 15%;
+  display: flex;
+  float: left;
+  z-index: 243; 
+  height: 350px;
+ 
+}
+
+
+/*.redesSociales02 {
+  
+  height: 100%;
+  margin-right: 5%;
+    display: flex;
+    justify-content: right; 
+    align-items: center;
+    color: white;
+}*/
+
+.hora02 {
+  margin-right: 3%;
+  margin-top: -210px;
+  width: 15%;
+  display: flex;
+  float: right;
+  z-index: 243;
+  height: 210px;
+  /*background-color: #fff;
+  border: 4px solid #18203E;*/
+}
+
+.contador02 {
+  align-items: center;
+  margin: auto;
+}
+  /* -----            Parte derecha de noticias             ----- */
+  .cajaanuncios02 {
+    width: 15%;
+    z-index: 276;         /*¿Porque tan alto?*/
+      float: right;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+        margin-top: 60px;
+        margin-right: 3%;
+        margin-left: 1%;
+        height: 940px;
+        background-color: #EE2852;
+        border: 4px solid #18203E;
+  }
+
+  @media screen and (max-width: 600px) { /* La regla CSS se aplicará cuando la pantalla sea menor de 600px de ancho */
+    .cajaanuncios02 {
+        width: 90%; /* El ancho del div será del 90% del ancho de la pantalla */
+        padding: 1%; /* Los márgenes internos del div serán del 1% del ancho de la pantalla */
+    }
+  }
+
+  @media screen and (max-width: 100px) { /* La regla CSS se aplicará cuando la pantalla sea menor de 600px de ancho */
+    .anuncio02 {
+        width: 20%; /* El ancho del div será del 90% del ancho de la pantalla */
+        padding: 1%; /* Los márgenes internos del div serán del 1% del ancho de la pantalla */
+    }
+  }
+
+  .anunsimple1 {
+   
+    margin: 5px;
+    width: 95%;
+    height: 300px;
+    background-color: #fff;
+    border: 2px solid #18203E;
+
+  }
+
+  .anunsimple2 {
+    
+    float: left;
+    z-index: 12;
+    margin: 5px;
+    width: 95%;
+    height: 300px;
+    background-color: #fff;
+    border: 2px solid #18203E;
+  }   
+
+  .anunsimple3 {
+   
+    margin: 5px;
+    width: 95%;
+    height: 300px;
+    background-color: #fff;
+    border: 2px solid #18203E;
+  } 
+  /* -----           Parrafo noticia              ----- */
+
+  .noticia02 {
+    z-index: 1;
+      height: 600px;
+      background-color: #EE2852;
+      margin-top: 4%;
+      margin-left: 20%;
+      overflow: hidden;
+      border: 4px solid #18203E;
+      border-top-right-radius: 30px;
+      border-bottom-left-radius: 30px;
+      border-top-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+  }
+
+.titulonoticia02 {
+  padding-top: 40px;
+  text-align: center;
+  flex-basis: 100%;
+  height: 20%;
+  border-bottom: 2px solid #18203E;
+  background-color: #fff;
+  align-content: center;
+    font-family: 'StarRockets';
+    src: url('../../../font/paginaPrincipal/FuentesEG/StarRocketsDemoRegular.ttf');
+    font-weight: bold;
+    font-style: normal;
+}
+
+.noticiah2 {
+      
+  font-family: 'StarRockets';
+    src: url('../../../font/paginaPrincipal/FuentesEG/StarRocketsDemoRegular.ttf');
+    font-weight: bold;
+    font-style: normal;
+    color: #18203E;
+    font-size: 40px;
+}
+
+  .parrafos02 {
+    flex-basis: 100%;
+    height: 80%;
+    background-color: #EE2852;
+    
+  }
+  /*.titulop02 {
+    font-weight: bold;
+    height: fit-content;
+    width: 100%;
+    margin-bottom: 20px;
+  } */
+
+ .parrafo1_02 {
+
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  text-align: center;
+ } 
+
+
+
+  /* ----- Primeras secciones ----- */
+
+  
+
+.left, .right{
+	position: absolute;
+	top: 0;
+	height: 100%;
+
+	display: flex;
+	align-items: center;
+
+	color: #fff;
+	font-size: 35px;
+	cursor: pointer;
+	z-index: 2;
+}
+
+.left{
+	left: 10px;
+}
+
+.right{
+	right: 10px;
+}
+
+
+
+    /* ----- Carrusel ----- */
+
+    
+    
+   
+
+
+    @media screen and (max-width: 600px) { /* La regla CSS se aplicará cuando la pantalla sea menor de 600px de ancho */
+      .carrusel_02 {
+          width: 90%; /* El ancho del div será del 90% del ancho de la pantalla */
+          padding: 1%; /* Los márgenes internos del div serán del 1% del ancho de la pantalla */
+          margin: auto;
+      }
+  }
+
+    .fondo02 {
+      bottom: 0px;
+      position: absolute;
+      height: 50px;
+      background-color: #EE2852;
+      width: 100%;
+      text-align: center;
+      border-top: 2px solid #18203E;
+    }
+
+    h2 {
+      padding-top: -15px;
+      font-family: 'Heroesassemble';
+        src: url('../../../font/paginaPrincipal/FuentesEG/heroesassemble2.ttf');
+        font-weight: normal;
+        font-style: normal;
+        color: #18203E;
+        font-size: 40px;
+    }
+
+    
+
+    /* ----- Parte derecha de anuncios ----- */
+
+    
+    /* -----                           ----- */
+
+    /* ----- Video de YouTube ----- */
+    
+    /* -----                  ----- */
+
+  #carrusel-caja {
+      -moz-animation: carrusel 10s infinite linear;
+      -o-animation: carrusel 10s infinite linear;
+      -webkit-animation: carrusel 10s infinite linear;
+      animation: carrusel 10s infinite linear;
+      -webkit-transition: all 0.75s ease;
+      -moz-transition: all 0.75s ease;
+      -ms-transition: all 0.75s ease;
+      -o-transition: all 0.75s ease;
+      transition: all 0.75s ease;
+      height: 500px;
+      width: 300%;
+  }
+  #carrusel-contenido {
+      margin: 0 auto;
+      overflow: hidden;
+      text-align: left;
+  }
+  .imagenes{
+      height: 500px;
+      width: 100%;
+  }
+  .carrusel-elemento {
+      float: left;
+      width: 33.333%;
+  }
+  @-moz-keyframes carrusel {
+      0% {
+          margin-left: 0;
+      }
+      30% {
+          margin-left: 0;
+      }
+      35% {
+          margin-left: -100%;
+      }
+      65% {
+          margin-left: -100%;
+      }
+      70% {
+          margin-left: -200%;
+      }
+      95% {
+          margin-left: -200%;
+      }
+      100% {
+          margin-left: 0;
+      }
+  }
+  @-webkit-keyframes carrusel {
+      0% {
+          margin-left: 0;
+      }
+      30% {
+          margin-left: 0;
+      }
+      35% {
+          margin-left: -100%;
+      }
+      65% {
+          margin-left: -100%;
+      }
+      70% {
+          margin-left: -200%;
+      }
+      95% {
+          margin-left: -200%;
+      }
+      100% {
+          margin-left: 0;
+      }
+  }
+  @keyframes carrusel {
+      0% {
+          margin-left: 0;
+      }
+      30% {
+          margin-left: 0;
+      }
+      35% {
+          margin-left: -100%;
+      }
+      65% {
+          margin-left: -100%;
+      }
+      70% {
+          margin-left: -200%;
+      }
+      95% {
+          margin-left: -200%;
+      }
+      100% {
+          margin-left: 0;
+      }
+  }
+
+  /* ----- Desplegable Izquierdo ----- */
+
+  .menudesp {
+    position: fixed;
+    z-index: 1000px;        /*¿Porque tan alto?*/
+    top: 0;
+    z-index: 4;
+    height: 606px;
+    }
+
+  .sidebar {
+    position: fixed;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background: #042331;
+    transition: all .5s ease;
+  }
+  .sidebar header {
+    font-size: 22px;
+    color: white;
+    line-height: 70px;
+    text-align: center;
+    background: #063146;
+    user-select: none;
+  }
+  .sidebar ul a{
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 65px;
+    font-size: 20px;
+    color: white;
+    padding-left: 40px;
+    box-sizing: border-box;
+    border-bottom: 1px solid black;
+    border-top: 1px solid rgba(255,255,255,.1);
+    transition: .4s;
+  }
+  ul li:hover a{
+    padding-left: 50px;
+  }
+  .sidebar ul a i{
+    margin-right: 16px;
+  }
+  #check{
+    display: none;
+  }
+  label #btn,label #cancel{
+    position: absolute;
+    background: #042331;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  label #btn{
+    left: 40px;
+    top: 25px;
+    font-size: 35px;
+    color: white;
+    padding: 6px 12px;
+    transition: all .5s;
+  }
+  label #cancel{
+    z-index: 1111;              /*¿Porque tan alto?*/
+    left: -195px;
+    top: 17px;
+    font-size: 30px;
+    color: #0a5275;
+    padding: 4px 9px;
+    transition: all .5s ease;
+  }
+  #check:checked ~ .sidebar{
+    left: 0;
+  }
+  #check:checked ~ label #btn{
+    left: 250px;
+    opacity: 0;
+    pointer-events: none;
+  }
+  #check:checked ~ label #cancel{
+    left: 195px;
+  }
+  #check:checked ~ section{
+    margin-left: 250px;
+  }
+  section{
+    background: url(bg.jpeg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    transition: all .5s;
+  }
+  
+  nav {
+      overflow: hidden;
+      background-color: #333;
+      position: fixed;
+      top: 0; 
+      width: 100%; 
+  }
+
+
+  /* ---------------------------------- */
+  /* footer */
+  footer {
+    background: rgb(42, 42, 42);
+    width: 100%;
+    color: #fff;
+    padding: 30px;
+  }
+  
+  footer .top-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  footer .top-content .socials {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    transition: background-color 0.5s ease;
+  }
+
+  .logos {
+    width: 40px;
+    background-color: rgb(42, 42, 42);
+    padding: 10px;
+    transition: background-color 0.5s ease;
+  }
+
+  .logos:hover {
+    background-color: rgb(rgb(0, 119, 255));
+  }
+  
+  footer .top-content .socials img {
+    width: 25px;
+    height: auto;
+    margin: 0 10px 0 0;
+  }
+  
+  footer .top-content .small-nav img {
+    width: 25px;
+    height: auto;
+  }
+  
+  footer .res-madeby {
+    display: flex;
+    margin: 20px 0 0 0;
+    margin-top: 20px;
+  }
+  
+  footer .res-madeby .resources .small-title {
+    color: rgb(148, 148, 148);
+    font-size: 15px;
+  }
+
+  .linegris {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-color: #333;
+  }
+  
+  footer .res-madeby .resources .content {
+    display: flex;
+    margin: 10px 0 0 0;
+  }
+  
+  footer .res-madeby .resources .content .resource-ctr {
+    margin: 0 25px 0 0;
+  }
+  
+  footer .res-madeby .resources .content .resource-ctr a {
+    margin: 0 0 7px 0;
+    font-size: 15px;
+    color: rgb(207, 206, 206);
+  }
+  
+  footer .res-madeby .made-by .small-title {
+    color: rgb(148, 148, 148);
+    font-size: 15px;
+  }
+  
+  footer .res-madeby .made-by .content {
+    display: flex;
+    margin: 10px 0 0 0;
+  }
+  
+  footer .res-madeby .made-by .content .madeby-ctr {
+    margin: 0 25px 0 0;
+  }
+  
+  footer .res-madeby .made-by .content .madeby-ctr a {
+    margin: 0 0 7px 0;
+    font-size: 15px;
+    color: rgb(207, 206, 206);
+  }
+  
+  footer .text-cont {
+    width: 50%;
+    font-size: 12px;
+    color: rgb(207, 206, 206);
+    margin: 50px 0;
+    line-height: 21px;
+  }
+  
+  footer .down-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  footer .down-content .left-cont {
+    display: flex;
+    align-items: center;
+  }
+  
+  footer .down-content .left-cont a {
+    margin: 0 15px 0 0;
+    color: rgb(207, 206, 206);
+  }
+  
+  footer .down-content .right-cont img {
+    width: 40px;
+    height: auto;
+  }
+  
+  @media (max-width: 1100px) {
+    footer .text-cont {
+      width: 75%;
+    }
+  }
+  @media (max-width: 800px) {
+    footer .res-madeby {
+      flex-direction: column;
+    }
+  
+    footer .res-madeby .resources {
+      margin: 30px 0;
+    }
+  
+    footer .res-madeby .resources .small-title {
+      margin: 0 0 20px 0;
+    }
+  
+    footer .res-madeby .made-by {
+      margin: 30px 0;
+    }
+  
+    footer .res-madeby .made-by .small-title {
+      margin: 0 0 20px 0;
+    }
+  
+    footer .text-cont {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 700px) {
+    footer .down-content {
+      flex-direction: column;
+      justify-content: space-between;
+      height: 90px;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    footer .res-madeby .resources .content .resource-ctr a,
+    footer .res-madeby .made-by .content .madeby-ctr a,
+    footer .text-cont,
+    footer .down-content .left-cont a {
+      font-size: 12px;
+    }
+  }
+  
+  @media (max-width: 500px) {
+    footer .res-madeby .resources {
+      margin: 20px 0;
+    }
+  
+    footer .res-madeby .resources .small-title {
+      margin: 0 0 10px 0;
+    }
+  
+    footer .res-madeby .made-by {
+      margin: 20px 0;
+    }
+  
+    footer .res-madeby .made-by .small-title {
+      margin: 0 0 10px 0;
+    }
+  
+    footer .res-madeby .resources .small-title,
+    footer .res-madeby .made-by .small-title {
+      font-size: 13px;
+    }
+    footer .down-content .left-cont a {
+      font-size: 10px;
+    }
+    footer .res-madeby .resources .content .resource-ctr a,
+    footer .res-madeby .made-by .content .madeby-ctr a,
+    footer .text-cont,
+    footer .down-content .left-cont a {
+      font-size: 10px;
+    }
+    footer .text-cont {
+      margin: 20px 0 40px 0;
+      text-align: justify;
+    }
+  }
+  
+  @media (max-width: 400px) {
+    footer .res-madeby .resources .small-title,
+    footer .res-madeby .made-by .small-title {
+      font-size: 11px;
+    }
+    footer .res-madeby .resources .content .resource-ctr li a,
+    footer .res-madeby .made-by .content .madeby-ctr li a,
+    footer .text-cont,
+    footer .down-content .left-cont li a {
+      font-size: 8px;
+    }
+  
+    footer .down-content .left-cont li a {
+      font-size: 8px;
+    }
+  }
+
+  .terminos {
+    text-decoration: none;
+  }

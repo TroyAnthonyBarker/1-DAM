@@ -1,0 +1,128 @@
+aside,
+footer {
+    overflow: hidden;
+}
+
+a {
+    color: aliceblue;
+}
+
+header,
+footer {
+    background-image: linear-gradient(to right,
+            #072f4e,
+            #1f547e,
+            #3378ad,
+            #284eee,
+            #2898ee,
+            #284eee,
+            #3378ad,
+            #1f547e,
+            #072f4e);
+    min-width: 600px;
+    width: 100%;
+    min-height: 75px;
+    color: aliceblue;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+}
+
+footer {
+    width: 100%;
+}
+
+aside .Referencia_07 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 15px;
+    width: 12%;
+    min-width: 160px;
+}
+
+aside article {
+    margin: 5px;
+}
+
+main {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    padding: 2% 6%;
+}
+
+main section {
+    display: flex;
+    flex-flow: column wrap;
+    max-width: 75%;
+}
+
+main article {
+    background-color: #2898eeb2;
+    border: 2px solid #1f547e;
+    border-radius: 1em;
+    backdrop-filter: blur(10px);
+    margin: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-items: center;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: 15%;
+    margin-right: 10%;
+}
+
+
+/*---------------------CLASES---------------------------------*/
+
+.Referencia_07 {
+    display: flex;
+}
+
+.Referencia_07 article {
+    width: 150px;
+}
+
+.flex-container_07 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/*--------------------TAMAÑO------------------------------*/
+
+@media screen and (max-width: 1415px) {
+    main section {
+        max-width: 100%;
+    }
+}
+
+
+@media screen and (max-width: 1105px) {
+    .flex-container_07 {
+        flex-flow: column-reverse;
+    }
+
+    aside .Referencia_07 {
+        display: flex;
+        flex-flow: row wrap;
+        width: auto;
+    }
+
+    aside {
+        width: 100%;
+
+    }
+
+    main {
+        width: 100%;
+        padding: 0%;
+    }
+}

@@ -1,0 +1,1942 @@
+label {
+  cursor: pointer;
+}
+
+/* Contenedor para centrar */
+.Slider {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: black;
+  align-self: center;
+  width: fit-content;
+  padding: 10px;
+}
+
+/* Input */
+input {
+  display: none
+}
+
+
+
+/* Slider */
+.Carrusels {
+  height: 300px;
+  width: 750px;
+  position: relative;
+  overflow-x: hidden;
+  background-color: black;
+}
+
+
+.Carrusel {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: black;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: all .5s ease;
+}
+
+.flecha {
+  width: 100%;
+  height: 100%;
+  font-family: Arial;
+  color: aliceblue;
+  font-size: min(30px, max(3.75vw, 25px));
+  text-align: center;
+  content-visibility: hidden;
+}
+
+.flecha:hover, .Carrusel:hover~.flecha {
+  content-visibility: visible;
+}
+
+.resenas {
+  height: 300px;
+  width: 500px;
+  position: relative;
+  overflow-x: hidden;
+  background-color: rgba(245, 245, 245, 0.75);
+  border: 10px solid;
+  border-color: gray black black gray;
+}
+
+.resena {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transition: all .5s ease;
+}
+
+.resena p {
+  text-align: justify;
+  padding: 30px;
+}
+
+/* Configuracion de elementos individuales */
+.Carrusels .Carrusel:nth-child(1) {
+  background-image: url(http://as01.epimg.net/epik/imagenes/2021/02/14/album/1613297443_723360_1613297476_album_grande.jpg);
+}
+
+.Carrusels .Carrusel:nth-child(2) {
+  background-image: url(http://as01.epimg.net/epik/imagenes/2021/02/14/album/1613297443_723360_1613297491_album_grande.jpg);
+}
+
+.Carrusels .Carrusel:nth-child(3) {
+  background-image: url(https://www.tuexperto.com/wp-content/uploads/2020/02/memes-sam-va-lentin-san-valentin-2020-twitter-whatsapp-3.jpeg.webp);
+}
+
+.Carrusels .Carrusel:nth-child(4) {
+  background-image: url(../../IMG/PaginaPrincipal/Comparativa.jpg);
+}
+
+.Carrusels .Carrusel:nth-child(5) {
+  background-image: url(../../IMG/PaginaPrincipal/Resenyas.jpg);
+}
+
+.Carrusels .Carrusel:nth-child(6) {
+  background-image: url(http://as01.epimg.net/epik/imagenes/2021/02/14/album/1613297443_723360_1613297476_album_grande.jpg);
+}
+
+.Carrusels .Carrusel:nth-child(7) {
+  background-image: url(http://as01.epimg.net/epik/imagenes/2021/02/14/album/1613297443_723360_1613297491_album_grande.jpg);
+}
+
+.Carrusels .Carrusel:nth-child(8) {
+  background-image: url(https://www.tuexperto.com/wp-content/uploads/2020/02/memes-sam-va-lentin-san-valentin-2020-twitter-whatsapp-3.jpeg.webp);
+}
+
+.Carrusels .Carrusel:nth-child(9) {
+  background-image: url(../../IMG/PaginaPrincipal/Comparativa.jpg);
+}
+
+.Carrusels .Carrusel:nth-child(10) {
+  background-image: url(../../IMG/PaginaPrincipal/Resenyas.jpg);
+}
+
+.Carrusels .Carrusel:nth-child(11) {
+  background-image: url(http://as01.epimg.net/epik/imagenes/2021/02/14/album/1613297443_723360_1613297476_album_grande.jpg);
+}
+
+.Carrusels .Carrusel:nth-child(12) {
+  background-image: url(http://as01.epimg.net/epik/imagenes/2021/02/14/album/1613297443_723360_1613297491_album_grande.jpg);
+}
+
+.Carrusels .Carrusel:nth-child(13) {
+  background-image: url(https://www.tuexperto.com/wp-content/uploads/2020/02/memes-sam-va-lentin-san-valentin-2020-twitter-whatsapp-3.jpeg.webp);
+}
+
+.Carrusels .Carrusel:nth-child(14) {
+  background-image: url(../../IMG/PaginaPrincipal/Comparativa.jpg);
+}
+
+.Carrusels .Carrusel:nth-child(15) {
+  background-image: url(../../IMG/PaginaPrincipal/Resenyas.jpg);
+}
+
+.Carrusels .Carrusel:nth-child(16) {
+  background-image: url(http://as01.epimg.net/epik/imagenes/2021/02/14/album/1613297443_723360_1613297476_album_grande.jpg);
+}
+
+.Carrusels .Carrusel:nth-child(17) {
+  background-image: url(http://as01.epimg.net/epik/imagenes/2021/02/14/album/1613297443_723360_1613297491_album_grande.jpg);
+}
+
+.Carrusels .Carrusel:nth-child(18) {
+  background-image: url(https://www.tuexperto.com/wp-content/uploads/2020/02/memes-sam-va-lentin-san-valentin-2020-twitter-whatsapp-3.jpeg.webp);
+}
+
+.Carrusels .Carrusel:nth-child(19) {
+  background-image: url(../../IMG/PaginaPrincipal/Comparativa.jpg);
+}
+
+.Carrusels .Carrusel:nth-child(20) {
+  background-image: url(../../IMG/PaginaPrincipal/Resenyas.jpg);
+}
+
+/* Estado 1 */
+#Slider1:checked~.Slider .Carrusels .Carrusel:nth-of-type(1) {
+  transform: translate(0%, 0);
+}
+
+#Slider1:checked~.Slider .Carrusels .Carrusel:nth-of-type(2) {
+  transform: translate(100%, 0);
+}
+
+#Slider1:checked~.Slider .Carrusels .Carrusel:nth-of-type(3) {
+  transform: translate(200%, 0);
+}
+
+#Slider1:checked~.Slider .Carrusels .Carrusel:nth-of-type(4) {
+  transform: translate(300%, 0);
+}
+
+#Slider1:checked~.Slider .Carrusels .Carrusel:nth-of-type(5) {
+  transform: translate(400%, 0);
+}
+
+#Slider1:checked~.Slider .Carrusels .Carrusel:nth-of-type(6) {
+  transform: translate(500%, 0);
+}
+
+#Slider1:checked~.Slider .Carrusels .Carrusel:nth-of-type(7) {
+  transform: translate(600%, 0);
+}
+
+#Slider1:checked~.Slider .Carrusels .Carrusel:nth-of-type(8) {
+  transform: translate(700%, 0);
+}
+
+#Slider1:checked~.Slider .Carrusels .Carrusel:nth-of-type(9) {
+  transform: translate(800%, 0);
+}
+
+#Slider1:checked~.Slider .Carrusels .Carrusel:nth-of-type(10) {
+  transform: translate(900%, 0);
+}
+#Slider1:checked~.Slider .Carrusels .Carrusel:nth-of-type(11) {
+  transform: translate(1000%, 0);
+}
+
+#Slider1:checked~.Slider .Carrusels .Carrusel:nth-of-type(12) {
+  transform: translate(1100%, 0);
+}
+
+#Slider1:checked~.Slider .Carrusels .Carrusel:nth-of-type(13) {
+  transform: translate(1200%, 0);
+}
+
+#Slider1:checked~.Slider .Carrusels .Carrusel:nth-of-type(14) {
+  transform: translate(1300%, 0);
+}
+
+#Slider1:checked~.Slider .Carrusels .Carrusel:nth-of-type(15) {
+  transform: translate(1400%, 0);
+}
+#Slider1:checked~.Slider .Carrusels .Carrusel:nth-of-type(16) {
+  transform: translate(1500%, 0);
+}
+
+#Slider1:checked~.Slider .Carrusels .Carrusel:nth-of-type(17) {
+  transform: translate(1600%, 0);
+}
+
+#Slider1:checked~.Slider .Carrusels .Carrusel:nth-of-type(18) {
+  transform: translate(1700%, 0);
+}
+
+#Slider1:checked~.Slider .Carrusels .Carrusel:nth-of-type(19) {
+  transform: translate(1800%, 0);
+}
+
+#Slider1:checked~.Slider .Carrusels .Carrusel:nth-of-type(20) {
+  transform: translate(1900%, 0);
+}
+
+/* Estado 2 */
+#Slider2:checked~.Slider .Carrusels .Carrusel:nth-of-type(1) {
+  transform: translate(-100%, 0);
+}
+
+#Slider2:checked~.Slider .Carrusels .Carrusel:nth-of-type(2) {
+  transform: translate(0%, 0);
+}
+
+#Slider2:checked~.Slider .Carrusels .Carrusel:nth-of-type(3) {
+  transform: translate(100%, 0);
+}
+
+#Slider2:checked~.Slider .Carrusels .Carrusel:nth-of-type(4) {
+  transform: translate(200%, 0);
+}
+
+#Slider2:checked~.Slider .Carrusels .Carrusel:nth-of-type(5) {
+  transform: translate(300%, 0);
+}
+
+#Slider2:checked~.Slider .Carrusels .Carrusel:nth-of-type(6) {
+  transform: translate(400%, 0);
+}
+
+#Slider2:checked~.Slider .Carrusels .Carrusel:nth-of-type(7) {
+  transform: translate(500%, 0);
+}
+
+#Slider2:checked~.Slider .Carrusels .Carrusel:nth-of-type(8) {
+  transform: translate(600%, 0);
+}
+
+#Slider2:checked~.Slider .Carrusels .Carrusel:nth-of-type(9) {
+  transform: translate(700%, 0);
+}
+
+#Slider2:checked~.Slider .Carrusels .Carrusel:nth-of-type(10) {
+  transform: translate(800%, 0);
+}
+#Slider2:checked~.Slider .Carrusels .Carrusel:nth-of-type(11) {
+  transform: translate(900%, 0);
+}
+
+#Slider2:checked~.Slider .Carrusels .Carrusel:nth-of-type(12) {
+  transform: translate(1000%, 0);
+}
+
+#Slider2:checked~.Slider .Carrusels .Carrusel:nth-of-type(13) {
+  transform: translate(1100%, 0);
+}
+
+#Slider2:checked~.Slider .Carrusels .Carrusel:nth-of-type(14) {
+  transform: translate(1200%, 0);
+}
+
+#Slider2:checked~.Slider .Carrusels .Carrusel:nth-of-type(15) {
+  transform: translate(1300%, 0);
+}
+#Slider2:checked~.Slider .Carrusels .Carrusel:nth-of-type(16) {
+  transform: translate(1400%, 0);
+}
+
+#Slider2:checked~.Slider .Carrusels .Carrusel:nth-of-type(17) {
+  transform: translate(1500%, 0);
+}
+
+#Slider2:checked~.Slider .Carrusels .Carrusel:nth-of-type(18) {
+  transform: translate(1600%, 0);
+}
+
+#Slider2:checked~.Slider .Carrusels .Carrusel:nth-of-type(19) {
+  transform: translate(1700%, 0);
+}
+
+#Slider2:checked~.Slider .Carrusels .Carrusel:nth-of-type(20) {
+  transform: translate(1800%, 0);
+}
+
+/* Estado 3 */
+#Slider3:checked~.Slider .Carrusels .Carrusel:nth-of-type(1) {
+  transform: translate(-200%, 0);
+}
+
+#Slider3:checked~.Slider .Carrusels .Carrusel:nth-of-type(2) {
+  transform: translate(-100%, 0);
+}
+
+#Slider3:checked~.Slider .Carrusels .Carrusel:nth-of-type(3) {
+  transform: translate(0%, 0);
+}
+
+#Slider3:checked~.Slider .Carrusels .Carrusel:nth-of-type(4) {
+  transform: translate(100%, 0);
+}
+
+#Slider3:checked~.Slider .Carrusels .Carrusel:nth-of-type(5) {
+  transform: translate(200%, 0);
+}
+
+#Slider3:checked~.Slider .Carrusels .Carrusel:nth-of-type(6) {
+  transform: translate(300%, 0);
+}
+
+#Slider3:checked~.Slider .Carrusels .Carrusel:nth-of-type(7) {
+  transform: translate(400%, 0);
+}
+
+#Slider3:checked~.Slider .Carrusels .Carrusel:nth-of-type(8) {
+  transform: translate(500%, 0);
+}
+
+#Slider3:checked~.Slider .Carrusels .Carrusel:nth-of-type(9) {
+  transform: translate(600%, 0);
+}
+
+#Slider3:checked~.Slider .Carrusels .Carrusel:nth-of-type(10) {
+  transform: translate(700%, 0);
+}
+#Slider3:checked~.Slider .Carrusels .Carrusel:nth-of-type(11) {
+  transform: translate(800%, 0);
+}
+
+#Slider3:checked~.Slider .Carrusels .Carrusel:nth-of-type(12) {
+  transform: translate(900%, 0);
+}
+
+#Slider3:checked~.Slider .Carrusels .Carrusel:nth-of-type(13) {
+  transform: translate(1000%, 0);
+}
+
+#Slider3:checked~.Slider .Carrusels .Carrusel:nth-of-type(14) {
+  transform: translate(1100%, 0);
+}
+
+#Slider3:checked~.Slider .Carrusels .Carrusel:nth-of-type(15) {
+  transform: translate(1200%, 0);
+}
+#Slider3:checked~.Slider .Carrusels .Carrusel:nth-of-type(16) {
+  transform: translate(1300%, 0);
+}
+
+#Slider3:checked~.Slider .Carrusels .Carrusel:nth-of-type(17) {
+  transform: translate(1400%, 0);
+}
+
+#Slider3:checked~.Slider .Carrusels .Carrusel:nth-of-type(18) {
+  transform: translate(1500%, 0);
+}
+
+#Slider3:checked~.Slider .Carrusels .Carrusel:nth-of-type(19) {
+  transform: translate(1600%, 0);
+}
+
+#Slider3:checked~.Slider .Carrusels .Carrusel:nth-of-type(20) {
+  transform: translate(1700%, 0);
+}
+
+/* Estado 4 */
+#Slider4:checked~.Slider .Carrusels .Carrusel:nth-of-type(1) {
+  transform: translate(-300%, 0);
+}
+
+#Slider4:checked~.Slider .Carrusels .Carrusel:nth-of-type(2) {
+  transform: translate(-200%, 0);
+}
+
+#Slider4:checked~.Slider .Carrusels .Carrusel:nth-of-type(3) {
+  transform: translate(-100%, 0);
+}
+
+#Slider4:checked~.Slider .Carrusels .Carrusel:nth-of-type(4) {
+  transform: translate(0%, 0);
+}
+
+#Slider4:checked~.Slider .Carrusels .Carrusel:nth-of-type(5) {
+  transform: translate(100%, 0);
+}
+
+#Slider4:checked~.Slider .Carrusels .Carrusel:nth-of-type(6) {
+  transform: translate(200%, 0);
+}
+
+#Slider4:checked~.Slider .Carrusels .Carrusel:nth-of-type(7) {
+  transform: translate(300%, 0);
+}
+
+#Slider4:checked~.Slider .Carrusels .Carrusel:nth-of-type(8) {
+  transform: translate(400%, 0);
+}
+
+#Slider4:checked~.Slider .Carrusels .Carrusel:nth-of-type(9) {
+  transform: translate(500%, 0);
+}
+
+#Slider4:checked~.Slider .Carrusels .Carrusel:nth-of-type(10) {
+  transform: translate(600%, 0);
+}
+#Slider4:checked~.Slider .Carrusels .Carrusel:nth-of-type(11) {
+  transform: translate(700%, 0);
+}
+
+#Slider4:checked~.Slider .Carrusels .Carrusel:nth-of-type(12) {
+  transform: translate(800%, 0);
+}
+
+#Slider4:checked~.Slider .Carrusels .Carrusel:nth-of-type(13) {
+  transform: translate(900%, 0);
+}
+
+#Slider4:checked~.Slider .Carrusels .Carrusel:nth-of-type(14) {
+  transform: translate(1000%, 0);
+}
+
+#Slider4:checked~.Slider .Carrusels .Carrusel:nth-of-type(15) {
+  transform: translate(1100%, 0);
+}
+#Slider4:checked~.Slider .Carrusels .Carrusel:nth-of-type(16) {
+  transform: translate(1200%, 0);
+}
+
+#Slider4:checked~.Slider .Carrusels .Carrusel:nth-of-type(17) {
+  transform: translate(1300%, 0);
+}
+
+#Slider4:checked~.Slider .Carrusels .Carrusel:nth-of-type(18) {
+  transform: translate(1400%, 0);
+}
+
+#Slider4:checked~.Slider .Carrusels .Carrusel:nth-of-type(19) {
+  transform: translate(1500%, 0);
+}
+
+#Slider4:checked~.Slider .Carrusels .Carrusel:nth-of-type(20) {
+  transform: translate(1600%, 0);
+}
+
+/* Estado 5 */
+#Slider5:checked~.Slider .Carrusels .Carrusel:nth-of-type(1) {
+  transform: translate(-400%, 0);
+}
+
+#Slider5:checked~.Slider .Carrusels .Carrusel:nth-of-type(2) {
+  transform: translate(-300%, 0);
+}
+
+#Slider5:checked~.Slider .Carrusels .Carrusel:nth-of-type(3) {
+  transform: translate(-200%, 0);
+}
+
+#Slider5:checked~.Slider .Carrusels .Carrusel:nth-of-type(4) {
+  transform: translate(-100%, 0);
+}
+
+#Slider5:checked~.Slider .Carrusels .Carrusel:nth-of-type(5) {
+  transform: translate(0%, 0);
+}
+
+#Slider2:checked~.Slider .Carrusels .Carrusel:nth-of-type(6) {
+  transform: translate(100%, 0);
+}
+
+#Slider5:checked~.Slider .Carrusels .Carrusel:nth-of-type(7) {
+  transform: translate(200%, 0);
+}
+
+#Slider5:checked~.Slider .Carrusels .Carrusel:nth-of-type(8) {
+  transform: translate(300%, 0);
+}
+
+#Slider5:checked~.Slider .Carrusels .Carrusel:nth-of-type(9) {
+  transform: translate(400%, 0);
+}
+
+#Slider5:checked~.Slider .Carrusels .Carrusel:nth-of-type(10) {
+  transform: translate(500%, 0);
+}
+#Slider5:checked~.Slider .Carrusels .Carrusel:nth-of-type(11) {
+  transform: translate(600%, 0);
+}
+
+#Slider5:checked~.Slider .Carrusels .Carrusel:nth-of-type(12) {
+  transform: translate(700%, 0);
+}
+
+#Slider5:checked~.Slider .Carrusels .Carrusel:nth-of-type(13) {
+  transform: translate(800%, 0);
+}
+
+#Slider5:checked~.Slider .Carrusels .Carrusel:nth-of-type(14) {
+  transform: translate(900%, 0);
+}
+
+#Slider5:checked~.Slider .Carrusels .Carrusel:nth-of-type(15) {
+  transform: translate(1000%, 0);
+}
+#Slider5:checked~.Slider .Carrusels .Carrusel:nth-of-type(16) {
+  transform: translate(1100%, 0);
+}
+
+#Slider5:checked~.Slider .Carrusels .Carrusel:nth-of-type(17) {
+  transform: translate(1200%, 0);
+}
+
+#Slider5:checked~.Slider .Carrusels .Carrusel:nth-of-type(18) {
+  transform: translate(1300%, 0);
+}
+
+#Slider5:checked~.Slider .Carrusels .Carrusel:nth-of-type(19) {
+  transform: translate(1400%, 0);
+}
+
+#Slider5:checked~.Slider .Carrusels .Carrusel:nth-of-type(20) {
+  transform: translate(1500%, 0);
+}
+
+/* Estado 6 */
+#Slider6:checked~.Slider .Carrusels .Carrusel:nth-of-type(1) {
+  transform: translate(0%, 0);
+}
+
+#Slider6:checked~.Slider .Carrusels .Carrusel:nth-of-type(2) {
+  transform: translate(100%, 0);
+}
+
+#Slider6:checked~.Slider .Carrusels .Carrusel:nth-of-type(3) {
+  transform: translate(200%, 0);
+}
+
+#Slider6:checked~.Slider .Carrusels .Carrusel:nth-of-type(4) {
+  transform: translate(300%, 0);
+}
+
+#Slider6:checked~.Slider .Carrusels .Carrusel:nth-of-type(5) {
+  transform: translate(400%, 0);
+}
+
+#Slider6:checked~.Slider .Carrusels .Carrusel:nth-of-type(6) {
+  transform: translate(500%, 0);
+}
+
+#Slider6:checked~.Slider .Carrusels .Carrusel:nth-of-type(7) {
+  transform: translate(600%, 0);
+}
+
+#Slider6:checked~.Slider .Carrusels .Carrusel:nth-of-type(8) {
+  transform: translate(700%, 0);
+}
+
+#Slider6:checked~.Slider .Carrusels .Carrusel:nth-of-type(9) {
+  transform: translate(800%, 0);
+}
+
+#Slider6:checked~.Slider .Carrusels .Carrusel:nth-of-type(10) {
+  transform: translate(900%, 0);
+}
+#Slider6:checked~.Slider .Carrusels .Carrusel:nth-of-type(11) {
+  transform: translate(1000%, 0);
+}
+
+#Slider6:checked~.Slider .Carrusels .Carrusel:nth-of-type(12) {
+  transform: translate(1100%, 0);
+}
+
+#Slider6:checked~.Slider .Carrusels .Carrusel:nth-of-type(13) {
+  transform: translate(1200%, 0);
+}
+
+#Slider6:checked~.Slider .Carrusels .Carrusel:nth-of-type(14) {
+  transform: translate(1300%, 0);
+}
+
+#Slider6:checked~.Slider .Carrusels .Carrusel:nth-of-type(15) {
+  transform: translate(1400%, 0);
+}
+#Slider6:checked~.Slider .Carrusels .Carrusel:nth-of-type(16) {
+  transform: translate(1500%, 0);
+}
+
+#Slider6:checked~.Slider .Carrusels .Carrusel:nth-of-type(17) {
+  transform: translate(1600%, 0);
+}
+
+#Slider6:checked~.Slider .Carrusels .Carrusel:nth-of-type(18) {
+  transform: translate(1700%, 0);
+}
+
+#Slider6:checked~.Slider .Carrusels .Carrusel:nth-of-type(19) {
+  transform: translate(1800%, 0);
+}
+
+#Slider6:checked~.Slider .Carrusels .Carrusel:nth-of-type(20) {
+  transform: translate(1900%, 0);
+}
+
+/* Estado 7 */
+#Slider7:checked~.Slider .Carrusels .Carrusel:nth-of-type(1) {
+  transform: translate(-100%, 0);
+}
+
+#Slider7:checked~.Slider .Carrusels .Carrusel:nth-of-type(2) {
+  transform: translate(0%, 0);
+}
+
+#Slider7:checked~.Slider .Carrusels .Carrusel:nth-of-type(3) {
+  transform: translate(100%, 0);
+}
+
+#Slider7:checked~.Slider .Carrusels .Carrusel:nth-of-type(4) {
+  transform: translate(200%, 0);
+}
+
+#Slider7:checked~.Slider .Carrusels .Carrusel:nth-of-type(5) {
+  transform: translate(300%, 0);
+}
+
+#Slider7:checked~.Slider .Carrusels .Carrusel:nth-of-type(6) {
+  transform: translate(400%, 0);
+}
+
+#Slider7:checked~.Slider .Carrusels .Carrusel:nth-of-type(7) {
+  transform: translate(500%, 0);
+}
+
+#Slider7:checked~.Slider .Carrusels .Carrusel:nth-of-type(8) {
+  transform: translate(600%, 0);
+}
+
+#Slider7:checked~.Slider .Carrusels .Carrusel:nth-of-type(9) {
+  transform: translate(700%, 0);
+}
+
+#Slider7:checked~.Slider .Carrusels .Carrusel:nth-of-type(10) {
+  transform: translate(800%, 0);
+}
+#Slider7:checked~.Slider .Carrusels .Carrusel:nth-of-type(11) {
+  transform: translate(900%, 0);
+}
+
+#Slider7:checked~.Slider .Carrusels .Carrusel:nth-of-type(12) {
+  transform: translate(1000%, 0);
+}
+
+#Slider7:checked~.Slider .Carrusels .Carrusel:nth-of-type(13) {
+  transform: translate(1100%, 0);
+}
+
+#Slider7:checked~.Slider .Carrusels .Carrusel:nth-of-type(14) {
+  transform: translate(1200%, 0);
+}
+
+#Slider7:checked~.Slider .Carrusels .Carrusel:nth-of-type(15) {
+  transform: translate(1300%, 0);
+}
+#Slider7:checked~.Slider .Carrusels .Carrusel:nth-of-type(16) {
+  transform: translate(1400%, 0);
+}
+
+#Slider7:checked~.Slider .Carrusels .Carrusel:nth-of-type(17) {
+  transform: translate(1500%, 0);
+}
+
+#Slider7:checked~.Slider .Carrusels .Carrusel:nth-of-type(18) {
+  transform: translate(1600%, 0);
+}
+
+#Slider7:checked~.Slider .Carrusels .Carrusel:nth-of-type(19) {
+  transform: translate(1700%, 0);
+}
+
+#Slider7:checked~.Slider .Carrusels .Carrusel:nth-of-type(20) {
+  transform: translate(1800%, 0);
+}
+
+/* Estado 8 */
+#Slider8:checked~.Slider .Carrusels .Carrusel:nth-of-type(1) {
+  transform: translate(-200%, 0);
+}
+
+#Slider8:checked~.Slider .Carrusels .Carrusel:nth-of-type(2) {
+  transform: translate(-100%, 0);
+}
+
+#Slider8:checked~.Slider .Carrusels .Carrusel:nth-of-type(3) {
+  transform: translate(0%, 0);
+}
+
+#Slider8:checked~.Slider .Carrusels .Carrusel:nth-of-type(4) {
+  transform: translate(100%, 0);
+}
+
+#Slider8:checked~.Slider .Carrusels .Carrusel:nth-of-type(5) {
+  transform: translate(200%, 0);
+}
+
+#Slider8:checked~.Slider .Carrusels .Carrusel:nth-of-type(6) {
+  transform: translate(300%, 0);
+}
+
+#Slider8:checked~.Slider .Carrusels .Carrusel:nth-of-type(7) {
+  transform: translate(400%, 0);
+}
+
+#Slider8:checked~.Slider .Carrusels .Carrusel:nth-of-type(8) {
+  transform: translate(500%, 0);
+}
+
+#Slider8:checked~.Slider .Carrusels .Carrusel:nth-of-type(9) {
+  transform: translate(600%, 0);
+}
+
+#Slider8:checked~.Slider .Carrusels .Carrusel:nth-of-type(10) {
+  transform: translate(700%, 0);
+}
+#Slider8:checked~.Slider .Carrusels .Carrusel:nth-of-type(11) {
+  transform: translate(800%, 0);
+}
+
+#Slider8:checked~.Slider .Carrusels .Carrusel:nth-of-type(12) {
+  transform: translate(900%, 0);
+}
+
+#Slider8:checked~.Slider .Carrusels .Carrusel:nth-of-type(13) {
+  transform: translate(1000%, 0);
+}
+
+#Slider8:checked~.Slider .Carrusels .Carrusel:nth-of-type(14) {
+  transform: translate(1100%, 0);
+}
+
+#Slider8:checked~.Slider .Carrusels .Carrusel:nth-of-type(15) {
+  transform: translate(1200%, 0);
+}
+#Slider8:checked~.Slider .Carrusels .Carrusel:nth-of-type(16) {
+  transform: translate(1300%, 0);
+}
+
+#Slider8:checked~.Slider .Carrusels .Carrusel:nth-of-type(17) {
+  transform: translate(1400%, 0);
+}
+
+#Slider8:checked~.Slider .Carrusels .Carrusel:nth-of-type(18) {
+  transform: translate(1500%, 0);
+}
+
+#Slider8:checked~.Slider .Carrusels .Carrusel:nth-of-type(19) {
+  transform: translate(1600%, 0);
+}
+
+#Slider8:checked~.Slider .Carrusels .Carrusel:nth-of-type(20) {
+  transform: translate(1700%, 0);
+}
+
+/* Estado 9 */
+#Slider9:checked~.Slider .Carrusels .Carrusel:nth-of-type(1) {
+  transform: translate(-300%, 0);
+}
+
+#Slider9:checked~.Slider .Carrusels .Carrusel:nth-of-type(2) {
+  transform: translate(-200%, 0);
+}
+
+#Slider9:checked~.Slider .Carrusels .Carrusel:nth-of-type(3) {
+  transform: translate(-100%, 0);
+}
+
+#Slider9:checked~.Slider .Carrusels .Carrusel:nth-of-type(4) {
+  transform: translate(0%, 0);
+}
+
+#Slider9:checked~.Slider .Carrusels .Carrusel:nth-of-type(5) {
+  transform: translate(100%, 0);
+}
+
+#Slider9:checked~.Slider .Carrusels .Carrusel:nth-of-type(6) {
+  transform: translate(200%, 0);
+}
+
+#Slider9:checked~.Slider .Carrusels .Carrusel:nth-of-type(7) {
+  transform: translate(300%, 0);
+}
+
+#Slider9:checked~.Slider .Carrusels .Carrusel:nth-of-type(8) {
+  transform: translate(400%, 0);
+}
+
+#Slider9:checked~.Slider .Carrusels .Carrusel:nth-of-type(9) {
+  transform: translate(500%, 0);
+}
+
+#Slider9:checked~.Slider .Carrusels .Carrusel:nth-of-type(10) {
+  transform: translate(600%, 0);
+}
+#Slider9:checked~.Slider .Carrusels .Carrusel:nth-of-type(11) {
+  transform: translate(700%, 0);
+}
+
+#Slider9:checked~.Slider .Carrusels .Carrusel:nth-of-type(12) {
+  transform: translate(800%, 0);
+}
+
+#Slider9:checked~.Slider .Carrusels .Carrusel:nth-of-type(13) {
+  transform: translate(900%, 0);
+}
+
+#Slider9:checked~.Slider .Carrusels .Carrusel:nth-of-type(14) {
+  transform: translate(1000%, 0);
+}
+
+#Slider9:checked~.Slider .Carrusels .Carrusel:nth-of-type(15) {
+  transform: translate(1100%, 0);
+}
+#Slider9:checked~.Slider .Carrusels .Carrusel:nth-of-type(16) {
+  transform: translate(1200%, 0);
+}
+
+#Slider9:checked~.Slider .Carrusels .Carrusel:nth-of-type(17) {
+  transform: translate(1300%, 0);
+}
+
+#Slider9:checked~.Slider .Carrusels .Carrusel:nth-of-type(18) {
+  transform: translate(1400%, 0);
+}
+
+#Slider9:checked~.Slider .Carrusels .Carrusel:nth-of-type(19) {
+  transform: translate(1500%, 0);
+}
+
+#Slider9:checked~.Slider .Carrusels .Carrusel:nth-of-type(20) {
+  transform: translate(1600%, 0);
+}
+
+/* Estado 10 */
+#Slider10:checked~.Slider .Carrusels .Carrusel:nth-of-type(1) {
+  transform: translate(-400%, 0);
+}
+
+#Slider10:checked~.Slider .Carrusels .Carrusel:nth-of-type(2) {
+  transform: translate(-300%, 0);
+}
+
+#Slider10:checked~.Slider .Carrusels .Carrusel:nth-of-type(3) {
+  transform: translate(-200%, 0);
+}
+
+#Slider10:checked~.Slider .Carrusels .Carrusel:nth-of-type(4) {
+  transform: translate(-100%, 0);
+}
+
+#Slider10:checked~.Slider .Carrusels .Carrusel:nth-of-type(5) {
+  transform: translate(0%, 0);
+}
+
+#Slider2:checked~.Slider .Carrusels .Carrusel:nth-of-type(6) {
+  transform: translate(100%, 0);
+}
+
+#Slider10:checked~.Slider .Carrusels .Carrusel:nth-of-type(7) {
+  transform: translate(200%, 0);
+}
+
+#Slider10:checked~.Slider .Carrusels .Carrusel:nth-of-type(8) {
+  transform: translate(300%, 0);
+}
+
+#Slider10:checked~.Slider .Carrusels .Carrusel:nth-of-type(9) {
+  transform: translate(400%, 0);
+}
+
+#Slider10:checked~.Slider .Carrusels .Carrusel:nth-of-type(10) {
+  transform: translate(500%, 0);
+}
+#Slider10:checked~.Slider .Carrusels .Carrusel:nth-of-type(11) {
+  transform: translate(600%, 0);
+}
+
+#Slider10:checked~.Slider .Carrusels .Carrusel:nth-of-type(12) {
+  transform: translate(700%, 0);
+}
+
+#Slider10:checked~.Slider .Carrusels .Carrusel:nth-of-type(13) {
+  transform: translate(800%, 0);
+}
+
+#Slider10:checked~.Slider .Carrusels .Carrusel:nth-of-type(14) {
+  transform: translate(900%, 0);
+}
+
+#Slider10:checked~.Slider .Carrusels .Carrusel:nth-of-type(15) {
+  transform: translate(1000%, 0);
+}
+#Slider10:checked~.Slider .Carrusels .Carrusel:nth-of-type(16) {
+  transform: translate(1100%, 0);
+}
+
+#Slider10:checked~.Slider .Carrusels .Carrusel:nth-of-type(17) {
+  transform: translate(1200%, 0);
+}
+
+#Slider10:checked~.Slider .Carrusels .Carrusel:nth-of-type(18) {
+  transform: translate(1300%, 0);
+}
+
+#Slider10:checked~.Slider .Carrusels .Carrusel:nth-of-type(19) {
+  transform: translate(1400%, 0);
+}
+
+#Slider10:checked~.Slider .Carrusels .Carrusel:nth-of-type(20) {
+  transform: translate(1500%, 0);
+}
+
+/* Estado 11 */
+#Slider11:checked~.Slider .Carrusels .Carrusel:nth-of-type(1) {
+  transform: translate(0%, 0);
+}
+
+#Slider11:checked~.Slider .Carrusels .Carrusel:nth-of-type(2) {
+  transform: translate(100%, 0);
+}
+
+#Slider11:checked~.Slider .Carrusels .Carrusel:nth-of-type(3) {
+  transform: translate(200%, 0);
+}
+
+#Slider11:checked~.Slider .Carrusels .Carrusel:nth-of-type(4) {
+  transform: translate(300%, 0);
+}
+
+#Slider11:checked~.Slider .Carrusels .Carrusel:nth-of-type(5) {
+  transform: translate(400%, 0);
+}
+
+#Slider11:checked~.Slider .Carrusels .Carrusel:nth-of-type(6) {
+  transform: translate(500%, 0);
+}
+
+#Slider11:checked~.Slider .Carrusels .Carrusel:nth-of-type(7) {
+  transform: translate(600%, 0);
+}
+
+#Slider11:checked~.Slider .Carrusels .Carrusel:nth-of-type(8) {
+  transform: translate(700%, 0);
+}
+
+#Slider11:checked~.Slider .Carrusels .Carrusel:nth-of-type(9) {
+  transform: translate(800%, 0);
+}
+
+#Slider11:checked~.Slider .Carrusels .Carrusel:nth-of-type(10) {
+  transform: translate(900%, 0);
+}
+#Slider11:checked~.Slider .Carrusels .Carrusel:nth-of-type(11) {
+  transform: translate(1000%, 0);
+}
+
+#Slider11:checked~.Slider .Carrusels .Carrusel:nth-of-type(12) {
+  transform: translate(1100%, 0);
+}
+
+#Slider11:checked~.Slider .Carrusels .Carrusel:nth-of-type(13) {
+  transform: translate(1200%, 0);
+}
+
+#Slider11:checked~.Slider .Carrusels .Carrusel:nth-of-type(14) {
+  transform: translate(1300%, 0);
+}
+
+#Slider11:checked~.Slider .Carrusels .Carrusel:nth-of-type(15) {
+  transform: translate(1400%, 0);
+}
+#Slider11:checked~.Slider .Carrusels .Carrusel:nth-of-type(16) {
+  transform: translate(1500%, 0);
+}
+
+#Slider11:checked~.Slider .Carrusels .Carrusel:nth-of-type(17) {
+  transform: translate(1600%, 0);
+}
+
+#Slider11:checked~.Slider .Carrusels .Carrusel:nth-of-type(18) {
+  transform: translate(1700%, 0);
+}
+
+#Slider11:checked~.Slider .Carrusels .Carrusel:nth-of-type(19) {
+  transform: translate(1800%, 0);
+}
+
+#Slider11:checked~.Slider .Carrusels .Carrusel:nth-of-type(20) {
+  transform: translate(1900%, 0);
+}
+
+/* Estado 12 */
+#Slider12:checked~.Slider .Carrusels .Carrusel:nth-of-type(1) {
+  transform: translate(-100%, 0);
+}
+
+#Slider12:checked~.Slider .Carrusels .Carrusel:nth-of-type(2) {
+  transform: translate(0%, 0);
+}
+
+#Slider12:checked~.Slider .Carrusels .Carrusel:nth-of-type(3) {
+  transform: translate(100%, 0);
+}
+
+#Slider12:checked~.Slider .Carrusels .Carrusel:nth-of-type(4) {
+  transform: translate(200%, 0);
+}
+
+#Slider12:checked~.Slider .Carrusels .Carrusel:nth-of-type(5) {
+  transform: translate(300%, 0);
+}
+
+#Slider12:checked~.Slider .Carrusels .Carrusel:nth-of-type(6) {
+  transform: translate(400%, 0);
+}
+
+#Slider12:checked~.Slider .Carrusels .Carrusel:nth-of-type(7) {
+  transform: translate(500%, 0);
+}
+
+#Slider12:checked~.Slider .Carrusels .Carrusel:nth-of-type(8) {
+  transform: translate(600%, 0);
+}
+
+#Slider12:checked~.Slider .Carrusels .Carrusel:nth-of-type(9) {
+  transform: translate(700%, 0);
+}
+
+#Slider12:checked~.Slider .Carrusels .Carrusel:nth-of-type(10) {
+  transform: translate(800%, 0);
+}
+#Slider12:checked~.Slider .Carrusels .Carrusel:nth-of-type(11) {
+  transform: translate(900%, 0);
+}
+
+#Slider12:checked~.Slider .Carrusels .Carrusel:nth-of-type(12) {
+  transform: translate(1000%, 0);
+}
+
+#Slider12:checked~.Slider .Carrusels .Carrusel:nth-of-type(13) {
+  transform: translate(1100%, 0);
+}
+
+#Slider12:checked~.Slider .Carrusels .Carrusel:nth-of-type(14) {
+  transform: translate(1200%, 0);
+}
+
+#Slider12:checked~.Slider .Carrusels .Carrusel:nth-of-type(15) {
+  transform: translate(1300%, 0);
+}
+#Slider12:checked~.Slider .Carrusels .Carrusel:nth-of-type(16) {
+  transform: translate(1400%, 0);
+}
+
+#Slider12:checked~.Slider .Carrusels .Carrusel:nth-of-type(17) {
+  transform: translate(1500%, 0);
+}
+
+#Slider12:checked~.Slider .Carrusels .Carrusel:nth-of-type(18) {
+  transform: translate(1600%, 0);
+}
+
+#Slider12:checked~.Slider .Carrusels .Carrusel:nth-of-type(19) {
+  transform: translate(1700%, 0);
+}
+
+#Slider12:checked~.Slider .Carrusels .Carrusel:nth-of-type(20) {
+  transform: translate(1800%, 0);
+}
+
+/* Estado 13 */
+#Slider13:checked~.Slider .Carrusels .Carrusel:nth-of-type(1) {
+  transform: translate(-200%, 0);
+}
+
+#Slider13:checked~.Slider .Carrusels .Carrusel:nth-of-type(2) {
+  transform: translate(-100%, 0);
+}
+
+#Slider13:checked~.Slider .Carrusels .Carrusel:nth-of-type(3) {
+  transform: translate(0%, 0);
+}
+
+#Slider13:checked~.Slider .Carrusels .Carrusel:nth-of-type(4) {
+  transform: translate(100%, 0);
+}
+
+#Slider13:checked~.Slider .Carrusels .Carrusel:nth-of-type(5) {
+  transform: translate(200%, 0);
+}
+
+#Slider13:checked~.Slider .Carrusels .Carrusel:nth-of-type(6) {
+  transform: translate(300%, 0);
+}
+
+#Slider13:checked~.Slider .Carrusels .Carrusel:nth-of-type(7) {
+  transform: translate(400%, 0);
+}
+
+#Slider13:checked~.Slider .Carrusels .Carrusel:nth-of-type(8) {
+  transform: translate(500%, 0);
+}
+
+#Slider13:checked~.Slider .Carrusels .Carrusel:nth-of-type(9) {
+  transform: translate(600%, 0);
+}
+
+#Slider13:checked~.Slider .Carrusels .Carrusel:nth-of-type(10) {
+  transform: translate(700%, 0);
+}
+#Slider13:checked~.Slider .Carrusels .Carrusel:nth-of-type(11) {
+  transform: translate(800%, 0);
+}
+
+#Slider13:checked~.Slider .Carrusels .Carrusel:nth-of-type(12) {
+  transform: translate(900%, 0);
+}
+
+#Slider13:checked~.Slider .Carrusels .Carrusel:nth-of-type(13) {
+  transform: translate(1000%, 0);
+}
+
+#Slider13:checked~.Slider .Carrusels .Carrusel:nth-of-type(14) {
+  transform: translate(1100%, 0);
+}
+
+#Slider13:checked~.Slider .Carrusels .Carrusel:nth-of-type(15) {
+  transform: translate(1200%, 0);
+}
+#Slider13:checked~.Slider .Carrusels .Carrusel:nth-of-type(16) {
+  transform: translate(1300%, 0);
+}
+
+#Slider13:checked~.Slider .Carrusels .Carrusel:nth-of-type(17) {
+  transform: translate(1400%, 0);
+}
+
+#Slider13:checked~.Slider .Carrusels .Carrusel:nth-of-type(18) {
+  transform: translate(1500%, 0);
+}
+
+#Slider13:checked~.Slider .Carrusels .Carrusel:nth-of-type(19) {
+  transform: translate(1600%, 0);
+}
+
+#Slider13:checked~.Slider .Carrusels .Carrusel:nth-of-type(20) {
+  transform: translate(1700%, 0);
+}
+
+/* Estado 14 */
+#Slider14:checked~.Slider .Carrusels .Carrusel:nth-of-type(1) {
+  transform: translate(-300%, 0);
+}
+
+#Slider14:checked~.Slider .Carrusels .Carrusel:nth-of-type(2) {
+  transform: translate(-200%, 0);
+}
+
+#Slider14:checked~.Slider .Carrusels .Carrusel:nth-of-type(3) {
+  transform: translate(-100%, 0);
+}
+
+#Slider14:checked~.Slider .Carrusels .Carrusel:nth-of-type(4) {
+  transform: translate(0%, 0);
+}
+
+#Slider14:checked~.Slider .Carrusels .Carrusel:nth-of-type(5) {
+  transform: translate(100%, 0);
+}
+
+#Slider14:checked~.Slider .Carrusels .Carrusel:nth-of-type(6) {
+  transform: translate(200%, 0);
+}
+
+#Slider14:checked~.Slider .Carrusels .Carrusel:nth-of-type(7) {
+  transform: translate(300%, 0);
+}
+
+#Slider14:checked~.Slider .Carrusels .Carrusel:nth-of-type(8) {
+  transform: translate(400%, 0);
+}
+
+#Slider14:checked~.Slider .Carrusels .Carrusel:nth-of-type(9) {
+  transform: translate(500%, 0);
+}
+
+#Slider14:checked~.Slider .Carrusels .Carrusel:nth-of-type(10) {
+  transform: translate(600%, 0);
+}
+#Slider14:checked~.Slider .Carrusels .Carrusel:nth-of-type(11) {
+  transform: translate(700%, 0);
+}
+
+#Slider14:checked~.Slider .Carrusels .Carrusel:nth-of-type(12) {
+  transform: translate(800%, 0);
+}
+
+#Slider14:checked~.Slider .Carrusels .Carrusel:nth-of-type(13) {
+  transform: translate(900%, 0);
+}
+
+#Slider14:checked~.Slider .Carrusels .Carrusel:nth-of-type(14) {
+  transform: translate(1000%, 0);
+}
+
+#Slider14:checked~.Slider .Carrusels .Carrusel:nth-of-type(15) {
+  transform: translate(1100%, 0);
+}
+#Slider14:checked~.Slider .Carrusels .Carrusel:nth-of-type(16) {
+  transform: translate(1200%, 0);
+}
+
+#Slider14:checked~.Slider .Carrusels .Carrusel:nth-of-type(17) {
+  transform: translate(1300%, 0);
+}
+
+#Slider14:checked~.Slider .Carrusels .Carrusel:nth-of-type(18) {
+  transform: translate(1400%, 0);
+}
+
+#Slider14:checked~.Slider .Carrusels .Carrusel:nth-of-type(19) {
+  transform: translate(1500%, 0);
+}
+
+#Slider14:checked~.Slider .Carrusels .Carrusel:nth-of-type(20) {
+  transform: translate(1600%, 0);
+}
+
+/* Estado 15 */
+#Slider15:checked~.Slider .Carrusels .Carrusel:nth-of-type(1) {
+  transform: translate(-400%, 0);
+}
+
+#Slider15:checked~.Slider .Carrusels .Carrusel:nth-of-type(2) {
+  transform: translate(-300%, 0);
+}
+
+#Slider15:checked~.Slider .Carrusels .Carrusel:nth-of-type(3) {
+  transform: translate(-200%, 0);
+}
+
+#Slider15:checked~.Slider .Carrusels .Carrusel:nth-of-type(4) {
+  transform: translate(-100%, 0);
+}
+
+#Slider15:checked~.Slider .Carrusels .Carrusel:nth-of-type(5) {
+  transform: translate(0%, 0);
+}
+
+#Slider2:checked~.Slider .Carrusels .Carrusel:nth-of-type(6) {
+  transform: translate(100%, 0);
+}
+
+#Slider15:checked~.Slider .Carrusels .Carrusel:nth-of-type(7) {
+  transform: translate(200%, 0);
+}
+
+#Slider15:checked~.Slider .Carrusels .Carrusel:nth-of-type(8) {
+  transform: translate(300%, 0);
+}
+
+#Slider15:checked~.Slider .Carrusels .Carrusel:nth-of-type(9) {
+  transform: translate(400%, 0);
+}
+
+#Slider15:checked~.Slider .Carrusels .Carrusel:nth-of-type(10) {
+  transform: translate(500%, 0);
+}
+#Slider15:checked~.Slider .Carrusels .Carrusel:nth-of-type(11) {
+  transform: translate(600%, 0);
+}
+
+#Slider15:checked~.Slider .Carrusels .Carrusel:nth-of-type(12) {
+  transform: translate(700%, 0);
+}
+
+#Slider15:checked~.Slider .Carrusels .Carrusel:nth-of-type(13) {
+  transform: translate(800%, 0);
+}
+
+#Slider15:checked~.Slider .Carrusels .Carrusel:nth-of-type(14) {
+  transform: translate(900%, 0);
+}
+
+#Slider15:checked~.Slider .Carrusels .Carrusel:nth-of-type(15) {
+  transform: translate(1000%, 0);
+}
+#Slider15:checked~.Slider .Carrusels .Carrusel:nth-of-type(16) {
+  transform: translate(1100%, 0);
+}
+
+#Slider15:checked~.Slider .Carrusels .Carrusel:nth-of-type(17) {
+  transform: translate(1200%, 0);
+}
+
+#Slider15:checked~.Slider .Carrusels .Carrusel:nth-of-type(18) {
+  transform: translate(1300%, 0);
+}
+
+#Slider15:checked~.Slider .Carrusels .Carrusel:nth-of-type(19) {
+  transform: translate(1400%, 0);
+}
+
+#Slider15:checked~.Slider .Carrusels .Carrusel:nth-of-type(20) {
+  transform: translate(1500%, 0);
+}
+
+/* Estado 1 */
+#Slider1:checked~.Slider .Carrusels .Carrusel:nth-of-type(1) {
+  transform: translate(0%, 0);
+}
+
+#Slider1:checked~.Slider .Carrusels .Carrusel:nth-of-type(2) {
+  transform: translate(100%, 0);
+}
+
+#Slider1:checked~.Slider .Carrusels .Carrusel:nth-of-type(3) {
+  transform: translate(200%, 0);
+}
+
+#Slider1:checked~.Slider .Carrusels .Carrusel:nth-of-type(4) {
+  transform: translate(300%, 0);
+}
+
+#Slider1:checked~.Slider .Carrusels .Carrusel:nth-of-type(5) {
+  transform: translate(400%, 0);
+}
+
+#Slider1:checked~.Slider .Carrusels .Carrusel:nth-of-type(6) {
+  transform: translate(500%, 0);
+}
+
+#Slider1:checked~.Slider .Carrusels .Carrusel:nth-of-type(7) {
+  transform: translate(600%, 0);
+}
+
+#Slider1:checked~.Slider .Carrusels .Carrusel:nth-of-type(8) {
+  transform: translate(700%, 0);
+}
+
+#Slider1:checked~.Slider .Carrusels .Carrusel:nth-of-type(9) {
+  transform: translate(800%, 0);
+}
+
+#Slider1:checked~.Slider .Carrusels .Carrusel:nth-of-type(10) {
+  transform: translate(900%, 0);
+}
+#Slider1:checked~.Slider .Carrusels .Carrusel:nth-of-type(11) {
+  transform: translate(1000%, 0);
+}
+
+#Slider1:checked~.Slider .Carrusels .Carrusel:nth-of-type(12) {
+  transform: translate(1100%, 0);
+}
+
+#Slider1:checked~.Slider .Carrusels .Carrusel:nth-of-type(13) {
+  transform: translate(1200%, 0);
+}
+
+#Slider1:checked~.Slider .Carrusels .Carrusel:nth-of-type(14) {
+  transform: translate(1300%, 0);
+}
+
+#Slider1:checked~.Slider .Carrusels .Carrusel:nth-of-type(15) {
+  transform: translate(1400%, 0);
+}
+#Slider1:checked~.Slider .Carrusels .Carrusel:nth-of-type(16) {
+  transform: translate(1500%, 0);
+}
+
+#Slider1:checked~.Slider .Carrusels .Carrusel:nth-of-type(17) {
+  transform: translate(1600%, 0);
+}
+
+#Slider1:checked~.Slider .Carrusels .Carrusel:nth-of-type(18) {
+  transform: translate(1700%, 0);
+}
+
+#Slider1:checked~.Slider .Carrusels .Carrusel:nth-of-type(19) {
+  transform: translate(1800%, 0);
+}
+
+#Slider1:checked~.Slider .Carrusels .Carrusel:nth-of-type(20) {
+  transform: translate(1900%, 0);
+}
+
+/* Estado 2 */
+#Slider2:checked~.Slider .Carrusels .Carrusel:nth-of-type(1) {
+  transform: translate(-100%, 0);
+}
+
+#Slider2:checked~.Slider .Carrusels .Carrusel:nth-of-type(2) {
+  transform: translate(0%, 0);
+}
+
+#Slider2:checked~.Slider .Carrusels .Carrusel:nth-of-type(3) {
+  transform: translate(100%, 0);
+}
+
+#Slider2:checked~.Slider .Carrusels .Carrusel:nth-of-type(4) {
+  transform: translate(200%, 0);
+}
+
+#Slider2:checked~.Slider .Carrusels .Carrusel:nth-of-type(5) {
+  transform: translate(300%, 0);
+}
+
+#Slider2:checked~.Slider .Carrusels .Carrusel:nth-of-type(6) {
+  transform: translate(400%, 0);
+}
+
+#Slider2:checked~.Slider .Carrusels .Carrusel:nth-of-type(7) {
+  transform: translate(500%, 0);
+}
+
+#Slider2:checked~.Slider .Carrusels .Carrusel:nth-of-type(8) {
+  transform: translate(600%, 0);
+}
+
+#Slider2:checked~.Slider .Carrusels .Carrusel:nth-of-type(9) {
+  transform: translate(700%, 0);
+}
+
+#Slider2:checked~.Slider .Carrusels .Carrusel:nth-of-type(10) {
+  transform: translate(800%, 0);
+}
+#Slider2:checked~.Slider .Carrusels .Carrusel:nth-of-type(11) {
+  transform: translate(900%, 0);
+}
+
+#Slider2:checked~.Slider .Carrusels .Carrusel:nth-of-type(12) {
+  transform: translate(1000%, 0);
+}
+
+#Slider2:checked~.Slider .Carrusels .Carrusel:nth-of-type(13) {
+  transform: translate(1100%, 0);
+}
+
+#Slider2:checked~.Slider .Carrusels .Carrusel:nth-of-type(14) {
+  transform: translate(1200%, 0);
+}
+
+#Slider2:checked~.Slider .Carrusels .Carrusel:nth-of-type(15) {
+  transform: translate(1300%, 0);
+}
+#Slider2:checked~.Slider .Carrusels .Carrusel:nth-of-type(16) {
+  transform: translate(1400%, 0);
+}
+
+#Slider2:checked~.Slider .Carrusels .Carrusel:nth-of-type(17) {
+  transform: translate(1500%, 0);
+}
+
+#Slider2:checked~.Slider .Carrusels .Carrusel:nth-of-type(18) {
+  transform: translate(1600%, 0);
+}
+
+#Slider2:checked~.Slider .Carrusels .Carrusel:nth-of-type(19) {
+  transform: translate(1700%, 0);
+}
+
+#Slider2:checked~.Slider .Carrusels .Carrusel:nth-of-type(20) {
+  transform: translate(1800%, 0);
+}
+
+/* Estado 3 */
+#Slider3:checked~.Slider .Carrusels .Carrusel:nth-of-type(1) {
+  transform: translate(-200%, 0);
+}
+
+#Slider3:checked~.Slider .Carrusels .Carrusel:nth-of-type(2) {
+  transform: translate(-100%, 0);
+}
+
+#Slider3:checked~.Slider .Carrusels .Carrusel:nth-of-type(3) {
+  transform: translate(0%, 0);
+}
+
+#Slider3:checked~.Slider .Carrusels .Carrusel:nth-of-type(4) {
+  transform: translate(100%, 0);
+}
+
+#Slider3:checked~.Slider .Carrusels .Carrusel:nth-of-type(5) {
+  transform: translate(200%, 0);
+}
+
+#Slider3:checked~.Slider .Carrusels .Carrusel:nth-of-type(6) {
+  transform: translate(300%, 0);
+}
+
+#Slider3:checked~.Slider .Carrusels .Carrusel:nth-of-type(7) {
+  transform: translate(400%, 0);
+}
+
+#Slider3:checked~.Slider .Carrusels .Carrusel:nth-of-type(8) {
+  transform: translate(500%, 0);
+}
+
+#Slider3:checked~.Slider .Carrusels .Carrusel:nth-of-type(9) {
+  transform: translate(600%, 0);
+}
+
+#Slider3:checked~.Slider .Carrusels .Carrusel:nth-of-type(10) {
+  transform: translate(700%, 0);
+}
+#Slider3:checked~.Slider .Carrusels .Carrusel:nth-of-type(11) {
+  transform: translate(800%, 0);
+}
+
+#Slider3:checked~.Slider .Carrusels .Carrusel:nth-of-type(12) {
+  transform: translate(900%, 0);
+}
+
+#Slider3:checked~.Slider .Carrusels .Carrusel:nth-of-type(13) {
+  transform: translate(1000%, 0);
+}
+
+#Slider3:checked~.Slider .Carrusels .Carrusel:nth-of-type(14) {
+  transform: translate(1100%, 0);
+}
+
+#Slider3:checked~.Slider .Carrusels .Carrusel:nth-of-type(15) {
+  transform: translate(1200%, 0);
+}
+#Slider3:checked~.Slider .Carrusels .Carrusel:nth-of-type(16) {
+  transform: translate(1300%, 0);
+}
+
+#Slider3:checked~.Slider .Carrusels .Carrusel:nth-of-type(17) {
+  transform: translate(1400%, 0);
+}
+
+#Slider3:checked~.Slider .Carrusels .Carrusel:nth-of-type(18) {
+  transform: translate(1500%, 0);
+}
+
+#Slider3:checked~.Slider .Carrusels .Carrusel:nth-of-type(19) {
+  transform: translate(1600%, 0);
+}
+
+#Slider3:checked~.Slider .Carrusels .Carrusel:nth-of-type(20) {
+  transform: translate(1700%, 0);
+}
+
+/* Estado 5 */
+#Slider4:checked~.Slider .Carrusels .Carrusel:nth-of-type(1) {
+  transform: translate(-300%, 0);
+}
+
+#Slider4:checked~.Slider .Carrusels .Carrusel:nth-of-type(2) {
+  transform: translate(-200%, 0);
+}
+
+#Slider4:checked~.Slider .Carrusels .Carrusel:nth-of-type(3) {
+  transform: translate(-100%, 0);
+}
+
+#Slider4:checked~.Slider .Carrusels .Carrusel:nth-of-type(4) {
+  transform: translate(0%, 0);
+}
+
+#Slider4:checked~.Slider .Carrusels .Carrusel:nth-of-type(5) {
+  transform: translate(100%, 0);
+}
+
+#Slider4:checked~.Slider .Carrusels .Carrusel:nth-of-type(6) {
+  transform: translate(200%, 0);
+}
+
+#Slider4:checked~.Slider .Carrusels .Carrusel:nth-of-type(7) {
+  transform: translate(300%, 0);
+}
+
+#Slider4:checked~.Slider .Carrusels .Carrusel:nth-of-type(8) {
+  transform: translate(400%, 0);
+}
+
+#Slider4:checked~.Slider .Carrusels .Carrusel:nth-of-type(9) {
+  transform: translate(500%, 0);
+}
+
+#Slider4:checked~.Slider .Carrusels .Carrusel:nth-of-type(10) {
+  transform: translate(600%, 0);
+}
+#Slider4:checked~.Slider .Carrusels .Carrusel:nth-of-type(11) {
+  transform: translate(700%, 0);
+}
+
+#Slider4:checked~.Slider .Carrusels .Carrusel:nth-of-type(12) {
+  transform: translate(800%, 0);
+}
+
+#Slider4:checked~.Slider .Carrusels .Carrusel:nth-of-type(13) {
+  transform: translate(900%, 0);
+}
+
+#Slider4:checked~.Slider .Carrusels .Carrusel:nth-of-type(14) {
+  transform: translate(1000%, 0);
+}
+
+#Slider4:checked~.Slider .Carrusels .Carrusel:nth-of-type(15) {
+  transform: translate(1100%, 0);
+}
+#Slider4:checked~.Slider .Carrusels .Carrusel:nth-of-type(16) {
+  transform: translate(1200%, 0);
+}
+
+#Slider4:checked~.Slider .Carrusels .Carrusel:nth-of-type(17) {
+  transform: translate(1300%, 0);
+}
+
+#Slider4:checked~.Slider .Carrusels .Carrusel:nth-of-type(18) {
+  transform: translate(1400%, 0);
+}
+
+#Slider4:checked~.Slider .Carrusels .Carrusel:nth-of-type(19) {
+  transform: translate(1500%, 0);
+}
+
+#Slider4:checked~.Slider .Carrusels .Carrusel:nth-of-type(20) {
+  transform: translate(1600%, 0);
+}
+
+/* Estado 5 */
+#Slider15:checked~.Slider .Carrusels .Carrusel:nth-of-type(1) {
+  transform: translate(-400%, 0);
+}
+
+#Slider15:checked~.Slider .Carrusels .Carrusel:nth-of-type(2) {
+  transform: translate(-300%, 0);
+}
+
+#Slider15:checked~.Slider .Carrusels .Carrusel:nth-of-type(3) {
+  transform: translate(-200%, 0);
+}
+
+#Slider15:checked~.Slider .Carrusels .Carrusel:nth-of-type(4) {
+  transform: translate(-100%, 0);
+}
+
+#Slider15:checked~.Slider .Carrusels .Carrusel:nth-of-type(5) {
+  transform: translate(0%, 0);
+}
+
+#Slider2:checked~.Slider .Carrusels .Carrusel:nth-of-type(6) {
+  transform: translate(100%, 0);
+}
+
+#Slider15:checked~.Slider .Carrusels .Carrusel:nth-of-type(7) {
+  transform: translate(200%, 0);
+}
+
+#Slider15:checked~.Slider .Carrusels .Carrusel:nth-of-type(8) {
+  transform: translate(300%, 0);
+}
+
+#Slider15:checked~.Slider .Carrusels .Carrusel:nth-of-type(9) {
+  transform: translate(400%, 0);
+}
+
+#Slider15:checked~.Slider .Carrusels .Carrusel:nth-of-type(10) {
+  transform: translate(500%, 0);
+}
+#Slider15:checked~.Slider .Carrusels .Carrusel:nth-of-type(11) {
+  transform: translate(600%, 0);
+}
+
+#Slider15:checked~.Slider .Carrusels .Carrusel:nth-of-type(12) {
+  transform: translate(700%, 0);
+}
+
+#Slider15:checked~.Slider .Carrusels .Carrusel:nth-of-type(13) {
+  transform: translate(800%, 0);
+}
+
+#Slider15:checked~.Slider .Carrusels .Carrusel:nth-of-type(14) {
+  transform: translate(900%, 0);
+}
+
+#Slider15:checked~.Slider .Carrusels .Carrusel:nth-of-type(15) {
+  transform: translate(1000%, 0);
+}
+#Slider15:checked~.Slider .Carrusels .Carrusel:nth-of-type(16) {
+  transform: translate(1100%, 0);
+}
+
+#Slider15:checked~.Slider .Carrusels .Carrusel:nth-of-type(17) {
+  transform: translate(1200%, 0);
+}
+
+#Slider15:checked~.Slider .Carrusels .Carrusel:nth-of-type(18) {
+  transform: translate(1300%, 0);
+}
+
+#Slider15:checked~.Slider .Carrusels .Carrusel:nth-of-type(19) {
+  transform: translate(1400%, 0);
+}
+
+#Slider15:checked~.Slider .Carrusels .Carrusel:nth-of-type(20) {
+  transform: translate(1500%, 0);
+}
+
+
+/* Flechas */
+.Carrusels .ArrowLeft,
+.Carrusels .ArrowRight {
+  position: absolute;
+  height: 100%;
+  width: 2em;
+  align-items: center;
+  justify-content: center;
+  display: none;
+  user-select: none;
+}
+
+.Carrusels .ArrowLeft {
+  left: 0px;
+  background: linear-gradient(to right, black, transparent);
+}
+
+.Carrusels .ArrowRight {
+  right: 0px;
+  background: linear-gradient(to left, black, transparent);
+}
+
+/* Configuracion de flechas individuales */
+#Slider1:checked~.Slider .Carrusels .Arrow1 {
+  display: flex;
+}
+
+#Slider2:checked~.Slider .Carrusels .Arrow2 {
+  display: flex;
+}
+
+#Slider3:checked~.Slider .Carrusels .Arrow3 {
+  display: flex;
+}
+
+#Slider4:checked~.Slider .Carrusels .Arrow4 {
+  display: flex;
+}
+
+#Slider5:checked~.Slider .Carrusels .Arrow5 {
+  display: flex;
+}
+#Slider6:checked~.Slider .Carrusels .Arrow1 {
+  display: flex;
+}
+
+#Slider7:checked~.Slider .Carrusels .Arrow2 {
+  display: flex;
+}
+
+#Slider8:checked~.Slider .Carrusels .Arrow3 {
+  display: flex;
+}
+
+#Slider9:checked~.Slider .Carrusels .Arrow4 {
+  display: flex;
+}
+
+#Slider10:checked~.Slider .Carrusels .Arrow5 {
+  display: flex;
+}
+#Slider11:checked~.Slider .Carrusels .Arrow1 {
+  display: flex;
+}
+
+#Slider12:checked~.Slider .Carrusels .Arrow2 {
+  display: flex;
+}
+
+#Slider13:checked~.Slider .Carrusels .Arrow3 {
+  display: flex;
+}
+
+#Slider14:checked~.Slider .Carrusels .Arrow4 {
+  display: flex;
+}
+
+#Slider15:checked~.Slider .Carrusels .Arrow5 {
+  display: flex;
+}
+#Slider16:checked~.Slider .Carrusels .Arrow1 {
+  display: flex;
+}
+
+#Slider17:checked~.Slider .Carrusels .Arrow2 {
+  display: flex;
+}
+
+#Slider18:checked~.Slider .Carrusels .Arrow3 {
+  display: flex;
+}
+
+#Slider19:checked~.Slider .Carrusels .Arrow4 {
+  display: flex;
+}
+
+#Slider20:checked~.Slider .Carrusels .Arrow5 {
+  display: flex;
+}
+
+
+/* Selectores */
+.Selectors {
+  width: 500px;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Selectors .Selector {
+  background-color: transparent;
+  display: flex;
+  width: 50px;
+  border-radius: 5px;
+  padding: 5px;
+  align-items: center;
+  justify-content: center;
+}
+
+.Selectors .Selector img {
+  height: 25px;
+}
+
+/* Condicionales para botón inferior */
+#Slider1:checked~.Slider .Selectors .Selector:nth-of-type(1) {
+  background-color: #2898eec4;
+}
+
+#Slider2:checked~.Slider .Selectors .Selector:nth-of-type(2) {
+  background-color: #2898eec4;
+}
+
+#Slider3:checked~.Slider .Selectors .Selector:nth-of-type(3) {
+  background-color: #2898eec4;
+}
+
+#Slider4:checked~.Slider .Selectors .Selector:nth-of-type(4) {
+  background-color: #2898eec4;
+}
+
+#Slider5:checked~.Slider .Selectors .Selector:nth-of-type(5) {
+  background-color: #2898eec4;
+}
+
+#Slider6:checked~.Slider .Selectors .Selector:nth-of-type(1) {
+  background-color: #2898eec4;
+}
+
+#Slider7:checked~.Slider .Selectors .Selector:nth-of-type(2) {
+  background-color: #2898eec4;
+}
+
+#Slider8:checked~.Slider .Selectors .Selector:nth-of-type(3) {
+  background-color: #2898eec4;
+}
+
+#Slider9:checked~.Slider .Selectors .Selector:nth-of-type(4) {
+  background-color: #2898eec4;
+}
+
+#Slider10:checked~.Slider .Selectors .Selector:nth-of-type(5) {
+  background-color: #2898eec4;
+}
+#Slider11:checked~.Slider .Selectors .Selector:nth-of-type(1) {
+  background-color: #2898eec4;
+}
+
+#Slider12:checked~.Slider .Selectors .Selector:nth-of-type(2) {
+  background-color: #2898eec4;
+}
+
+#Slider13:checked~.Slider .Selectors .Selector:nth-of-type(3) {
+  background-color: #2898eec4;
+}
+
+#Slider14:checked~.Slider .Selectors .Selector:nth-of-type(4) {
+  background-color: #2898eec4;
+}
+
+#Slider15:checked~.Slider .Selectors .Selector:nth-of-type(5) {
+  background-color: #2898eec4;
+}
+#Slider16:checked~.Slider .Selectors .Selector:nth-of-type(1) {
+  background-color: #2898eec4;
+}
+
+#Slider17:checked~.Slider .Selectors .Selector:nth-of-type(2) {
+  background-color: #2898eec4;
+}
+
+#Slider18:checked~.Slider .Selectors .Selector:nth-of-type(3) {
+  background-color: #2898eec4;
+}
+
+#Slider19:checked~.Slider .Selectors .Selector:nth-of-type(4) {
+  background-color: #2898eec4;
+}
+
+#Slider20:checked~.Slider .Selectors .Selector:nth-of-type(5) {
+  background-color: #2898eec4;
+}

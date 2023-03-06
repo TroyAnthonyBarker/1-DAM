@@ -1,0 +1,11 @@
+﻿{
+  "KeyboardShortcut": "",
+  "PostsFolder": "C:\\Users\\dam_bt\\Documents\\Markdown Monster Weblog Posts",
+  "ReplacePostImagesWithOnlineUrls": false,
+  "LastWeblogAccessed": null,
+  "AutoSavePost": false,
+  "RenderLinksOpenExternal": true,
+  "AddFrontMatterToNewBlogPost": false,
+  "FrontMatterTemplate": "---\r\nTitle: {0}\r\nPublished: {1:dd/MM/yyyy}\r\nTags:\r\n- Keyword1\r\n---\r\n",
+  "Weblogs": {}
+}
