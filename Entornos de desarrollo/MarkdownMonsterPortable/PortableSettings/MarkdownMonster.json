@@ -47,7 +47,7 @@
   "OpenDocuments": [
     {
       "Filename": "E:\\DAM\\1º DAM\\Entornos de desarrollo\\UD2 - Herramientas de Desarrollo\\UD2Practica3\\UD3-T3-INTELLIJ-JAR-1_TroyAnthonyBarker.md",
-      "IsActive": true,
+      "IsActive": false,
       "LastEditorLineNumber": 8,
       "LastImageFolder": null
     },
@@ -62,9 +62,16 @@
       "IsActive": false,
       "LastEditorLineNumber": 3,
       "LastImageFolder": null
+    },
+    {
+      "Filename": "C:\\Users\\troy_\\OneDrive\\Documentos\\xampp\\mysql\\README.md",
+      "IsActive": true,
+      "LastEditorLineNumber": 0,
+      "LastImageFolder": null
     }
   ],
   "RecentDocuments": [
+    "C:\\Users\\troy_\\OneDrive\\Documentos\\xampp\\mysql\\README.md",
     "E:\\DAM\\1º DAM\\Entornos de desarrollo\\UD2 - Herramientas de Desarrollo\\UD2Practica3\\UD3-T3-INTELLIJ-JAR-1_TroyAnthonyBarker.md",
     "E:\\DAM\\1º DAM\\Entornos de desarrollo\\UD2 - Herramientas de Desarrollo\\UD2Practica4\\UD3-T4-IntelliJ-JAR-2_Troy-Anthony-Barker.md",
     "E:\\DAM\\1º DAM\\Entornos de desarrollo\\UD2 - Herramientas de Desarrollo\\UD2Practica1\\UD2-T1-IntelliJ-POO-Depuracion-01_TroyBarker.md",
@@ -165,16 +172,16 @@
     "log": "text"
   },
   "ApplicationUpdates": {
-    "LastUpdateCheck": "2022-12-04T00:00:00Z",
+    "LastUpdateCheck": "2023-03-08T00:00:00Z",
     "UpdateFrequency": 10,
-    "AccessCount": 24,
+    "AccessCount": 25,
     "FirstRun": false
   },
   "WindowPosition": {
     "Top": 20,
     "Left": 20,
-    "Width": 1936,
-    "Height": 1056,
+    "Width": 1550,
+    "Height": 830,
     "InternalPreviewWidth": 949,
     "PreviewTop": 0,
     "PreviewLeft": 0,
@@ -247,6 +254,6 @@
   "LastLinkExternal": false,
   "LastUseReferenceLinks": false,
   "LastLinkFolder": null,
-  "LastFolder": "E:\\DAM\\1º DAM\\Entornos de desarrollo\\UD2 - Herramientas de Desarrollo\\UD2Practica1",
+  "LastFolder": "C:\\Users\\troy_\\OneDrive\\Documentos\\xampp\\mysql",
   "CommonFolder": "E:\\DAM\\1º DAM\\Entornos de desarrollo\\MarkdownMonsterPortable\\PortableSettings"
 }

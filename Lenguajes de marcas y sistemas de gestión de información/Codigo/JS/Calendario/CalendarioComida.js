@@ -106,18 +106,16 @@ function hideCreateEvento(){
 }
 
 function showCreateEvento(){
-    contenedorCrearEvento.style.visibility = 'visible'
+    contenedorCrearEvento.style.visibility = 'visible';
 }
 
 function createEvento(){
     var fecha = new Date(document.getElementById("fechaEvento").value);
     var nombre = document.getElementById("nombreEvento").value;
     var descripcion = document.getElementById("descripcionEvento").value;
-    if (descripcion){
-        var evento = new Evento(fecha, nombre);
-    }else{
-        var evento = new Evento(fecha, nombre, descripcion);
-    }
+    var event = new Evento(fecha, nombre, descripcion);
+    event.createEvent();
     hideCreateEvento();
+    event.getEvent();
 }
 

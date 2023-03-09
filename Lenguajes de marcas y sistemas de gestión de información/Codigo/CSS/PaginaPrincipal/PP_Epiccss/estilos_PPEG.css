@@ -16,13 +16,6 @@ body{
 
 /* ---------------------- */
 
-.menu02 {
-	margin-top: 0;
-	width: 100%;
-	height: 100px;
-	background-color: #EE2852;
-}
-
 @font-face {
   font-family: Seagram;
   src: url(../../font/resenyas/EG_resenya/Seagramtfb.ttf);
@@ -37,14 +30,6 @@ body{
     font-size: 30px;
     color: #18203E;
 }
-
-.linea02 {
-	margin-top: 0;
-	width: 100%;
-	height: 10px;
-	background-color: #ffffff;
-}
-
 
 .twosubmenu02 {
 	margin-top: 5px;
@@ -115,29 +100,6 @@ body{
 	cursor: pointer;
 }
 
-.left, .right{
-	position: absolute;
-	top: 0;
-	height: 100%;
-
-	display: flex;
-	align-items: center;
-
-	color: #fff;
-	font-size: 35px;
-	cursor: pointer;
-	z-index: 2;
-}
-
-.left{
-	left: 10px;
-}
-
-.right{
-	right: 10px;
-}
-
-
 @media screen and (max-width: 600px){
 	.slider .caption p{
 		display: none;
@@ -159,5 +121,3 @@ body{
 		display: none;
 	}
 }
-
-/* ----- FOOTER ----- */

@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="../../CSS/Comun/Comun.css">
     <link rel="stylesheet" href="../../CSS/Calendario/CalendarioComida.css">
     <script src="../../JS/Calendario/jquery-3.6.3.js"></script>
-    <script src="../../JS/Calendario/EventoComida.js"></script>
     <title>Calendario</title>
 </head>
 <body>
@@ -19,7 +18,7 @@
     </main>
     <div id="containerCrearEvento">
         <article>
-            <form action="" method="post" onsubmit="createEvento()">
+            <form action="" method="post">
                 <section class="x">
                     <img src="../../IMG/Calendario/X.png" alt="X" onclick="hideCreateEvento()">
                 </section>
@@ -43,13 +42,14 @@
                 </section>
                 <section>
                     <button type="reset">Clear</button>
-                    <button type="submit">Create</button> 
+                    <button type="button" onclick="createEvento()">Create</button> 
                 </section> 
             </form>
         </article>
     </div>
-    <script src="../../JS/Historia/HistoriaComida.js"></script>
     <script src="../../JS/Calendario/CalendarioComida.js"></script>
+    <script src="../../JS/Calendario/EventoComida.js"></script>
+    
     <footer></footer>
 </body>
 </html>
