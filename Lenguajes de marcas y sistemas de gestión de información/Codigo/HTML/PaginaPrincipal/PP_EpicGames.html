@@ -298,10 +298,20 @@
 
 <!--Contenedor de las listas de las cookies-->
 <div id="containerCookies">
-	<article>
+	<article id="limitedInformationOnCookies">
 		<h1></h1>
 		<section>
-			<p>Hola</p>
+			<p>Limited</p>
+		</section>
+		<section class="containerButtons">
+			<button onclick="showCookies()">Show Cookies</button>
+			<button onclick="acceptAllCookies()">Accept All</button>
+		</section>
+	</article>
+	<article id="unlimitedInformationOnCookies">
+		<h1></h1>
+		<section>
+			<p>Big</p>
 			<input type="checkbox" name="cookies" id="cookie1">
 		</section>
 		<section>
@@ -317,9 +327,9 @@
 			<input type="checkbox" class="necessary" name="cookies" id="cookie4" required checked>
 		</section>
 		<section class="containerButtons">
-			<button>Accept Necessary</button>
-			<button>Accept All</button>
-			<button>Cancel</button>
+			<button onclick="acceptNecessary()">Accept Necessary</button>
+			<button>Accept Configuration</button>
+			<button onclick="closeWindow()">Cancel</button>
 		</section>
 	</article>
 </div>

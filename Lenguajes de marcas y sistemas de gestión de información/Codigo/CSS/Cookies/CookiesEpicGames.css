@@ -1,7 +1,7 @@
 #containerCookies{
     display: flex;
     position: fixed;
-    /* visibility: hidden; */
+    visibility: hidden; 
     top: 0;
     left: 0;
     height: 100%;
@@ -15,6 +15,7 @@
 
 #containerCookies article{
     display: flex;
+    position: absolute;
     flex-direction: column;
     width: 50%;
     height: 75%;
@@ -52,4 +53,12 @@
 
 #containerCookies .containerButtons {
     justify-content: right;
+}
+
+#limitedInformationOnCookies {
+    visibility: visible;
+}
+
+#unlimitedInformationOnCookies {
+    visibility: hidden;
 }
