@@ -1,11 +1,12 @@
-let acceptCookies = confirm("Ver cookies");
-var contenedor = document.getElementById('containerCookies');
+const contenedor = document.getElementById('containerCookies');
+const limitedCookiesInfo = document.getElementById('limitedInformationOnCookies');
+const unlimitedCookiesInfo = document.getElementById('unlimitedInformationOnCookies');
 
-if (!localStorage.getItem('cookies')){
-    alert(acceptCookies);
-
+if (!(localStorage.getItem("Necessary") == "true")){
+    let acceptCookies = confirm("Ver cookies");
     if (acceptCookies){
         contenedor.style.visibility = 'visible';
+        limitedCookiesInfo.style.visibility = 'visible';
     } else {
         closeWindow();
     }
@@ -17,12 +18,15 @@ function closeWindow(){
 
 function acceptNecessary(){
     contenedor.style.visibility = 'hidden';
-    localStorage.setItem("Hola", "algo.txt")
+    unlimitedCookiesInfo.style.visibility = 'hidden';
+    crearCookie("Necessary", "true")
 }
 
 function showCookies(){
-    var limitedCookiesInfo = document.getElementById('limitedInformationOnCookies');
     limitedCookiesInfo.style.visibility = 'hidden';
-    var unlimitedCookiesInfo = document.getElementById('unlimitedInformationOnCookies');
     unlimitedCookiesInfo.style.visibility = 'visible';
 }
+
+function crearCookie(nombre, valor) {
+    localStorage.setItem(nombre, valor);
+  }

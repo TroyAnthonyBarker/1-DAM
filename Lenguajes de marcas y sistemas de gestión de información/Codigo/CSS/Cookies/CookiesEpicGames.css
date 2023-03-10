@@ -56,7 +56,7 @@
 }
 
 #limitedInformationOnCookies {
-    visibility: visible;
+    visibility: hidden;
 }
 
 #unlimitedInformationOnCookies {
