@@ -51,10 +51,7 @@ footer {
   background-color: #EE2852;
 }
 
-.footdiv {
-  padding-top: 10px;
-  width: 100%;
-}
+/** Eliminado footdiv por que no se aplicaba en ningún sitio
 
 /* ---------- */
 

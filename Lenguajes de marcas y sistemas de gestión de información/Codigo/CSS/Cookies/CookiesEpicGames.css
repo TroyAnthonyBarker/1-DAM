@@ -16,14 +16,18 @@
 #containerCookies article{
     display: flex;
     position: absolute;
-    flex-direction: column;
+    flex-flow: column;
     width: 50%;
     height: 75%;
+    min-width: 542px;
     align-items: center;
+    justify-items: center;
+    justify-content: space-around;
     background-color: #282828;
     border: #fff solid 5px;
     border-radius: 25px;
     font-size: 1.3em;
+    text-align: justify;
 }
 
 #containerCookies section {
@@ -33,6 +37,7 @@
     align-items: center;
     color: aliceblue;
     width: 90%;
+    height: fit-content;
 }
 
 .necessary {
@@ -55,10 +60,19 @@
     justify-content: right;
 }
 
+#containerCookies h1 {
+    color: aliceblue;
+    font-size: 2em;
+}
+
 #limitedInformationOnCookies {
     visibility: hidden;
 }
 
 #unlimitedInformationOnCookies {
     visibility: hidden;
+}
+
+#limitedInformationOnCookies p {
+    margin: 10px;
 }

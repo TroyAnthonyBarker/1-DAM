@@ -1,3 +1,8 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 public class MiniFileManager {
 
     private String pwd;
@@ -6,25 +11,7 @@ public class MiniFileManager {
         this.pwd = pwd;
     }
 
-    public void interaccion(String interaccion){
-        String comando = interaccion.split(" ")[0];
-        switch (comando){
-            case "pwd" -> System.out.println(getPwd() + " > " + getPwd());
-            case "cd" -> cd(accion(interaccion));
-            case "ls" -> ls();
-            case "ll" -> ll();
-            case "mkdir" -> mkdir(accion(interaccion));
-            case "rm" -> rm(accion(interaccion));
-            case "mv" -> mv(accion(interaccion));
-            case "help" -> help();
-        }
-    }
-
-    private String accion(String interaccion) {
-        return interaccion.substring(interaccion.indexOf(" "));
-    }
-
-    private void help(){
+    public void help(){
         System.out.println("""
                     • pwd:  Muestra cual es la carpeta actual.
                     • cd <DIR>: Cambia la carpeta actual a ‘DIR’. Con .. cambia a la carpeta superior.
@@ -40,26 +27,90 @@ public class MiniFileManager {
                 """);
     }
 
-    private void mv(String accion) {
+    public void mv(String parametro) {
         
     }
 
-    private void rm(String accion) {
+    public boolean rm(String parametro) throws FileNotFoundException {
+        boolean ok = false;
+        File x = new File(parametro);
+        if (!x.exists()) throw new FileNotFoundException("Fichero no existe");
+        if (x.isFile()) {
+            x.delete();
+            ok = true;
+        } else {
+            File[] z = x.listFiles();
+            for (int i = 0; i < z.length; i++) {
+                if (z[i].isDirectory()) {
+                    ok = false;
+                    System.err.println("El directorio contiene subdirectorios, NO SE HA REALIZADO LA OPERACIÓN");
+                    break;
+                } else {
+                    z[i].delete();
+                    ok = true;
+                }
+            }
+        }
+
+        return ok;
     }
 
-    private void mkdir(String accion) {
+    public boolean mkdir(String parametro) {
+        boolean ok;
+        File f = new File(parametro);
+        if (f.exists()) {
+            ok = false;
+            System.err.println("El fichero/directorio ya existe");
+        } else {
+            ok = f.mkdir();
+        }
 
+        return ok;
     }
 
-    private void ll() {
-
+    public void ll() {
+        File[] d = new File(pwd).listFiles();
+        Arrays.sort(d);
+        for (File file : d) {
+            if (file.isDirectory()) System.out.println(file.getName() + " Tamaño Bytes: " + file.length() + " Última modificación: " + file.lastModified());
+        }
+        for (File file : d) {
+            if (file.isFile()) System.out.println(file.getName() + " Tamaño Bytes: " + file.length() + " Última modificación: " + file.lastModified());
+        }
     }
 
-    private void ls() {
+    public void ls() {
+        File[] d = new File(pwd).listFiles();
+        Arrays.sort(d);
+        for (File file : d) {
+            if (file.isDirectory()) System.out.println(file.getName());
+        }
+        for (File file : d) {
+            if (file.isFile()) System.out.println(file.getName());
+        }
     }
 
-    private void cd(String accion) {
+    public boolean cd(String ruta) {
+        String[] parametros = ruta.split("/");
+        File tempPWD = new File(pwd);
+        ruta = "";
+        for (int i = 0; i < parametros.length; i++) {
+            if (parametros[i].equals("..")){
+                ruta += tempPWD.getParent();
+                tempPWD = new File(ruta);
+            } else {
+                ruta += parametros[i] + "/";
+            }
+        }
+        File destino = new File(ruta);
 
+        if (destino.exists()){
+            pwd = ruta;
+            return true;
+        } else {
+            System.err.println("Destino no existe");
+            return false;
+        }
     }
 
     public String getPwd() {
