@@ -8,6 +8,8 @@ public class DiasLluvia {
     }
 
     public boolean registroDia(int dia, int mes, boolean lluvia){
+        if (dia < 1 || dia > 30) return false;
+        if (mes < 1 || mes > 12) return false;
         this.lluvia[mes-1][dia-1] = lluvia;
         return true;
     }
@@ -49,9 +51,9 @@ public class DiasLluvia {
             }
         }
 
-        if (t1 > t2 && t1 > t3 && t1 > t4) return 1;
-        else if (t2 > t1 && t2 > t3 && t2 > t4) return 2;
-        else if (t3 > t1 && t3 > t2 && t3 > t4) return 3;
+        if (t1 >= t2 && t1 >= t3 && t1 >= t4) return 1;
+        else if (t2 >= t1 && t2 >= t3 && t2 >= t4) return 2;
+        else if (t3 >= t1 && t3 >= t2 && t3 >= t4) return 3;
         else return 4;
     }
 

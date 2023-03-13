@@ -26,13 +26,6 @@ class Evento {
     deleteEvent() {
         
     }
-
-    getEvent() {
-        console.log("getEvent")
-        $.support.cors = true;
-        
-        alert("llamado")
-    }
 }
 
 

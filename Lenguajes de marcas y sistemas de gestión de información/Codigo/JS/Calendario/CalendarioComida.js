@@ -26,24 +26,25 @@ const renderizadorDeNombresDeDias = nombreDeLosDiasDeLaSemana.map(rendNombreDia 
 }).join('')
 
 function actualizaMes(){
-    var dias = [...Array(new Date(anyo, mes+1, 0).getDate()).keys()];
-    var primerDia = new Date(anyo, mes, 1).getDay();
-    var fechaRef = new Date(anyo, mes)
-    var nombreDelMes = intlMes.format(fechaRef);
-    nombreDelMes = nombreDelMes[0].toUpperCase() + nombreDelMes.substring(1);
-    var clasePrimerAtributo = `class='dias primerDia' style='--primerDia: ${primerDia}'`;
-    var claseHoy = `id="hoy"`
-    var renderizadorDeDias = dias.map(
+    var dias = [...Array(new Date(anyo, mes+1, 0).getDate()).keys()];       // Días del mes a mostrar
+    var primerDia = new Date(anyo, mes, 1).getDay();                        // Identifica el primer Día del mes
+    var fechaRef = new Date(anyo, mes)                                      // Identifica el año y el mes a mostrar
+    var nombreDelMes = intlMes.format(fechaRef);                            // Cambia el mes de numero a String (0 -> Enero)
+    var eventos = getEvent();                                              // Eventos almacenados en el servidor
+
+
+    nombreDelMes = nombreDelMes[0].toUpperCase() + nombreDelMes.substring(1);   // Hace que la primera letra sea mayuscula
+
+
+    var clasePrimerAtributo = `class='dias primerDia' style='--primerDia: ${primerDia}'`;   // Añade una custom property para indicar en que día de la semana empieza el mes
+    var claseHoy = `id="hoy`;       // Identifica si es Hoy
+    
+    var renderizadorDeDias = dias.map(              // Renderiza los días del mes
         (dia, contador)=>{
-            if (dia+1 ==1){
-                return `<li ${contador == 0 ? clasePrimerAtributo: ''} class="dias" ${diaActualNum == (dia + 1) && mesActual == mes && anyoActual == anyo ? claseHoy: ''}>${dia+1}<p class="evento">Hola</p></li>`
-            } else {
-                return `<li ${contador == 0 ? clasePrimerAtributo: ''} class="dias" ${diaActualNum == (dia + 1) && mesActual == mes && anyoActual == anyo ? claseHoy: ''}>${dia+1}<p></p></li>`
-            }
+            return `<li ${contador == 0 ? clasePrimerAtributo: ''} class="dias" ${diaActualNum == (dia + 1) && mesActual == mes && anyoActual == anyo ? claseHoy: ''}>${dia+1}<p></p></li>`
         }
     ).join('')
-
-    console.log(renderizadorDeDias)
+    
 
     return {
         nombreDelMes,
@@ -56,7 +57,6 @@ function html() {
     var nombre = actualizaMes().nombreDelMes;
     var dias = actualizaMes().renderizadorDeDias;
     var fechaRef = actualizaMes().fechaRef;
-
     return ` <article>
     <h1>
         <button onclick='decrementar()'>&#x2b9c</button>
@@ -91,15 +91,9 @@ const contenedorCrearEvento = document.getElementById("containerCrearEvento")
 
 function hideCreateEvento(){
     contenedorCrearEvento.style.visibility = 'hidden';
-    /*var diaEvento = document.getElementById("dia");
-    var mesEvento = document.getElementById("mes");
-    var anyoEvento = document.getElementById("anyo");*/
     var fechaEvento = document.getElementById("fechaEvento");
     var nombre = document.getElementById("nombreEvento");
     var descripcion = document.getElementById("descripcionEvento");
-    /*diaEvento.value = '';
-    mesEvento.value = '';
-    anyoEvento.value = '';*/
     fechaEvento.value ='';
     nombre.value = '';
     descripcion.value = '';
@@ -119,3 +113,17 @@ function createEvento(){
     event.getEvent();
 }
 
+function getEvent() {
+    $.ajax({
+        url: '../../PHP/Calendario/RequestCalendarioComida.php',
+        type: 'GET',
+        dataType: 'json',
+        success: function(response) {
+            console.log(response);
+            return response;
+        },
+        error: function(xhr, status, error) {
+            console.log(xhr.responseText);
+        }
+    });
+}
