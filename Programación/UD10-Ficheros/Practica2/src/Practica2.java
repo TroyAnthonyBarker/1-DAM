@@ -1,15 +1,70 @@
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.*;
 
 public class Practica2 {
 
+    static Scanner sc;
     public static void main(String[] args) {
+        sc = new Scanner(System.in);
+        System.out.println("\t ------------- Ejercicio 1 -------------");
         ejercicio1();
-        System.out.println();
+        System.out.println("\n\t ------------- Ejercicio 2 -------------");
         ejercicio2();
+    }
+
+    static void ejercicio3() {
+        File a = pideFile();
+        File b = pideFile();
+
+        boolean sobreescribir = checkFile(b);
+        while (!sobreescribir) {
+            b = pideFile();
+            sobreescribir = checkFile(b);
+        }
+        try{
+            Scanner lector = new Scanner(a);
+            FileWriter writer = new FileWriter(b);
+            writer.write(contenidoOrdenado(lector));
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+
+    static String contenidoOrdenado(Scanner lector){
+        List<String> contenido = new ArrayList<>();
+        StringBuilder contenidoOrdenado = new StringBuilder();
+        while (lector.hasNextLine()){
+            contenido.add(lector.nextLine());
+        }
+        Collections.sort(contenido);
+        for (String line : contenido) contenidoOrdenado.append(line);
+        return contenidoOrdenado.toString();
+    }
+
+    static boolean checkFile(File f){
+        boolean sobreescribir;
+        if (f.exists()) {
+            System.out.println("El fichero " + f.getName() + " existe. ¿Quieres sobreescribir?");
+            sobreescribir =
+                    sc.nextLine().equalsIgnoreCase("si") ||
+                            sc.nextLine().equalsIgnoreCase("sí") ||
+                            sc.nextLine().equalsIgnoreCase("s") ||
+                            sc.nextLine().equalsIgnoreCase("yes") ||
+                            sc.nextLine().equalsIgnoreCase("y");
+        } else {
+            sobreescribir = true;
+        }
+        return sobreescribir;
+    }
+
+    static File pideFile() {
+        File f;
+        System.out.println("Introduce una ruta del fichero.");
+        f = new File(sc.nextLine());
+        return f;
     }
 
     static void ejercicio2(){
@@ -36,6 +91,7 @@ public class Practica2 {
             }
             alumnos.add(new Alumno(datoAlu[0], datoAlu[1], notas));
         }
+        lector.close();
         return alumnos;
     }
 
@@ -59,6 +115,7 @@ public class Practica2 {
             double valor = lector.nextDouble();
             if (valor < minValue) minValue = valor;
         }
+        lector.close();
         return minValue;
     }
 
@@ -69,6 +126,7 @@ public class Practica2 {
             double valor = lector.nextDouble();
             if (valor > maxValue) maxValue = valor;
         }
+        lector.close();
         return maxValue;
     }
 }

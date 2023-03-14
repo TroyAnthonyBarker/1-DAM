@@ -30,7 +30,13 @@ function actualizaMes(){
     var primerDia = new Date(anyo, mes, 1).getDay();                        // Identifica el primer Día del mes
     var fechaRef = new Date(anyo, mes)                                      // Identifica el año y el mes a mostrar
     var nombreDelMes = intlMes.format(fechaRef);                            // Cambia el mes de numero a String (0 -> Enero)
-    var eventos = getEvent();                                              // Eventos almacenados en el servidor
+    var eventos = getEvent();
+
+    console.log("Primer log eventos");
+    console.log(eventos);
+
+    console.log("Fecha de referencia");
+    console.log(fechaRef)
 
 
     nombreDelMes = nombreDelMes[0].toUpperCase() + nombreDelMes.substring(1);   // Hace que la primera letra sea mayuscula
@@ -114,16 +120,19 @@ function createEvento(){
 }
 
 function getEvent() {
+    var eventos = [];
     $.ajax({
         url: '../../PHP/Calendario/RequestCalendarioComida.php',
         type: 'GET',
         dataType: 'json',
         success: function(response) {
-            console.log(response);
-            return response;
+            $.each(response, function(index, event) {
+                eventos.push(event);
+            });
         },
         error: function(xhr, status, error) {
             console.log(xhr.responseText);
         }
     });
+    return eventos;
 }
