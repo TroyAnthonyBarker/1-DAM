@@ -14,10 +14,10 @@
     <script src="../../js/Comun/Comun.js"></script>
     <main>
         <div id="cambiaCalendario"></div>
-        <button onclick="showCreateEvento()">Create Event</button>
+        <!--<button onclick="showCreateEvento()">Create Event</button>-->
     </main>
-    <div id="containerCrearEvento">
-        <article>
+    <div id="containerEventos">
+        <article id="containerCreateEvent">
             <form action="" method="post">
                 <section class="x">
                     <img src="../../IMG/Calendario/X.png" alt="X" onclick="hideCreateEvento()">
@@ -26,9 +26,6 @@
                 <section>
                     <p class="subtitulos">Date</p>
                     <div id="contenedorFecha">
-                        <!--<input type="number" name="dia" id="dia" placeholder="* Day"> /
-                        <input type="number" name="mes" id="mes" placeholder="* Month"> /
-                        <input type="number" name="anyo" id="anyo" placeholder="* Year">-->
                         <input type="date" name="" id="fechaEvento" required>
                     </div>
                 </section>
@@ -44,6 +41,11 @@
                     <button type="reset">Clear</button>
                     <button type="button" onclick="createEvento()">Create</button> 
                 </section> 
+            </form>
+        </article>
+        <article id="containerShowEvent">
+            <form id="showEvent">
+                 
             </form>
         </article>
     </div>

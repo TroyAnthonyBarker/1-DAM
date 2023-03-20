@@ -1,3 +1,9 @@
+html, body {
+    display: flex;
+    min-height: 100%;
+    width: 100%;
+}
+
 main {
     display: flex;
     flex-flow: column;
@@ -89,7 +95,7 @@ h1 button:hover {
     border-radius: 25px;
 }
 
-#containerCrearEvento {
+#containerEventos {
     display: flex;
     position: fixed;
     visibility: hidden;
@@ -104,13 +110,13 @@ h1 button:hover {
     align-items: center;
 }
 
-#containerCrearEvento article{
+#containerEventos article{
     width: 50%;
-    height: 75%;
+    height: 80%;
     align-items: center;
 }
 
-#containerCrearEvento form{
+#containerEventos form{
     width: 100%;
     height: 100%;
     display: flex;
@@ -148,7 +154,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
     width: 100%;
 }
 
-#containerCrearEvento section {
+#containerEventos section {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -178,7 +184,7 @@ input {
     padding: 5px;
 }
 
-#contenedorFecha{
+#contenedorFecha {
     color: aliceblue;
     font-weight: bolder;
     font-size: 1.7em;
@@ -197,7 +203,7 @@ button {
     font-size: large;
 }
 
-#containerCrearEvento .x {
+#containerEventos .x {
     font-size: 3em;
     font-family: fantasy;
     font-weight: bolder;
@@ -210,7 +216,27 @@ button {
     padding: 5px;
 }
 
-#containerCrearEvento .x img {
+#containerEventos .x img {
     width: 20px;
     height: 20px;
+}
+
+.events p{
+    font-size: medium;
+    color: green;
+    font-weight: bolder;
+}
+
+.lessThanOneWeek p{
+    color: red;
+}
+
+#containerCreateEvent{
+    visibility: hidden;
+    position: absolute;
+}
+
+#containerShowEvent{
+    visibility: hidden;
+    position: absolute;
 }
