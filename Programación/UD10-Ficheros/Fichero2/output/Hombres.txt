@@ -1,0 +1,66 @@
+Hombres: 
+
+	Amy Rhodes 30 H 343,18
+	Karly Davis 79 H 111,45
+	Joelle Mathews 51 H 221,22
+	Hanna Wilkerson asdfadsfasdf 75 H 195,37
+	Porter Mcclain 68 H 334,90
+	Caldwell Mercer 36 H 273,71
+	Marshall Wilkerson 55 H 257,18
+	Teagan Walker 21 H 402,13
+	Plato Hardin 54 H 257,81
+	Alma Decker 90 H 266,32
+	Kelly Whitehead 62 H 233,64
+	Vanna Leonard 55 H 319,45
+	Karina Douglas asdfsadfsadf 79 H 136,00
+	Jescie Spencer 50 H 250,41
+	Chase Bonner 87 H 178,73
+	Flavia Medina 80 H 197,58
+	Helen Haney 20 H 252,02
+	Sylvia Newton 34 H 192,26
+	Zephr Logan 28 H 114,64
+	Dante Blake 65 H 285,29
+	Haviva Clarke 19 H 209,60
+	Mona Miranda 64 H 211,30
+	Colleen Boone 83 H 262,01
+	Natalie Garrison 84 H 262,24
+	Sophia Shepherd 35 H 305,81
+	Rana Mayer 89 H 320,82
+	Ora Knowles 69 H 84,63
+	Maxwell Bond 43 H 245,89
+	Carlos Fitzgerald 34 H 281,13
+	Mannix Mueller 62 H 257,74
+	Nasim Beasley 34 H 230,14
+	Whoopi Turner 43 H 204,50
+	Ali Harvey 84 H 293,31
+	Thor Mendoza 69 H 185,67
+	Janna King 55 H 196,54
+	Bevis Chang 89 H 283,14
+	Thor Robinson 85 H 336,15
+	Casey Young 66 H 214,82
+	Dakota Lyons 64 H 350,97
+	Kasimir Kaufman 83 H 127,46
+	Rhea Stanley 80 H 324,37
+	Lacy Blevins 44 H 243,34
+	Sylvia Glover 85 H 254,77
+	Ursula Hines 24 H 217,84
+	Lev Clark 68 H 308,87
+	Casey Newman 64 H 312,21
+	Medge Morgan 27 H 303,81
+	Edward Hobbs 54 H 200,02
+	Carter Walsh 79 H 117,53
+	Hoyt Arnold 52 H 255,96
+	Leila Silva 59 H 279,36
+	Eve Cohen 65 H 260,99
+	Laurel Lyons 80 H 252,18
+	Fuller Decker 51 H 228,66
+	Akeem Wallace 76 H 309,62
+	Lois Navarro 82 H 120,08
+	Blair Newman 57 H 282,52
+	Kimberley Hughes 88 H 274,69
+	Galena Figueroa 22 H 276,82
+	Nicholas Bernard 66 H 256,16
+	Paki Dotson 80 H 255,50
+	Josiah Vang 39 H 259,17
+
+Media total 246,48

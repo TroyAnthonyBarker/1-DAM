@@ -8,8 +8,7 @@
     $descripcion = $_POST["descripcion"];
 
 // Consulta SQL para insertar los eventos
-    $sql = "INSERT INTO eventos(fecha, nombre, descripcion)
-    VALUES ('$fechaEvento', '$nombre', '$descripcion')";
+    $sql = "INSERT INTO eventos(fecha, nombre, descripcion) VALUES ('$fechaEvento', '$nombre', '$descripcion')";
     mysqli_query($conexion, $sql);
 
 // Devuelve 1 si la inserción se ha realizado con exito

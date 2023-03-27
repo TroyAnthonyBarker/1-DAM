@@ -1,3 +1,11 @@
+/*
+@AUTOR: TROY ANTHONY BARKER
+@REVISOR: 
+DESCRIPCIÓN: "PREGUNTAR A IVAN"
+RIESGOS: 
+*/
+
+//DECLARACIÓN DE CONSTANTES DEL JAVASCRIPT
 const local = 'en-EN';
 
 const hoy = new Date();
@@ -6,97 +14,81 @@ const diaActualNum = hoy.getDate();
 const mesActual = hoy.getMonth();
 const anyoActual = hoy.getFullYear();
 
-const hardCodedEvents = [
-    /* EVENTO 1 */ {
-    id: 1,
-    fecha: new Date("2022-12-15"),
-    nombre: "Evaluaciones",
-    descripcion: "Evaluaciones del primer trimestre"
-    },
-    /* EVENTO 2 */ {
-    id: 2,
-    fecha: new Date("2023-03-21"),
-    nombre: "Evaluaciones",
-    descripcion: "Evaluaciones del segundo trimestre"
-    },
-    /* EVENTO 3 */ {
-    id: 3,
-    fecha: new Date("2023-06-13"),
-    nombre: "Evaluaciones",
-    descripcion: "Evaluaciones del tercer trimestre"
-    },
-    /* EVENTO 4 */ {
-    id: 4,
-    fecha: new Date("2023-06-21"),
-    nombre: "Fin de curso",
-    descripcion: "Final de curso 1ºDAM"
-}];
-    var mes = mesActual;
-    var anyo = anyoActual;
+const containerEventos = document.getElementById("containerEventos");
+const showEventContainer = document.getElementById("showEvent");
+const containerCreateEvent = document.getElementById("containerCreateEvent");
+const containerShowEvent = document.getElementById("containerShowEvent");
 
-    const meses = [...Array(12).keys()];
-    const intlMes = new Intl.DateTimeFormat(local, {month: "long"});
+const meses = [...Array(12).keys()];
+const intlMes = new Intl.DateTimeFormat(local, {month: "long"});
 
-    const diasDeLaSemana = [...Array(7).keys()];
-    const intlDia = new Intl.DateTimeFormat(local, {weekday: "short"});
+const diasDeLaSemana = [...Array(7).keys()];
+const intlDia = new Intl.DateTimeFormat(local, {weekday: "short"});
 
-    const nombreDeLosDiasDeLaSemana = diasDeLaSemana.map(diaKey => {
-        var nombreDelDiaDeLaSemana = intlDia.format(new Date(2023, 4, diaKey + 1));
-        nombreDelDiaDeLaSemana = nombreDelDiaDeLaSemana[0].toUpperCase() + nombreDelDiaDeLaSemana.substring(1);
-        return nombreDelDiaDeLaSemana;
-    });
+const nombreDeLosDiasDeLaSemana = diasDeLaSemana.map(diaKey => {
+    var nombreDelDiaDeLaSemana = intlDia.format(new Date(2023, 4, diaKey + 1));
+    nombreDelDiaDeLaSemana = nombreDelDiaDeLaSemana[0].toUpperCase() + nombreDelDiaDeLaSemana.substring(1);
+    return nombreDelDiaDeLaSemana;
+});
 
-    const renderizadorDeNombresDeDias = nombreDeLosDiasDeLaSemana.map(rendNombreDia => {
-        return `<li class='nombreDia'>${rendNombreDia}</li>`
-    }).join('');
-
-    getEvent().then(function(eventos) {
-    function actualizaMes(){
-        var dias = [...Array(new Date(anyo, mes+1, 0).getDate()).keys()];       // Días del mes a mostrar
-        var primerDia = new Date(anyo, mes, 1).getDay();                        // Identifica el primer Día del mes
-        var fechaRef = new Date(anyo, mes)                                      // Identifica el año y el mes a mostrar
-        var nombreDelMes = intlMes.format(fechaRef);                            // Cambia el mes de numero a String (0 -> Enero)
+const renderizadorDeNombresDeDias = nombreDeLosDiasDeLaSemana.map(rendNombreDia => {
+    return `<li class='nombreDia'>${rendNombreDia}</li>`
+}).join('');
 
 
-        nombreDelMes = nombreDelMes[0].toUpperCase() + nombreDelMes.substring(1);   // Hace que la primera letra sea mayuscula
+//DECLARACIÓN DE VARIABLES DEL JAVASCRIPT
+var mes = mesActual;
+var anyo = anyoActual;
 
 
-        var clasePrimerAtributo = `class='dias primerDia' style='--primerDia: ${primerDia}'`;   // Añade una custom property para indicar en que día de la semana empieza el mes
-        var claseHoy = `id="hoy"`;       // Identifica si es Hoy
-        
-        
-        var renderizadorDeDias = dias.map(              // Renderiza los días del mes
-            (dia, contador)=>{
-                var li = "";
-                eventos.forEach(event => {
-                    event.fecha.substring()
-                    var string = event.fecha.split();
-                    var fechaTemp = new Date(string[2], string[1], string[0])
-                    if(fechaTemp.getMonth() == fechaRef.getMonth() && fechaTemp.getFullYear() == fechaRef.getFullYear() && fechaTemp.getDate() == (dia+1)){
-                        var idEvent = "Event"+event.id;
-                        if(fechaTemp.getDate()-hoy.getDate() >= 0 && fechaTemp.getDate()-hoy.getDate() <= 7 && fechaTemp.getMonth() == mesActual && fechaTemp.getFullYear() == anyoActual){
-                            li = `<li ${contador == 0 ? clasePrimerAtributo: ''} class="dias events lessThanOneWeek" ${dia+1 == diaActualNum && mes == mesActual && anyo == anyoActual ? claseHoy: ''} id="${idEvent}" onclick="showEvent(this)">${dia+1}<p>${event.nombre}</p></li>`;
-                        } else{
-                            li = `<li ${contador == 0 ? clasePrimerAtributo: ''} class="dias events" ${dia+1 == diaActualNum && mes == mesActual && anyo == anyoActual ? claseHoy: ''} id="${idEvent}" onclick="showEvent(this)">${dia+1}<p>${event.nombre}</p></li>`;
-                        }
+//LA FUNCIÓN ACTUALIZAMES RENDERIZA LOS DIAS DEL MES, EL NOMBRE DEL MES Y EL AÑO DEL MES
+function actualizaMes(eventos){
+    var dias = [...Array(new Date(anyo, mes+1, 0).getDate()).keys()];       // Días del mes a mostrar
+    var primerDia = new Date(anyo, mes, 1).getDay();                        // Identifica el primer Día del mes
+    var fechaRef = new Date(anyo, mes)                                      // Identifica el año y el mes a mostrar
+    var nombreDelMes = intlMes.format(fechaRef);                            // Cambia el mes de numero a String (0 -> Enero)
+
+
+    nombreDelMes = nombreDelMes[0].toUpperCase() + nombreDelMes.substring(1);   // Hace que la primera letra sea mayuscula
+
+
+    var clasePrimerAtributo = `class='dias primerDia' style='--primerDia: ${primerDia}'`;   // Añade una custom property para indicar en que día de la semana empieza el mes
+    var claseHoy = `id="hoy"`;       // Identifica si es Hoy
+    
+    //COMPRUEBA EN CADA DÍA SI HAY UN EVENTO GUARDADO EN EL ARRAY "EVENTOS"
+    var renderizadorDeDias = dias.map(              // Renderiza los días del mes
+        (dia, contador)=>{
+            var li = "";
+            eventos.forEach(event => {
+                var fechaTemp = new Date(event.fecha);
+                if(fechaTemp.getMonth() == fechaRef.getMonth() && fechaTemp.getFullYear() == fechaRef.getFullYear() && fechaTemp.getDate() == (dia+1)){
+                    var idEvent = "Event"+event.id;
+                    if(fechaTemp.getDate()-hoy.getDate() >= 0 && fechaTemp.getDate()-hoy.getDate() <= 7 && fechaTemp.getMonth() == mesActual && fechaTemp.getFullYear() == anyoActual){
+                        li = `<li ${contador == 0 ? clasePrimerAtributo: ''} class="dias events lessThanOneWeek" ${dia+1 == diaActualNum && mes == mesActual && anyo == anyoActual ? claseHoy: ''} id="${idEvent}" onclick="showEvent(this)">${dia+1}<p>${event.nombre}</p></li>`;
+                    } else{
+                        li = `<li ${contador == 0 ? clasePrimerAtributo: ''} class="dias events" ${dia+1 == diaActualNum && mes == mesActual && anyo == anyoActual ? claseHoy: ''} id="${idEvent}" onclick="showEvent(this)">${dia+1}<p>${event.nombre}</p></li>`;
                     }
-                });
-                if (li == "") li = `<li ${contador == 0 ? clasePrimerAtributo: ''} class="dias" ${dia+1 == diaActualNum && mes == mesActual && anyo == anyoActual ? claseHoy: ''}>${dia+1}<p></p></li>`;
-                return li;
-            }
-        ).join('');
-        
-        return {
-            nombreDelMes,
-            renderizadorDeDias,
-            fechaRef
-        };
+                }
+            });
+            if (li == "") li = `<li ${contador == 0 ? clasePrimerAtributo: ''} class="dias" ${dia+1 == diaActualNum && mes == mesActual && anyo == anyoActual ? claseHoy: ''}>${dia+1}<p></p></li>`;
+            return li;
+        }
+    ).join('');
+    
+    return {
+        nombreDelMes,
+        renderizadorDeDias,
+        fechaRef
     };
+};
 
-    function html() {
-        var nombre = actualizaMes().nombreDelMes;
-        var dias = actualizaMes().renderizadorDeDias;
-        var fechaRef = actualizaMes().fechaRef;
+// ES UNA FUNCIÓN QUE INSERTA EN EL HTML UN CÓDIGO GENERADO EN ESTE JAVASCRIPT
+function html() {
+    return getEvent().then(function(eventos){
+        var renderizado = actualizaMes(eventos);
+        var nombre = renderizado.nombreDelMes;
+        var dias = renderizado.renderizadorDeDias;
+        var fechaRef = renderizado.fechaRef;
         return ` <article>
         <h1>
             <button onclick='decrementar()'>&#x2b9c</button>
@@ -108,77 +100,70 @@ const hardCodedEvents = [
         </ol>
         </article>
         `
-    };
+    });
+};
 
-    document.getElementById("cambiaCalendario").innerHTML = html();
-});
-
-    function prueba(){
-        getEvent().then(function(eventos){
-            var x;
-            eventos.forEach(function(evento) {
-                x = evento.id;
-                console.log(evento.nombre + " fecha " + evento.fecha);
-            });
-        console.log(x);
-        })
-    };
-
-    function incrementar(){
-        mes++;
-        update();
-    };
-    function decrementar(){
-        mes--;
-        update();
-    };
-
-    function update(){
-        document.getElementById("cambiaCalendario").innerHTML = html();
-    };
-
+// ESTA FUNCIÓN INCREMENTA EL VALOR DE LA VARIABLE MES POR UNO
+function incrementar(){
+    mes++;
     update();
+};
 
-    const containerEventos = document.getElementById("containerEventos");
-    const showEventContainer = document.getElementById("showEvent");
-    const containerCreateEvent = document.getElementById("containerCreateEvent");
-    const containerShowEvent = document.getElementById("containerShowEvent");
+// ESTA FUNCIÓN DECREMENTA EL VALOR DE LA VARIABLE MES POR UNO
+function decrementar(){
+    mes--;
+    update();
+};
 
-    function hideCreateEvento(){
-        containerEventos.style.visibility = 'hidden';
-        showEventContainer.style.visibility = 'hidden';
-        containerCreateEvent.style.visibility = 'hidden';
-        containerShowEvent.style.visibility = 'hidden';
-        var fechaEvento = document.getElementById("fechaEvento");
-        var nombre = document.getElementById("nombreEvento");
-        var descripcion = document.getElementById("descripcionEvento");
-        fechaEvento.value ='';
-        nombre.value = '';
-        descripcion.value = '';
-    };
+// ESTA FUNCIÓN ACTUALIZA EL HTML DEL CALENDARIO
+function update(){
+    html().then(function(calendario){
+        document.getElementById("cambiaCalendario").innerHTML = calendario;
+    });
+};
 
-    function showCreateEvento(){
-        containerEventos.style.visibility = 'visible';
-        containerCreateEvent.style.visibility = 'visible';
-    };
+update();
 
-    function createEvento(){
-        var fecha = new Date(document.getElementById("fechaEvento").value);
-        var nombre = document.getElementById("nombreEvento").value;
-        var descripcion = document.getElementById("descripcionEvento").value;
-        var event = new Evento(fecha, nombre, descripcion);
-        event.createEvent();
-        hideCreateEvento();
-        event.getEvent();
-    };
+// ESCONDE UN DIV QUE CONTIENE "CREAR EVENTO"
+function hideCreateEvento(){
+    update();
+    containerEventos.style.visibility = 'hidden';
+    showEventContainer.style.visibility = 'hidden';
+    containerCreateEvent.style.visibility = 'hidden';
+    containerShowEvent.style.visibility = 'hidden';
+    var fechaEvento = document.getElementById("fechaEvento");
+    var nombre = document.getElementById("nombreEvento");
+    var descripcion = document.getElementById("descripcionEvento");
+    fechaEvento.value ='';
+    nombre.value = '';
+    descripcion.value = '';
+};
 
-    function showEvent(element){
+// MUESTRA UN DIV QUE CONTIENE "CREAR EVENTO"
+function showCreateEvento(){
+    containerEventos.style.visibility = 'visible';
+    containerCreateEvent.style.visibility = 'visible';
+};
+
+// RECOGE LOS DATOS DEL FORMULARIO "CREAR EVENTO" Y DECLARA E INSTANCIA UN OBJETO "EVENTO"
+function createEvento(){
+    var fecha = new Date(document.getElementById("fechaEvento").value);
+    var nombre = document.getElementById("nombreEvento").value;
+    var descripcion = document.getElementById("descripcionEvento").value;
+    var event = new Evento(fecha, nombre, descripcion);
+    event.createEvent();    // UTILIZA LA FUNCIÓN "CREATE EVENT" DE LA CLASE EVENTO PARA SUBIR EL EVENTO A LA BD
+    hideCreateEvento();
+};
+
+// MUESTRA UN EVENTO ESPECIFICO
+function showEvent(element){
+    getEvent().then(function(eventos){
         containerEventos.style.visibility = 'visible';
         containerShowEvent.style.visibility = 'visible';
         showEventContainer.style.visibility = 'visible';
         var id = element.id;
         var eventHTML;
-        hardCodedEvents.forEach(event =>{
+        eventos.forEach(event =>{
             var idEvent = "Event"+event.id;
             if (id == idEvent){
                 console.log(id + ' ' + idEvent)
@@ -189,7 +174,7 @@ const hardCodedEvents = [
             <section>
                 <p class="subtitulos">Date</p>
                 <div id="contenedorFecha">
-                    <input type="date" name="" id="fechaEvento" disabled value="${event.fecha.toISOString().substring(0,10)}">
+                    <input type="date" name="" id="fechaEvento" disabled value="${event.fecha}">
                 </div>
             </section>
             <section>
@@ -203,10 +188,11 @@ const hardCodedEvents = [
             }
         })
         console.log(eventHTML)
-        showEventContainer.innerHTML = '';
         showEventContainer.innerHTML = eventHTML;
-    };
+    });
+};
 
+// CONSULTA LA BD Y RECUPERA UN ARRAY EN FORMATO JSON DE TODOS LOS EVENTOS ALMACENADOS
 function getJSONData() {
     return new Promise(function(resolve, reject) {
         $.ajax({
@@ -223,6 +209,7 @@ function getJSONData() {
     });
 }
 
+//  LLAMA LA FUNCIÓN "getJSONData" Y PASA EL ARRAY DE JSON A UN ARRAY DE JAVASCRIPT
 function getEvent() {
     return getJSONData().then(function(data) {
         var eventos = [];
@@ -234,26 +221,3 @@ function getEvent() {
         console.log(error);
     });
 }
-
-function requestDB(){
-    $.ajax({
-        url: '../../PHP/Calendario/RequestCalendarioComida.php',
-        type: 'GET',
-        dataType: 'json',
-        success: function(response) {
-            $.each(response, function(index, object) {
-                // Acceder a los datos del objeto y mostrarlos en el DOM
-                var id = object.id;
-                var fecha = object.fecah;
-                var nombre = object.nombre;
-                var descripcion = object.descripcion;
-                // Mostrar los datos en el DOM
-                $('#IDdestino').append('<li>' + fecha + ' - ' + nombre + ' - ' + descripcion + '</li>');
-            });
-        },
-        error: function(xhr, status, error) {
-            console.log(error);
-        }
-    });
-}
-

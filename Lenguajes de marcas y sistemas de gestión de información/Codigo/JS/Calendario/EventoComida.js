@@ -22,10 +22,6 @@ class Evento {
             }
         });    
     };
-
-    deleteEvent() {
-        
-    }
 }
 
 

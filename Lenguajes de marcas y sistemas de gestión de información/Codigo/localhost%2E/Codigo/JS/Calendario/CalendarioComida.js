@@ -6,34 +6,10 @@ const diaActualNum = hoy.getDate();
 const mesActual = hoy.getMonth();
 const anyoActual = hoy.getFullYear();
 
-const hardCodedEvents = [
-    /* EVENTO 1 */ {
-    id: 1,
-    fecha: new Date("2022-12-15"),
-    nombre: "Evaluaciones",
-    descripcion: "Evaluaciones del primer trimestre"
-    },
-    /* EVENTO 2 */ {
-    id: 2,
-    fecha: new Date("2023-03-21"),
-    nombre: "Evaluaciones",
-    descripcion: "Evaluaciones del segundo trimestre"
-    },
-    /* EVENTO 3 */ {
-    id: 3,
-    fecha: new Date("2023-06-13"),
-    nombre: "Evaluaciones",
-    descripcion: "Evaluaciones del tercer trimestre"
-    },
-    /* EVENTO 4 */ {
-    id: 4,
-    fecha: new Date("2023-06-21"),
-    nombre: "Fin de curso",
-    descripcion: "Final de curso 1ºDAM"
-}];
-
-var mes = mesActual;
-var anyo = anyoActual;
+const containerEventos = document.getElementById("containerEventos");
+const showEventContainer = document.getElementById("showEvent");
+const containerCreateEvent = document.getElementById("containerCreateEvent");
+const containerShowEvent = document.getElementById("containerShowEvent");
 
 const meses = [...Array(12).keys()];
 const intlMes = new Intl.DateTimeFormat(local, {month: "long"});
@@ -45,13 +21,16 @@ const nombreDeLosDiasDeLaSemana = diasDeLaSemana.map(diaKey => {
     var nombreDelDiaDeLaSemana = intlDia.format(new Date(2023, 4, diaKey + 1));
     nombreDelDiaDeLaSemana = nombreDelDiaDeLaSemana[0].toUpperCase() + nombreDelDiaDeLaSemana.substring(1);
     return nombreDelDiaDeLaSemana;
-})
+});
 
 const renderizadorDeNombresDeDias = nombreDeLosDiasDeLaSemana.map(rendNombreDia => {
     return `<li class='nombreDia'>${rendNombreDia}</li>`
-}).join('')
+}).join('');
 
-function actualizaMes(){
+var mes = mesActual;
+var anyo = anyoActual;
+
+function actualizaMes(eventos){
     var dias = [...Array(new Date(anyo, mes+1, 0).getDate()).keys()];       // Días del mes a mostrar
     var primerDia = new Date(anyo, mes, 1).getDay();                        // Identifica el primer Día del mes
     var fechaRef = new Date(anyo, mes)                                      // Identifica el año y el mes a mostrar
@@ -68,10 +47,13 @@ function actualizaMes(){
     var renderizadorDeDias = dias.map(              // Renderiza los días del mes
         (dia, contador)=>{
             var li = "";
-            hardCodedEvents.forEach(event => {
-                if(event.fecha.getMonth() == fechaRef.getMonth() && event.fecha.getFullYear() == fechaRef.getFullYear() && event.fecha.getDate() == (dia+1)){
+            eventos.forEach(event => {
+                event.fecha.substring()
+                var string = event.fecha.split();
+                var fechaTemp = new Date(string[2], string[1], string[0])
+                if(fechaTemp.getMonth() == fechaRef.getMonth() && fechaTemp.getFullYear() == fechaRef.getFullYear() && fechaTemp.getDate() == (dia+1)){
                     var idEvent = "Event"+event.id;
-                    if(event.fecha.getDate()-hoy.getDate() >= 0 && event.fecha.getDate()-hoy.getDate() <= 7){
+                    if(fechaTemp.getDate()-hoy.getDate() >= 0 && fechaTemp.getDate()-hoy.getDate() <= 7 && fechaTemp.getMonth() == mesActual && fechaTemp.getFullYear() == anyoActual){
                         li = `<li ${contador == 0 ? clasePrimerAtributo: ''} class="dias events lessThanOneWeek" ${dia+1 == diaActualNum && mes == mesActual && anyo == anyoActual ? claseHoy: ''} id="${idEvent}" onclick="showEvent(this)">${dia+1}<p>${event.nombre}</p></li>`;
                     } else{
                         li = `<li ${contador == 0 ? clasePrimerAtributo: ''} class="dias events" ${dia+1 == diaActualNum && mes == mesActual && anyo == anyoActual ? claseHoy: ''} id="${idEvent}" onclick="showEvent(this)">${dia+1}<p>${event.nombre}</p></li>`;
@@ -81,63 +63,50 @@ function actualizaMes(){
             if (li == "") li = `<li ${contador == 0 ? clasePrimerAtributo: ''} class="dias" ${dia+1 == diaActualNum && mes == mesActual && anyo == anyoActual ? claseHoy: ''}>${dia+1}<p></p></li>`;
             return li;
         }
-    ).join('')
+    ).join('');
     
-
     return {
         nombreDelMes,
         renderizadorDeDias,
         fechaRef
-    }
-}
-
-function prueba(){
-    getEvent().then(function(response) {
-        response.forEach(event => {
-            typeof(event.fecha)
-            console.log(event.nombre + " fecha " + event.fecha);
-        });
-    });;
-}
-
-function html() {
-    var nombre = actualizaMes().nombreDelMes;
-    var dias = actualizaMes().renderizadorDeDias;
-    var fechaRef = actualizaMes().fechaRef;
-    return ` <article>
-    <h1>
-        <button onclick='decrementar()'>&#x2b9c</button>
-        ${nombre} ${fechaRef.getFullYear()}
-        <button onclick='incrementar()'>&#x2b9e</button>
-    </h1>
-    <ol>
-        ${renderizadorDeNombresDeDias} ${dias}
-    </ol>
-    </article>
-    `
+    };
 };
 
-document.getElementById("cambiaCalendario").innerHTML = html();
+function html() {
+    getEvent().then(function(eventos){
+        var renderizado = actualizaMes(eventos);
+        var nombre = renderizado.nombreDelMes;
+        var dias = renderizado.renderizadorDeDias;
+        var fechaRef = renderizado.fechaRef;
+        return ` <article>
+        <h1>
+            <button onclick='decrementar()'>&#x2b9c</button>
+            ${nombre} ${fechaRef.getFullYear()}
+            <button onclick='incrementar()'>&#x2b9e</button>
+        </h1>
+        <ol>
+            ${renderizadorDeNombresDeDias} ${dias}
+        </ol>
+        </article>
+        `
+    });
+};
 
 function incrementar(){
     mes++;
     update();
-}
+};
+
 function decrementar(){
     mes--;
     update();
-}
+};
 
 function update(){
     document.getElementById("cambiaCalendario").innerHTML = html();
-}
+};
 
 update();
-
-const containerEventos = document.getElementById("containerEventos");
-const showEventContainer = document.getElementById("showEvent");
-const containerCreateEvent = document.getElementById("containerCreateEvent");
-const containerShowEvent = document.getElementById("containerShowEvent");
 
 function hideCreateEvento(){
     containerEventos.style.visibility = 'hidden';
@@ -150,12 +119,12 @@ function hideCreateEvento(){
     fechaEvento.value ='';
     nombre.value = '';
     descripcion.value = '';
-}
+};
 
 function showCreateEvento(){
     containerEventos.style.visibility = 'visible';
     containerCreateEvent.style.visibility = 'visible';
-}
+};
 
 function createEvento(){
     var fecha = new Date(document.getElementById("fechaEvento").value);
@@ -164,36 +133,7 @@ function createEvento(){
     var event = new Evento(fecha, nombre, descripcion);
     event.createEvent();
     hideCreateEvento();
-    event.getEvent();
-}
-
-function getJSONData() {
-    return new Promise(function(resolve, reject) {
-        $.ajax({
-            url: '../../PHP/Calendario/RequestCalendarioComida.php',
-            type: 'GET',
-            dataType: 'json',
-            success: function(response) {
-                resolve(response);
-            },
-            error: function(xhr, status, error) {
-                reject(error);
-            }
-        });
-    });
-}
-
-function getEvent() {
-    return getJSONData().then(function(data) {
-        var eventos = [];
-        $.each(data, function(index, object) {
-            eventos.push(object);
-        });
-        return eventos;
-    }).catch(function(error) {
-        console.log(error);
-    });
-}
+};
 
 function showEvent(element){
     containerEventos.style.visibility = 'visible';
@@ -228,4 +168,32 @@ function showEvent(element){
     console.log(eventHTML)
     showEventContainer.innerHTML = '';
     showEventContainer.innerHTML = eventHTML;
+};
+
+function getJSONData() {
+    return new Promise(function(resolve, reject) {
+        $.ajax({
+            url: '../../PHP/Calendario/RequestCalendarioComida.php',
+            type: 'GET',
+            dataType: 'json',
+            success: function(response) {
+                resolve(response);
+            },
+            error: function(xhr, status, error) {
+                reject(error);
+            }
+        });
+    });
+}
+
+function getEvent() {
+    return getJSONData().then(function(data) {
+        var eventos = [];
+        $.each(data, function(index, object) {
+            eventos.push(object);
+        });
+        return eventos;
+    }).catch(function(error) {
+        console.log(error);
+    });
 }
