@@ -65,7 +65,7 @@ public class Pagos {
             escribirArchivo(personasM, "Mujeres");
             escribirArchivo(personasH, "Hombres");
         } catch (IOException |FileMalformed  e) {
-            throw new RuntimeException(e);
+            System.err.println(e.getMessage());
         }
     }
 
@@ -91,10 +91,8 @@ public class Pagos {
                     }
                 }
             }
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (FileMalformed e) {
-            throw new RuntimeException(e);
+        } catch (IOException | FileMalformed e) {
+            System.err.println(e.getMessage());
         }
 
 
@@ -149,7 +147,7 @@ public class Pagos {
                 pTemp = new Persona(nombre, apellido, apellido2, edad, sexo, pagos);
             }
         } catch (NumberFormatException e) {
-            e.printStackTrace();
+            System.err.println(e.getMessage());
         } catch (IllegalArgumentException e) {
             throw new FileMalformed("Sexo no válido");
         }
