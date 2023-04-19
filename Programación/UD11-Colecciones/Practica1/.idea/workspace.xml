@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a3dcf445-df20-4464-aee6-3b8dbad5c05d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../Lenguajes de marcas y sistemas de gestión de información/Documentos/Instalacion_XAMPP.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Documentos.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Documentos/personas.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Documentos/personas.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Practica1/Ejercicio1/Colores.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Practica1/Ejercicio1/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Practica1/Ejercicio2/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Practica1/Ejercicio3/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ejercicio1/Colores.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ejercicio1/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ejercicio1/package-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ejercicio2/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ejercicio2/package-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ejercicio3/Gato.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ejercicio3/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ejercicio3/package-info.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="package-info" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="2OdKMDFIfyoVrblkSfUavPp0XnU" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a3dcf445-df20-4464-aee6-3b8dbad5c05d" name="Changes" comment="" />
+      <created>1681884969665</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1681884969665</updated>
+    </task>
+    <servers />
+  </component>
+</project>
