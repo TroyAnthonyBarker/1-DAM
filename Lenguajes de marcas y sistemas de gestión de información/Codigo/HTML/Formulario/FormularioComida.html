@@ -6,9 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../CSS/Formulario/FormularioComida.css">
-    <link rel="stylesheet" href="../../CSS/Comun/Comun.css">
-    <link rel="shortcut icon" href="../../IMG/Comun/ComidaFavicon.ico" type="image/x-icon">
-
     <title>Formulario</title>
 </head>
 
@@ -17,7 +14,7 @@
     <script src="../../js/Comun/Comun.js"></script>
 
     <main>
-        <form action="" method="get" enctype="text/plain" autocomplete="on">
+        <form method="get" enctype="text/plain" autocomplete="on">
             <article class="PersonalData">
                 <h3>PERSONAL DATA</h3>
                 <section>
@@ -52,18 +49,18 @@
                 <h3>ADDRESS</h3>
                 <section class="Row">
                     <label for="Street">Street:</label>
-                    <Select>
+                    <select>
                         <option value="Street">St</option>
                         <option value="Avenue">Av</option>
                         <option value="Square">Sqr</option>
                         <option value="Urbanization">Urb</option>
                         <option value="Other">Other</option>
-                    </Select>
+                    </select>
                     <input type="text" name="" id="Street" placeholder="Cervantes">
                 </section>
                 <section>
                     <label for="City">City:</label>
-                    <input name="" id="City" list="CityOptions" placeholder="Villajoyosa">
+                    <input type="text" id="City" list="CityOptions" placeholder="Villajoyosa">
                     <datalist id="CityOptions">
                         <option value="Villajoyosa">La vila joiosa</option>
                         <option value="Finestrat">Finestrat</option>
@@ -75,7 +72,7 @@
                 </section>
                 <section>
                     <label for="Province">Province:</label>
-                    <input id="Province" list="ProvinceOptions" placeholder="Alicante">
+                    <input type="text" id="Province" list="ProvinceOptions" placeholder="Alicante">
                     <datalist id="ProvinceOptions">
                         <option value="Alicante">Alicante</option>
                         <option value="Valencia">Valencia</option>
@@ -84,7 +81,7 @@
                 </section>
                 <section>
                     <label for="Country">Country:</label>
-                    <input id="Country" list="CountryOptions" placeholder="Spain">
+                    <input type="text" id="Country" list="CountryOptions" placeholder="Spain">
                     <datalist id="CountryOptions">
                         <option value="England">Inglaterra</option>
                         <option value="Spain">España</option>
@@ -121,8 +118,8 @@
                     *I have read and agree to the <a href="../Politica/PoliticaComida.html">Privacy Policy</a>
                 </p>
                 <p>
-                    <input type="submit" value="Send">
-                    <input type="reset" value="Reset">
+                    <button type="submit">Send</button>
+                    <button type="reset">Reset</button>
                 </p>
             </article>
 

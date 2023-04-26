@@ -91,7 +91,9 @@ public class Pagos {
                     }
                 }
             }
-        } catch (IOException | FileMalformed e) {
+        } catch (InvalidSexoException e){
+            e.printStackTrace();
+        }catch (IOException e) {
             System.err.println(e.getMessage());
         }
 
@@ -120,7 +122,7 @@ public class Pagos {
         writer.close();
     }
 
-    private static Persona stringToPersona(String persona) throws FileMalformed {
+    private static Persona stringToPersona(String persona) throws InvalidSexoException {
         Persona pTemp = null;
         String[] datosPersona = persona.split(" ");
         try {
@@ -146,10 +148,10 @@ public class Pagos {
                 }
                 pTemp = new Persona(nombre, apellido, apellido2, edad, sexo, pagos);
             }
-        } catch (NumberFormatException e) {
+        } catch (NumberFormatException | FileMalformed e) {
             System.err.println(e.getMessage());
         } catch (IllegalArgumentException e) {
-            throw new FileMalformed("Sexo no válido");
+            throw new InvalidSexoException("Sexo no válido");
         }
 
         return pTemp;

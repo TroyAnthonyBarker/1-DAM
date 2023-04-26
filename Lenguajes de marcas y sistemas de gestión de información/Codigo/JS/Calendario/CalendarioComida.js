@@ -125,7 +125,7 @@ function update(){
 update();
 
 // ESCONDE UN DIV QUE CONTIENE "CREAR EVENTO"
-function hideCreateEvento(){
+function hideEvento(){
     update();
     containerEventos.style.visibility = 'hidden';
     showEventContainer.style.visibility = 'hidden';
@@ -134,9 +134,13 @@ function hideCreateEvento(){
     var fechaEvento = document.getElementById("fechaEvento");
     var nombre = document.getElementById("nombreEvento");
     var descripcion = document.getElementById("descripcionEvento");
+    var timeStartEvento = document.getElementById("timeStartEvento");
+    var timeEndEvento = document.getElementById("timeEndEvento");
     fechaEvento.value ='';
     nombre.value = '';
     descripcion.value = '';
+    timeStartEvento.value = '';
+    timeEndEvento.value = '';
 };
 
 // MUESTRA UN DIV QUE CONTIENE "CREAR EVENTO"
@@ -150,9 +154,19 @@ function createEvento(){
     var fecha = new Date(document.getElementById("fechaEvento").value);
     var nombre = document.getElementById("nombreEvento").value;
     var descripcion = document.getElementById("descripcionEvento").value;
-    var event = new Evento(fecha, nombre, descripcion);
-    event.createEvent();    // UTILIZA LA FUNCIÓN "CREATE EVENT" DE LA CLASE EVENTO PARA SUBIR EL EVENTO A LA BD
-    hideCreateEvento();
+    var timeStartEvento = document.getElementById("timeStartEvento").value;
+    var timeEndEvento = document.getElementById("timeEndEvento").value;
+    if (timeEndEvento == ''){
+        timeEndEvento = timeStartEvento;
+    }
+    
+    if (timeStartEvento <= timeEndEvento){
+        var event = new Evento(fecha, nombre, descripcion, timeStartEvento, timeEndEvento);
+        event.createEvent();    // UTILIZA LA FUNCIÓN "CREATE EVENT" DE LA CLASE EVENTO PARA SUBIR EL EVENTO A LA BD
+        hideEvento();
+    } else {
+        alert("La hora de inicio no puede ser superior que la hora de fin")
+    }
 };
 
 // MUESTRA UN EVENTO ESPECIFICO
@@ -166,15 +180,19 @@ function showEvent(element){
         eventos.forEach(event =>{
             var idEvent = "Event"+event.id;
             if (id == idEvent){
-                console.log(id + ' ' + idEvent)
                 eventHTML = `<section class="x">
-                <img src="../../IMG/Calendario/X.png" alt="X" onclick="hideCreateEvento()">
+                <img src="../../IMG/Calendario/X.png" alt="X" onclick="hideEvento()">
             </section>
             <p class="titulos">Event</p>
             <section>
                 <p class="subtitulos">Date</p>
                 <div id="contenedorFecha">
-                    <input type="date" name="" id="fechaEvento" disabled value="${event.fecha}">
+                    <label for="fechaEvento">Fecha del evento: </label>
+                    <input type="date" name="fecha" id="fechaEvento" disabled value="${event.fecha}">
+                    <label for="timeStartEvento">Hora inicio: </label>
+                    <input type="time" name="timeEvento" id="timeStartEvento" disabled value="${event.timeStart}">
+                    <label for="timeEndEvento">Hora fin: </label>
+                    <input type="time" name="timeEvento" id="timeEndEvento" disabled value="${event.timeEnd}">
                 </div>
             </section>
             <section>
@@ -184,13 +202,37 @@ function showEvent(element){
             <section>
                 <p class="subtitulos">Description</p>
                 <textarea name="descripcion" id="descripcionEvento" disabled>${event.descripcion}</textarea>
+            </section>
+            <section>
+                    <button type="button" onclick="deleteEvent(${event.id})">Delete</button> 
             </section>`;
             }
         })
-        console.log(eventHTML)
         showEventContainer.innerHTML = eventHTML;
     });
 };
+
+
+function deleteEvent(id){
+    if(confirm("CONFIRM DELETE")){
+    $.ajax({
+        type: "POST",
+        url: "../../PHP/Calendario/DropEventoComida.php",
+        data: {id: id},
+        success: function (response) {
+            if (response == 1){
+                alert("Event deleted");
+                hideEvento();
+            }
+        },
+        error: function (xhr, status, error) {
+            console.log(xhr.responseText);
+            console.log(status);
+            console.log(error);
+        }
+    });
+    } 
+}
 
 // CONSULTA LA BD Y RECUPERA UN ARRAY EN FORMATO JSON DE TODOS LOS EVENTOS ALMACENADOS
 function getJSONData() {

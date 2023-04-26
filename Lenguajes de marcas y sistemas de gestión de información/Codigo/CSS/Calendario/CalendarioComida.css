@@ -227,6 +227,11 @@ button {
     font-weight: bolder;
 }
 
+label {
+    font-size: medium;
+    font-weight: normal;
+}
+
 .lessThanOneWeek p{
     color: red;
 }

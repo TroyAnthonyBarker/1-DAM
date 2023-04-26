@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../CSS/Comun/Comun.css">
     <link rel="stylesheet" href="../../CSS/SerieTaylor/SerieTaylorComida.css">
     <script src="../../JS/SerieTaylor/SerieTaylorComida.js"></script>
     <title>Form</title>
@@ -14,10 +13,10 @@
     <script src="../../JS/Comun/Comun.js"></script>
     <main>
         <article>
-            <form id="myform" action="" onsubmit="return enviarFormulario()">
+            <form id="myform" onsubmit="return enviarFormulario()">
                 <input type="number" id="x" placeholder="x">
                 <input type="number" id="k" placeholder="k">
-                <input type="button" onclick="enviarFormulario()" value="e^x">
+                <button type="button" onclick="enviarFormulario()" value="e^x">e^x</button>
                 <input type="text" name="" id="resultado" readonly>
             </form>
         </article>

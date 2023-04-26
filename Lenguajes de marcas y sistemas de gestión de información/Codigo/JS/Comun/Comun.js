@@ -1,3 +1,8 @@
+const favicon = `<link rel="shortcut icon" href="../../IMG/Comun/ComidaFavicon.ico" type="image/x-icon">`;
+const cssComun = `<link rel="stylesheet" href="../../CSS/Comun/Comun.css">`;
+
+document.head.innerHTML = favicon + cssComun + document.head.innerHTML;
+
 document.querySelector('header').innerHTML = `<nav class="Sinfondo">
 <li><a href="" class="Sinfondo"><img src="../../IMG/Comun/menu.png" alt="Menú Desplegable"></a>
     <ul class="Place">
@@ -16,4 +21,4 @@ document.querySelector('header').innerHTML = `<nav class="Sinfondo">
 </li>
 </nav>
 <h1><a href="../PaginaPrincipal/HomePageComida.html">Comida</a></h1>
-`
+`;

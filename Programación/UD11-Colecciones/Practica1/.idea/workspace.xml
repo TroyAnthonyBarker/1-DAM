@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a3dcf445-df20-4464-aee6-3b8dbad5c05d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../Lenguajes de marcas y sistemas de gestión de información/Codigo/IMG/PaginaPrincipal/menu.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Lenguajes de marcas y sistemas de gestión de información/Codigo/JS/Comun/Comun.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Lenguajes de marcas y sistemas de gestión de información/Codigo/JS/Comun/Comun.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Lenguajes de marcas y sistemas de gestión de información/Documentos/DocumentoTécnicoProyectoDAM-TroyAnthonyBarker.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Lenguajes de marcas y sistemas de gestión de información/Documentos/DocumentoTécnicoProyectoDAM-TroyAnthonyBarker.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../UD10-Ficheros/Fichero2/out/production/Fichero2/Pagos.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../UD10-Ficheros/Fichero2/out/production/Fichero2/Pagos.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../UD10-Ficheros/Fichero2/src/Pagos.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../UD10-Ficheros/Fichero2/src/Pagos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Practica1_Colecciones/Ejercicio1/Ejercicio1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Practica1_Colecciones/Ejercicio1/Ejercicio1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Practica1_Colecciones/Ejercicio3/Libro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Practica1_Colecciones/Ejercicio3/Libro.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Practica1_Colecciones/Ejercicios.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Practica1_Colecciones/Ejercicios.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +19,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="package-info" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -37,7 +36,9 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/DAM/1º DAM/Programación/UD11-Colecciones/Practica1&quot;
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/DAM/1º DAM/Programación/UD11-Colecciones/Practica1&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.grazie&quot;
   }
 }</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -61,7 +62,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Practica1_Colecciones/Ejercicio3/Libro.java</url>
-          <line>18</line>
+          <line>17</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
@@ -80,5 +81,9 @@
         <watch expression="temp" />
       </configuration>
     </watches-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

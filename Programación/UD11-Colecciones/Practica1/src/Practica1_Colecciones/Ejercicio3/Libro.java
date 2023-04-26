@@ -34,6 +34,7 @@ public class Libro {
         this.author = author.trim();
         this.postingDate = LocalDate.parse(postingDate, dateFormat);
         this.releaseDate = LocalDate.parse(releaseDate, dateFormat);
+
         this.language = language.trim();
     }
 

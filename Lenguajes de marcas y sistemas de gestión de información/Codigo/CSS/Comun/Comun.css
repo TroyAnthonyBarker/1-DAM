@@ -60,7 +60,6 @@ nav {
     display: flex;
     align-items: center;
     justify-self: left;
-    align-self: left;
     position: relative;
     z-index: 100;
 }

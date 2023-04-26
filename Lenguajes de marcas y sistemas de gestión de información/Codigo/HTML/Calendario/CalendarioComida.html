@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../CSS/Comun/Comun.css">
     <link rel="stylesheet" href="../../CSS/Calendario/CalendarioComida.css">
     <script src="../../JS/Calendario/jquery-3.6.3.js"></script>
     <title>Calendario</title>
@@ -14,19 +13,24 @@
     <script src="../../js/Comun/Comun.js"></script>
     <main>
         <div id="cambiaCalendario"></div>
-        <button onclick="showCreateEvento()">Create Event</button>
+        <button type="button" onclick="showCreateEvento()">Create Event</button>
     </main>
     <div id="containerEventos">
         <article id="containerCreateEvent">
-            <form action="" method="post">
+            <form method="post" onsubmit="createEvento()">
                 <section class="x">
-                    <img src="../../IMG/Calendario/X.png" alt="X" onclick="hideCreateEvento()">
+                    <img src="../../IMG/Calendario/X.png" alt="X" onclick="hideEvento()">
                 </section>
                 <p class="titulos">Create Event</p>
                 <section>
                     <p class="subtitulos">Date</p>
                     <div id="contenedorFecha">
-                        <input type="date" name="" id="fechaEvento" required>
+                        <label for="fechaEvento">Fecha del evento: </label>
+                        <input type="date" name="fecha" id="fechaEvento" required>
+                        <label for="timeStartEvento">Hora inicio: </label>
+                        <input type="time" name="timeStart" id="timeStartEvento" required>
+                        <label for="timeEndEvento">Hora fin: </label>
+                        <input type="time" name="timeEnd" id="timeEndEvento">
                     </div>
                 </section>
                 <section>
@@ -39,19 +43,16 @@
                 </section>
                 <section>
                     <button type="reset">Clear</button>
-                    <button type="button" onclick="createEvento()">Create</button> 
-                </section> 
+                    <button type="submit">Create</button>
+                </section>
             </form>
         </article>
         <article id="containerShowEvent">
-            <form id="showEvent">
-                 
-            </form>
+            <form id="showEvent"></form>
         </article>
     </div>
     <script src="../../JS/Calendario/CalendarioComida.js"></script>
     <script src="../../JS/Calendario/EventoComida.js"></script>
-    
     <footer></footer>
 </body>
 </html>

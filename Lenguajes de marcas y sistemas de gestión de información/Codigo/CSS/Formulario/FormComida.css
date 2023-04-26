@@ -10,7 +10,7 @@ article {
     width: 100%;
     backdrop-filter: blur(10px);
     background-color: #2898eeb2;
-    border: 2px solid #1f547e;
+    /*border: 2px solid #1f547e;*/
     border-radius: 1em;
     color: aliceblue;
 }

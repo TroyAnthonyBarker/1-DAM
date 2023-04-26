@@ -84,7 +84,7 @@ p * {
 }
 
 label {
-  font-size: normal;
+  font-size: medium;
   font-weight: bold;
   margin-right: 3px;
 }
@@ -102,9 +102,10 @@ label {
   width: 94%;
 }
 
-input[type=submit],
-input[type=reset] {
+button[type=submit],
+button[type=reset] {
   background-color: #284eee;
+  border: 0px;
   color: aliceblue;
   padding: 5px;
 }

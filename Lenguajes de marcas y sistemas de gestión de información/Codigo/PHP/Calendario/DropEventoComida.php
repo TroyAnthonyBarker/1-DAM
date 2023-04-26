@@ -1,10 +1,7 @@
 <?php
-    $fechaEvento = $_POST["fechaEvento"];
-    $nombre = $_POST["nombre"];
-    $descripcion = $_POST["descripcion"];
+    $id = $_POST["id"];
     require("../Calendario/ConexionCalendarioComida.php");
-    require("../Calendario/RequestCalendarioComida.php")
-    $sql = "DROP INTO eventos(fecha, nombre, descripcion) VALUES ('$fechaEvento', '$nombre', '$descripcion')";
+    $sql = "DELETE FROM eventos WHERE id = $id";
     mysqli_query($conexion, $sql);
     echo 1;
 ?>

@@ -1,13 +1,9 @@
 package Practica1_Colecciones.Ejercicio1;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Scanner;
 
 public class Ejercicio1 {
 
@@ -23,12 +19,13 @@ public class Ejercicio1 {
 
     static void leerNumeros(){
         try {
-            Scanner lector = new Scanner(numerosTxt);
-            while (lector.hasNextLine()){
-                numeros.add(Integer.parseInt(lector.nextLine()));
+            BufferedReader lc = new BufferedReader(new FileReader(numerosTxt));
+            String line = "";
+            while ((line = lc.readLine()) != null){
+                numeros.add(Integer.parseInt(line));
             }
-            lector.close();
-        } catch (FileNotFoundException e) {
+            lc.close();
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -43,7 +40,7 @@ public class Ejercicio1 {
 
     static void write(){
         try {
-            FileWriter writer = new FileWriter(numerosOrdenadosTxt);
+            BufferedWriter writer = new BufferedWriter(new FileWriter(numerosOrdenadosTxt));
 
             writer.write("Números ordenados de mayor a menor:\n");
             ordenDESC();
@@ -58,7 +55,7 @@ public class Ejercicio1 {
         }
     }
 
-    static void escribirNumeros(FileWriter writer) {
+    static void escribirNumeros(BufferedWriter writer) {
         numeros.forEach(num -> {
             try {
                 writer.write(num + "\n");

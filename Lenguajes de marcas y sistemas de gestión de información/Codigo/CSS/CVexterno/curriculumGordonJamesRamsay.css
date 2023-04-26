@@ -1,37 +1,5 @@
-aside,
-footer {
-    overflow: hidden;
-}
-
 a {
     color: aliceblue;
-}
-
-header,
-footer {
-    background-image: linear-gradient(to right,
-            #072f4e,
-            #1f547e,
-            #3378ad,
-            #284eee,
-            #2898ee,
-            #284eee,
-            #3378ad,
-            #1f547e,
-            #072f4e);
-    min-width: 600px;
-    width: 100%;
-    min-height: 75px;
-    color: aliceblue;
-}
-
-header {
-    display: flex;
-    justify-content: center;
-}
-
-footer {
-    width: 100%;
 }
 
 aside .Referencia_07 {

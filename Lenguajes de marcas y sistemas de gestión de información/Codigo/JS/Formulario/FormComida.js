@@ -11,3 +11,5 @@ function enviarFormulario() {
     document.getElementById("resultado").value = suma
     console.log(suma)
 }
+
+$("article").css({"border": "15px solid #1f547e;"})

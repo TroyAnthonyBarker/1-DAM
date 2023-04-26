@@ -40,7 +40,7 @@ iframe {
   height: 270px;
 }
 
-.Video_07 {
+.video {
   display: flex;
   align-self: center;
   background-image: url('../../IMG/Comparativa/TV.png');
@@ -53,7 +53,7 @@ iframe {
   padding-top: 3px;
 }
 
-.chicken_07 {
+.chicken {
   background-image: url(../../IMG/Comparativa/chicken.png);
   background-size: contain;
   background-repeat: no-repeat;
@@ -61,46 +61,46 @@ iframe {
   padding-left: 35px;
 }
 
-.SaltPepper_07 {
+.saltPepper {
   background-image: url(../../IMG/Comparativa/Salt&Pepper.png);
 }
 
-.flour_07 {
+.flour {
   background-image: url(../../IMG/Comparativa/Flour.png);
 }
 
-.butter_07 {
+.butter {
   background-image: url(../../IMG/Comparativa/butter.png);
 }
 
-.oliveoil_07 {
+.oliveoil {
   background-image: url(../../IMG/Comparativa/Olive_oil.png);
 }
 
-.garlic_07 {
+.garlic {
   background-image: url(../../IMG/Comparativa/Garlic.png);
 }
 
-.applesider_07 {
+.applesider {
   background-image: url(../../IMG/Comparativa/Applesider.png);
 }
 
-.soysauce_07 {
+.soysauce {
   background-image: url(../../IMG/Comparativa/Soysauce.png);
 }
 
-.honey_07 {
+.honey {
   background-image: url(../../IMG/Comparativa/Honey.png);
 }
 
-.paprika_07 {
+.paprika {
   background-image: url(../../IMG/Comparativa/Paprika.png);
 }
 
-.seasoning_07 {
+.seasoning {
   background-image: url(../../IMG/Comparativa/Seasoning.png);
 }
 
-.parsley_07 {
+.parsley {
   background-image: url(../../IMG/Comparativa/parsley.png);
 }
