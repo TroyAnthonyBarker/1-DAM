@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../../JS/Dados/Dados_Troy.js"></script>
+    <link rel="stylesheet" href="../../CSS/Dados/Dados_Troy.css">
+    <title>DADOS</title>
+</head>
+<body>
+    <header></header>
+    <script src="../../JS/Comun/Comun.js"></script>
+    <main>
+        <article>
+            <select id="numSelect1">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+            </select>
+            <li id="Player1List">
+                <section id="player1Dice1"><img src="../../IMG/dados/d6.jpg" alt="Dado"></section>
+            </li>
+            <select id="numSelect2">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+            </select>
+            <li id="Player2List">
+                <section id="dice4"><img src="../../IMG/dados/d6.jpg" alt="Dado"></section>
+            </li>
+            <button onclick="diceRoll()">Random</button>
+        </article>
+        <article id="winner"></article>
+    </main>
+</body>
+</html>

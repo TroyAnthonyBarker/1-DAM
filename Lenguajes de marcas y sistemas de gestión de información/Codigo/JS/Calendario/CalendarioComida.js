@@ -48,13 +48,13 @@ function actualizaMes(eventos){
     var fechaRef = new Date(anyo, mes)                                      // Identifica el año y el mes a mostrar
     var nombreDelMes = intlMes.format(fechaRef);                            // Cambia el mes de numero a String (0 -> Enero)
 
-
     nombreDelMes = nombreDelMes[0].toUpperCase() + nombreDelMes.substring(1);   // Hace que la primera letra sea mayuscula
-
-
-    var clasePrimerAtributo = `class='dias primerDia' style='--primerDia: ${primerDia}'`;   // Añade una custom property para indicar en que día de la semana empieza el mes
+    var clasePrimerAtributo = `class='dias events primerDia' style='--primerDia: ${primerDia}'`;   // Añade una custom property para indicar en que día de la semana empieza el mes
+    var clasePrimerAtributoLessThan1Week = `class='dias events lessThanOneWeek primerDia' style='--primerDia: ${primerDia}'`;
     var claseHoy = `id="hoy"`;       // Identifica si es Hoy
     
+    console.log(eventos)
+
     //COMPRUEBA EN CADA DÍA SI HAY UN EVENTO GUARDADO EN EL ARRAY "EVENTOS"
     var renderizadorDeDias = dias.map(              // Renderiza los días del mes
         (dia, contador)=>{
@@ -63,8 +63,12 @@ function actualizaMes(eventos){
                 var fechaTemp = new Date(event.fecha);
                 if(fechaTemp.getMonth() == fechaRef.getMonth() && fechaTemp.getFullYear() == fechaRef.getFullYear() && fechaTemp.getDate() == (dia+1)){
                     var idEvent = "Event"+event.id;
-                    if(fechaTemp.getDate()-hoy.getDate() >= 0 && fechaTemp.getDate()-hoy.getDate() <= 7 && fechaTemp.getMonth() == mesActual && fechaTemp.getFullYear() == anyoActual){
-                        li = `<li ${contador == 0 ? clasePrimerAtributo: ''} class="dias events lessThanOneWeek" ${dia+1 == diaActualNum && mes == mesActual && anyo == anyoActual ? claseHoy: ''} id="${idEvent}" onclick="showEvent(this)">${dia+1}<p>${event.nombre}</p></li>`;
+                    if(fechaTemp.getDate()-hoy.getDate() >= 0 
+                    && fechaTemp.getDate()-hoy.getDate() <= 7
+                    && fechaTemp.getMonth() == mesActual 
+                    || fechaTemp.getMonth() == mesActual+1 
+                    && fechaTemp.getFullYear() == anyoActual){
+                        li = `<li ${contador == 0 ? clasePrimerAtributoLessThan1Week: ''} class="dias events lessThanOneWeek" ${dia+1 == diaActualNum && mes == mesActual && anyo == anyoActual ? claseHoy: ''} id="${idEvent}" onclick="showEvent(this)">${dia+1}<p class="withEvent">${event.nombre}</p></li>`;
                     } else{
                         li = `<li ${contador == 0 ? clasePrimerAtributo: ''} class="dias events" ${dia+1 == diaActualNum && mes == mesActual && anyo == anyoActual ? claseHoy: ''} id="${idEvent}" onclick="showEvent(this)">${dia+1}<p>${event.nombre}</p></li>`;
                     }
@@ -82,6 +86,19 @@ function actualizaMes(eventos){
     };
 };
 
+function eventosDelMes(eventos){
+    var eventosParrafo = "";
+    eventos.forEach(event => {
+        var temp = new Date(event.fecha);
+        console.log(temp.getMonth())
+        if(temp.getMonth() == mes){
+           eventosParrafo += `<p onclick="showEvent(this)">${event.nombre}</p>` 
+        }
+    })
+    return eventosParrafo;
+}
+
+
 // ES UNA FUNCIÓN QUE INSERTA EN EL HTML UN CÓDIGO GENERADO EN ESTE JAVASCRIPT
 function html() {
     return getEvent().then(function(eventos){
@@ -89,6 +106,7 @@ function html() {
         var nombre = renderizado.nombreDelMes;
         var dias = renderizado.renderizadorDeDias;
         var fechaRef = renderizado.fechaRef;
+        var eventosMes = eventosDelMes(eventos);
         return ` <article>
         <h1>
             <button onclick='decrementar()'>&#x2b9c</button>
@@ -98,6 +116,10 @@ function html() {
         <ol>
             ${renderizadorDeNombresDeDias} ${dias}
         </ol>
+        </article>
+        <article id="eventosMes">
+            <h1>Events in ${nombre}</h1>
+            ${eventosMes}
         </article>
         `
     });
