@@ -9,14 +9,14 @@ function diceRoll() {
     var imgPlayer2 = ``;
     console.log(dicePlayer1)
     for (let index = 0; index < dicePlayer1; index++) {
-        let randomNumber = parseInt(Math.random() * (6 - 1) + 1);
+        let randomNumber = parseInt(Math.random() * 6 + 1);
         player1 += randomNumber;
         var dice = "d"+randomNumber+".jpg"
         imgPlayer1 += `<section><img src="../../IMG/dados/${dice}" alt="${randomNumber}"></section>`
         
     }
     for (let index = 0; index < dicePlayer2; index++) {
-        let randomNumber = parseInt(Math.random() * (6 - 1) + 1);
+        let randomNumber = parseInt(Math.random() * 6 + 1);
         player2 += randomNumber;
         var dice = "d"+randomNumber+".jpg"
         imgPlayer2 += `<section><img src="../../IMG/dados/${dice}" alt="${randomNumber}"></section>`;

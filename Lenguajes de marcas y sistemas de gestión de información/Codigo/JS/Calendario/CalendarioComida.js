@@ -59,18 +59,27 @@ function actualizaMes(eventos){
     var renderizadorDeDias = dias.map(              // Renderiza los días del mes
         (dia, contador)=>{
             var li = "";
+            var p = "";
+            var pText = "";
+            var fechadiaTemp = new Date(anyo, mes, (dia+1));
+            var countEventsDay = 0;
+            console.log(fechadiaTemp.toLocaleDateString())
             eventos.forEach(event => {
                 var fechaTemp = new Date(event.fecha);
-                if(fechaTemp.getMonth() == fechaRef.getMonth() && fechaTemp.getFullYear() == fechaRef.getFullYear() && fechaTemp.getDate() == (dia+1)){
+                if(fechadiaTemp.toDateString() == fechaTemp.toDateString()){
                     var idEvent = "Event"+event.id;
+                    countEventsDay++;
+                    console.log("Cuenta de eventos en cada dia: " + countEventsDay)
+                    pText += event.nombre + " ";
+                    p = `<p class="withEvent">${pText}</p>`;
                     if(fechaTemp.getDate()-hoy.getDate() >= 0 
                     && fechaTemp.getDate()-hoy.getDate() <= 7
                     && fechaTemp.getMonth() == mesActual 
                     || fechaTemp.getMonth() == mesActual+1 
                     && fechaTemp.getFullYear() == anyoActual){
-                        li = `<li ${contador == 0 ? clasePrimerAtributoLessThan1Week: ''} class="dias events lessThanOneWeek" ${dia+1 == diaActualNum && mes == mesActual && anyo == anyoActual ? claseHoy: ''} id="${idEvent}" onclick="showEvent(this)">${dia+1}<p class="withEvent">${event.nombre}</p></li>`;
+                        li = `<li ${contador == 0 ? clasePrimerAtributoLessThan1Week: ''} class="dias events lessThanOneWeek" ${dia+1 == diaActualNum && mes == mesActual && anyo == anyoActual ? claseHoy: ''} id="${idEvent}" onclick="showEvent(this)">${dia+1}${p}</li>`;
                     } else{
-                        li = `<li ${contador == 0 ? clasePrimerAtributo: ''} class="dias events" ${dia+1 == diaActualNum && mes == mesActual && anyo == anyoActual ? claseHoy: ''} id="${idEvent}" onclick="showEvent(this)">${dia+1}<p>${event.nombre}</p></li>`;
+                        li = `<li ${contador == 0 ? clasePrimerAtributo: ''} class="dias events" ${dia+1 == diaActualNum && mes == mesActual && anyo == anyoActual ? claseHoy: ''} id="${idEvent}" onclick="showEvent(this)">${dia+1}${p}</li>`;
                     }
                 }
             });
@@ -91,7 +100,7 @@ function eventosDelMes(eventos){
     eventos.forEach(event => {
         var temp = new Date(event.fecha);
         console.log(temp.getMonth())
-        if(temp.getMonth() == mes){
+        if(temp.getMonth() == mes && temp.getFullYear() == anyo){
            eventosParrafo += `<p onclick="showEvent(this)">${event.nombre}</p>` 
         }
     })
