@@ -9,8 +9,9 @@ public class DBManager {
     // Configuración de la conexión a la base de datos
     private static final String DB_HOST = "DESKTOP-00LQ1SJ\\SQLEXPRESS";
     private static final String DB_PORT = "1433";
+    private static final String DB_TRUST_SERVER = "TrustServerCertificate=true";
     private static final String DB_NAME = "CLINICA_BD";
-    private static final String DB_URL = "jdbc:sqlserver://"+ DB_HOST + ":" + DB_PORT +";TrustServerCertificate=true";
+    private static final String DB_URL = "jdbc:sqlserver://"+ DB_HOST + ":" + DB_PORT +";" + DB_TRUST_SERVER;
 
     private static final String DB_USER = "sql";
     private static final String DB_PASS = "sql";

@@ -17,5 +17,4 @@ public class Covid {
             return "/diagnostico_bueno/";
         }
     }
-
 }
