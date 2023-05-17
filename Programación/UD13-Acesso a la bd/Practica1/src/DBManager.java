@@ -1,6 +1,4 @@
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class DBManager {
 
@@ -10,7 +8,6 @@ public class DBManager {
     private static final String DB_HOST = "DESKTOP-00LQ1SJ\\SQLEXPRESS";
     private static final String DB_PORT = "1433";
     private static final String DB_TRUST_SERVER = "TrustServerCertificate=true";
-    private static final String DB_NAME = "CLINICA_BD";
     private static final String DB_URL = "jdbc:sqlserver://"+ DB_HOST + ":" + DB_PORT +";" + DB_TRUST_SERVER;
 
     private static final String DB_USER = "sql";
@@ -19,10 +16,12 @@ public class DBManager {
     private static final String DB_MSQ_CONN_NO = "ERROR EN LA CONEXIÓN";
 
     // Configuración de la tabla Pacientes
-    private static final String DB_PACIENTES = "pacientes";
+    private static final String DB_PACIENTES = "dbo.pacientes";
     private static final String DB_PACIENTES_SELECT = "SELECT * FROM " + DB_PACIENTES;
-    private static final String DB_PACIENTES_CODIGO = "CODIGO";
-    private static final String DB_PACIENTES_NOM = "NOMBRE";
+
+    // Configuración de la tabla Visitas
+    private static final String DB_VISITAS = "visitas";
+    private static final String DB_VISITAS_SELECT = "SELECT * FROM " + DB_VISITAS;
 
     public static void main(String[] args) {
         connect();
@@ -37,6 +36,39 @@ public class DBManager {
         } catch (SQLException ex) {
             ex.printStackTrace();
             return false;
+        }
+    }
+
+    public static ResultSet selectAllPacientes(){
+        try {
+            Statement st = conn.createStatement();
+            st.execute(DB_PACIENTES_SELECT);
+            return st.getResultSet();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public static ResultSet selectPacientesWhere(String where){
+        try {
+            Statement st = conn.createStatement();
+            st.execute(DB_PACIENTES_SELECT + where);
+            return st.getResultSet();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public static ResultSet selectVisitas(int idPaciente){
+        try {
+            Statement st = conn.createStatement();
+            st.execute("SELECT codigo, fechaVisita, enfermedad, importe, porcentajePago, proximaVisita FROM dbo.visitas WHERE idPaciente = " + idPaciente);
+            return st.getResultSet();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
         }
     }
 

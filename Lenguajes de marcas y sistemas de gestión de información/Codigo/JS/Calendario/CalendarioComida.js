@@ -116,21 +116,25 @@ function html() {
         var dias = renderizado.renderizadorDeDias;
         var fechaRef = renderizado.fechaRef;
         var eventosMes = eventosDelMes(eventos);
-        return ` <article>
-        <h1>
-            <button onclick='decrementar()'>&#x2b9c</button>
-            ${nombre} ${fechaRef.getFullYear()}
-            <button onclick='incrementar()'>&#x2b9e</button>
-        </h1>
-        <ol>
-            ${renderizadorDeNombresDeDias} ${dias}
-        </ol>
-        </article>
-        <article id="eventosMes">
+        var calendario = ` <article>
+            <h1>
+                <button onclick='decrementar()'>&#x2b9c</button>
+                ${nombre} ${fechaRef.getFullYear()}
+                <button onclick='incrementar()'>&#x2b9e</button>
+            </h1>
+            <ol>
+                ${renderizadorDeNombresDeDias} ${dias}
+            </ol>
+            </article>`
+        var asideEventos = `<article id="eventosMes">
             <h1>Events in ${nombre}</h1>
             ${eventosMes}
-        </article>
-        `
+            </article>`
+        return {
+            calendario,
+            asideEventos
+        }
+        
     });
 };
 
@@ -148,8 +152,9 @@ function decrementar(){
 
 // ESTA FUNCIÓN ACTUALIZA EL HTML DEL CALENDARIO
 function update(){
-    html().then(function(calendario){
-        document.getElementById("cambiaCalendario").innerHTML = calendario;
+    html().then(function(html){
+        document.getElementById("cambiaCalendario").innerHTML = html.calendario;
+        document.getElementById("eventosMes").innerHTML = html.asideEventos;
     });
 };
 
