@@ -72,6 +72,43 @@ public class DBManager {
         }
     }
 
+    public static void editPaciente(int codigo, String nombre, String direccion, String ciudad, int telefono, boolean diabetico, Date fechaNac, int turno, String gentilicio){
+        try{
+            Statement st = conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            ResultSet rs = st.executeQuery(DB_PACIENTES_SELECT + " WHERE CODIGO = " + codigo);
+
+            rs.last();
+            rs.updateString("NOMBRE", nombre);
+            rs.updateString("DIRECCION", direccion);
+            rs.updateString("CIUDAD", ciudad);
+            rs.updateInt("TELEFONO", telefono);
+            rs.updateBoolean("DIABETICO", diabetico);
+            rs.updateDate("FECHANAC", fechaNac);
+            rs.updateInt("TURNO", turno);
+            rs.updateString("GENTILICIO", gentilicio);
+
+            rs.updateRow();
+            rs.close();
+
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
+
+    public static void deletePaciente(int codigo){
+        try{
+            Statement st = conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            ResultSet rs = st.executeQuery(DB_PACIENTES_SELECT + " WHERE CODIGO = " + codigo);
+
+            rs.last();
+            rs.deleteRow();
+            rs.close();
+
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
+
 
 
 }
