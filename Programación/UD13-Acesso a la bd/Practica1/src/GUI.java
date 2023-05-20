@@ -1,13 +1,12 @@
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.text.DateFormatter;
 import java.awt.*;
 import java.awt.event.*;
 import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.DateFormat;
+import java.util.Objects;
 
 public class GUI extends JFrame {
     private JPanel panelPrincipal;
@@ -27,7 +26,7 @@ public class GUI extends JFrame {
     private JButton eliminarButton;
     private JButton modificarButton;
     private JLabel labelIdPaciente;
-    private JTextField textField1;
+    private JTextField txtFldBuscar;
     private JButton buscarButton;
     private JButton crearButton;
     private JButton cancelarButton;
@@ -48,10 +47,20 @@ public class GUI extends JFrame {
     private JButton volver2Button;
     private JPanel panelDefaultInfoPacienteButtons;
     private JPanel panelModifyInfoPacienteButtons;
+    private JPanel panelCrearVisita;
+    private JTextField txtFldNewFechaVisita;
+    private JTextField txtFldNewEnfermedad;
+    private JTextField txtFldNewImporte;
+    private JTextField txtFldNewPorcentajePago;
+    private JTextField txtFldNewProximaVisita;
+    private JButton confirmCrearVisitaButton;
+    private JButton cancelarCrearVisitaButton;
     private static final int ROW_INTERVALS = 16;
     private static final Dimension PANEL_PACIENTES_SIZE = new Dimension(400, 500);
     private static final Dimension PANEL_PACIENTES_INFO_SIZE = new Dimension(1000, 500);
     private static final Dimension PANEL_CREAR_PACIENTE_SIZE = new Dimension(700, 250);
+
+    private static final Dimension PANEL_CREAR_VISITA_SIZE = new Dimension(1000, 150);
 
     public GUI() {
         super("CLINICA");
@@ -63,6 +72,7 @@ public class GUI extends JFrame {
         panelInfoPaciente.setVisible(false);
         panelCrearPaciente.setVisible(false);
         panelModifyInfoPacienteButtons.setVisible(false);
+        panelCrearVisita.setVisible(false);
 
         DBManager.connect();
 
@@ -144,38 +154,183 @@ public class GUI extends JFrame {
                 String input = JOptionPane.showInputDialog(null, "¿Que visita?\nIntroduce el id", "");
                 if (input != null) {
                     try {
-                        int idVisita = Integer.parseInt(input);
+                        int codigoVisita = Integer.parseInt(input);
+                        DBManager.deleteVisita(codigoVisita);
+                        cargarVisitasPaciente(getIdPacienteFromlabeLIdPaciente());
                     } catch (NumberFormatException ex) {
                         JOptionPane.showMessageDialog(null, "El id introducido no es valido", getTitle(), JOptionPane.ERROR_MESSAGE);
                     }
                 }
             }
         });
+        crearVisitaButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                panelInfoPaciente.setVisible(false);
+                panelCrearVisita.setVisible(true);
+                setSize(PANEL_CREAR_VISITA_SIZE);
+            }
+        });
+        cancelarCrearVisitaButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                panelCrearVisita.setVisible(false);
+                panelInfoPaciente.setVisible(true);
+                clearCreateVisitas();
+                setSize(PANEL_PACIENTES_INFO_SIZE);
+            }
+        });
+        confirmCrearVisitaButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                crearVisitaDePaciente(getIdPacienteFromlabeLIdPaciente());
+            }
+        });
+        confirmaCrearPacienteButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                crearPacienteNuevo();
+            }
+        });
+        buscarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                buscar();
+            }
+        });
+        txtFldBuscar.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                super.keyTyped(e);
+                if (e.getKeyChar() == '\n') {
+                    buscarButton.doClick();
+                }
+            }
+        });
     }
 
-    private void deleteVisita(int id) {
+    private void buscar() {
+        String paciente = txtFldBuscar.getText();
+        if (isNumbers(paciente)) {
+            buscarPorCodigo(Integer.parseInt(paciente));
+        } else if (paciente.equals("")) {
+            cargarPacientes();
+        } else {
+            buscarPorNombre(paciente);
+        }
+        txtFldBuscar.setText("");
+    }
 
+    private void buscarPorNombre(String nombrePaciente) {
+        String where = " WHERE LOWER(NOMBRE) LIKE '%" + nombrePaciente.toLowerCase() + "%'";
+        String[] columnas = {"CODIGO", "NOMBRE"};
+        String[][] datos = getDataResultSetPaciente(Objects.requireNonNull(DBManager.selectPacientesWhere(where)));
+        fillTablePacientes(datos, columnas);
+    }
+
+    private void buscarPorCodigo(int idPaciente) {
+        String[] columnas = {"CODIGO", "NOMBRE"};
+        String[][] datos = getDataResultSetPaciente(Objects.requireNonNull(DBManager.selectPacientesWhere(" WHERE CODIGO = " + idPaciente)));
+        fillTablePacientes(datos, columnas);
+    }
+
+    private boolean isNumbers(String stg) {
+        return stg.matches("[0-9]+");
+    }
+
+    private void crearPacienteNuevo() {
+        String mensajeErrorNumeros = "El telefono introducino no es valido";
+        try {
+            String nombre = txtNewNombrePaciente.getText();
+            String direccion = txtNewDireccionPaciente.getText();
+            String ciudad = txtNewCiudad.getText();
+            int telefono = Integer.parseInt(txtNewTelefonoPaciente.getText());
+            boolean diabetico = newDiabetesCheckBox.isSelected();
+            Date fechaNac = Date.valueOf(txtNewFechaNac.getText());
+            mensajeErrorNumeros = "El turno introducino no es valido";
+            int turno = Integer.parseInt(txtNewTurno.getText());
+            String gentilicio = txtNewGentilicio.getText();
+            if (gentilicio.length() > 3) {
+                throw new Exception("Gentilicio no valido");
+            }
+            DBManager.insertPaciente(nombre, direccion, ciudad, telefono, diabetico, fechaNac, turno, gentilicio);
+            clearCreateVisitas();
+            volverButton.doClick();
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, mensajeErrorNumeros, this.getTitle(), JOptionPane.ERROR_MESSAGE);
+        } catch (IllegalArgumentException e) {
+            JOptionPane.showMessageDialog(null, "La fecha de nacimiento introducido no es valido.\nFormato (YYYY-MM-dd)", this.getTitle(), JOptionPane.ERROR_MESSAGE);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage() + "\nMáximo 3 caracteres", this.getTitle(), JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    private void clearCreateVisitas() {
+        txtFldNewFechaVisita.setText("");
+        txtFldNewEnfermedad.setText("");
+        txtFldNewImporte.setText("");
+        txtFldNewPorcentajePago.setText("");
+        txtFldNewProximaVisita.setText("");
+    }
+
+    private void crearVisitaDePaciente(int idPaciente) {
+        String fechaErrorTextMessage = "La fecha de visita introducido no es valido.";
+        String mensajeErrorNumeros = "El importe introducido no es valido";
+        try {
+            Date fechaVisita = Date.valueOf(txtFldNewFechaVisita.getText());
+            String enfermedad = txtFldNewEnfermedad.getText();
+            fechaErrorTextMessage = "La fecha de la próxima visita introducido no es valido.";
+            Date fechaProximaVisita = Date.valueOf(txtFldNewProximaVisita.getText());
+            int importe = Integer.parseInt(txtFldNewImporte.getText());
+            mensajeErrorNumeros = "El porcentaje introducido no es valido";
+            int porcentajePago = Integer.parseInt(txtFldNewPorcentajePago.getText());
+
+            DBManager.insertVisita(idPaciente, fechaVisita, enfermedad, importe, porcentajePago, fechaProximaVisita);
+            cargarVisitasPaciente(idPaciente);
+            cancelarCrearVisitaButton.doClick();
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, mensajeErrorNumeros, this.getTitle(), JOptionPane.ERROR_MESSAGE);
+        } catch (IllegalArgumentException e) {
+            JOptionPane.showMessageDialog(null, fechaErrorTextMessage + "\nFormato (YYYY-MM-dd)", this.getTitle(), JOptionPane.ERROR_MESSAGE);
+
+        }
     }
 
     private void deletePaciente() {
-        int codigo = Integer.parseInt(labelIdPaciente.getText().split(" ")[3]);
+        int codigo = getIdPacienteFromlabeLIdPaciente();
         DBManager.deletePaciente(codigo);
         volverButton.doClick();
     }
 
-    private void updatePaciente() {
-        int codigo = Integer.parseInt(labelIdPaciente.getText().split(" ")[3]);
-        String nombre = txtNombrePaciente.getText();
-        String direccion = txtDireccionPaciente.getText();
-        String ciudad = txtCiudad.getText();
-        int telefono = Integer.parseInt(txtTelefonoPaciente.getText());
-        boolean diabetico = diabetesCheckBox.isSelected();
-        Date fechaNac = Date.valueOf(txtFechaNac.getText());
-        int turno = Integer.parseInt(txtTurno.getText());
-        String gentilicio = txtGentilicio.getText();
+    private int getIdPacienteFromlabeLIdPaciente() {
+        return Integer.parseInt(labelIdPaciente.getText().split(" ")[3]);
+    }
 
-        DBManager.editPaciente(codigo, nombre, direccion, ciudad, telefono, diabetico, fechaNac, turno, gentilicio);
-        deactivateEditInfoPaciente();
+    private void updatePaciente() {
+        int codigo = getIdPacienteFromlabeLIdPaciente();
+        String mensajeErrorNumeros = "El telefono introducino no es valido";
+        try {
+            String nombre = txtNombrePaciente.getText();
+            String direccion = txtDireccionPaciente.getText();
+            String ciudad = txtCiudad.getText();
+            int telefono = Integer.parseInt(txtTelefonoPaciente.getText());
+            boolean diabetico = diabetesCheckBox.isSelected();
+            Date fechaNac = Date.valueOf(txtFechaNac.getText());
+            mensajeErrorNumeros = "El turno introducino no es valido";
+            int turno = Integer.parseInt(txtTurno.getText());
+            String gentilicio = txtGentilicio.getText();
+            if (gentilicio.length() > 3) {
+                throw new Exception("Gentilicio no valido");
+            }
+            DBManager.editPaciente(codigo, nombre, direccion, ciudad, telefono, diabetico, fechaNac, turno, gentilicio);
+            deactivateEditInfoPaciente();
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, mensajeErrorNumeros, this.getTitle(), JOptionPane.ERROR_MESSAGE);
+        } catch (IllegalArgumentException e) {
+            JOptionPane.showMessageDialog(null, "La fecha de nacimiento introducino no es valido.\nFormato (YYYY-MM-dd)", this.getTitle(), JOptionPane.ERROR_MESSAGE);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage() + "\nMáximo 3 caracteres", this.getTitle(), JOptionPane.ERROR_MESSAGE);
+        }
     }
 
     private void deactivateEditInfoPaciente() {
@@ -190,8 +345,7 @@ public class GUI extends JFrame {
         txtGentilicio.setEditable(false);
         diabetesCheckBox.setEnabled(false);
 
-        String idPaciente = labelIdPaciente.getText().split(" ")[3];
-        fillDatosPaciente(Integer.parseInt(idPaciente));
+        fillDatosPaciente(getIdPacienteFromlabeLIdPaciente());
     }
 
     private void activateEditInfoPaciente() {
@@ -220,7 +374,7 @@ public class GUI extends JFrame {
 
     private void cargarPacientes() {
         String[] columnas = {"CODIGO", "NOMBRE"};
-        String[][] datos = getDataResultSetPaciente(DBManager.selectAllPacientes());
+        String[][] datos = getDataResultSetPaciente(Objects.requireNonNull(DBManager.selectAllPacientes()));
         fillTablePacientes(datos, columnas);
     }
 
@@ -232,9 +386,7 @@ public class GUI extends JFrame {
     }
 
     private void fillDatosPaciente(int idPaciente) {
-        String[][] datosPaciente = getDataResultSetPaciente(DBManager.selectPacientesWhere(" WHERE CODIGO = " + idPaciente));
-        String[][] visitasPaciente = getDataResultSetVisitas(DBManager.selectVisitas(idPaciente));
-        String[] columnasVisitas = {"codigo", "fechaVisita", "enfermedad", "importe", "porcentajePago", "proximaVisita"};
+        String[][] datosPaciente = getDataResultSetPaciente(Objects.requireNonNull(DBManager.selectPacientesWhere(" WHERE CODIGO = " + idPaciente)));
 
         txtNombrePaciente.setText(datosPaciente[0][1]);
         txtDireccionPaciente.setText(datosPaciente[0][2]);
@@ -245,6 +397,12 @@ public class GUI extends JFrame {
         txtGentilicio.setText(datosPaciente[0][8]);
         diabetesCheckBox.setSelected(Boolean.parseBoolean(datosPaciente[0][5]));
 
+        cargarVisitasPaciente(idPaciente);
+    }
+
+    private void cargarVisitasPaciente(int idPaciente) {
+        String[][] visitasPaciente = getDataResultSetVisitas(Objects.requireNonNull(DBManager.selectVisitas(idPaciente)));
+        String[] columnasVisitas = {"codigo", "fechaVisita", "enfermedad", "importe", "porcentajePago", "proximaVisita"};
         fillTableVisitas(visitasPaciente, columnasVisitas);
     }
 
@@ -277,8 +435,7 @@ public class GUI extends JFrame {
             int count = 0;
             while (rs.next()) {
                 if (result[count] != null) {
-                    result[count][0] = rs.getInt("codigo") + "";
-                    //result[count][1] = rs.getInt("idPaciente") + "";
+                    result[count][0] = String.valueOf(rs.getInt("codigo"));
                     result[count][1] = rs.getDate("fechaVisita").toString();
                     result[count][2] = rs.getString("enfermedad");
                     result[count][3] = rs.getInt("importe") + " €";

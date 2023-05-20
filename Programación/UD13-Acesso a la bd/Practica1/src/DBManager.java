@@ -20,7 +20,7 @@ public class DBManager {
     private static final String DB_PACIENTES_SELECT = "SELECT * FROM " + DB_PACIENTES;
 
     // Configuración de la tabla Visitas
-    private static final String DB_VISITAS = "visitas";
+    private static final String DB_VISITAS = "dbo.visitas";
     private static final String DB_VISITAS_SELECT = "SELECT * FROM " + DB_VISITAS;
 
     public static void main(String[] args) {
@@ -99,9 +99,68 @@ public class DBManager {
         try{
             Statement st = conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
             ResultSet rs = st.executeQuery(DB_PACIENTES_SELECT + " WHERE CODIGO = " + codigo);
-
             rs.last();
             rs.deleteRow();
+            rs.close();
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
+
+    public static void deleteVisita(int codigo){
+        try{
+            Statement st = conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            ResultSet rs = st.executeQuery(DB_VISITAS_SELECT + " WHERE codigo = " + codigo);
+            rs.last();
+            rs.deleteRow();
+            rs.close();
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
+
+    public static void insertVisita(int idPaciente, Date fechaVisita, String enfermedad, int importe, int porcentajePago, Date fechaProximaVisita){
+        try{
+            Statement st = conn.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_UPDATABLE);
+            ResultSet rs = st.executeQuery(DB_VISITAS_SELECT);
+
+            int codigo = getNewCodigo(DB_VISITAS);
+
+            rs.moveToInsertRow();
+            rs.updateInt("codigo", codigo);
+            rs.updateInt("idPaciente", idPaciente);
+            rs.updateDate("fechaVisita", fechaVisita);
+            rs.updateString("enfermedad", enfermedad);
+            rs.updateInt("importe", importe);
+            rs.updateInt("porcentajePago", porcentajePago);
+            rs.updateDate("proximaVisita", fechaProximaVisita);
+            rs.insertRow();
+            rs.close();
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
+
+    public static void insertPaciente( String nombre, String direccion, String ciudad, int telefono, boolean diabetico, Date fechaNac, int turno, String gentilicio){
+        try{
+            Statement st = conn.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_UPDATABLE);
+            ResultSet rs = st.executeQuery(DB_PACIENTES_SELECT);
+
+            int codigo = getNewCodigo(DB_PACIENTES);
+
+            rs.moveToInsertRow();
+
+            rs.updateInt("CODIGO", codigo);
+            rs.updateString("NOMBRE", nombre);
+            rs.updateString("DIRECCION", direccion);
+            rs.updateString("CIUDAD", ciudad);
+            rs.updateInt("TELEFONO", telefono);
+            rs.updateBoolean("DIABETICO", diabetico);
+            rs.updateDate("FECHANAC", fechaNac);
+            rs.updateInt("TURNO", turno);
+            rs.updateString("GENTILICIO", gentilicio);
+
+            rs.insertRow();
             rs.close();
 
         }catch (SQLException e){
@@ -109,6 +168,20 @@ public class DBManager {
         }
     }
 
-
-
+    public static int getNewCodigo(String tabla){
+        try{
+            Statement st = conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            ResultSet rs = st.executeQuery("SELECT MAX(codigo) FROM " + tabla);
+            int newId = 1;
+            while (rs.next()){
+                newId += rs.getInt(1);
+            }
+            rs.close();
+            st.close();
+            return newId;
+        }catch (SQLException e){
+            e.printStackTrace();
+            return -1;
+        }
+    }
 }
