@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"es.iesmz.ed.algoritmes","l":"Any"},{"p":"es.iesmz.ed.algoritmes","l":"DividirFactorial"},{"p":"es.iesmz.ed.algoritmes","l":"Hyperpar"}];updateSearchResults();

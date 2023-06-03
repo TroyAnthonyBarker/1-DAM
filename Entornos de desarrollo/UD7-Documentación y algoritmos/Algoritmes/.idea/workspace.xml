@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="922f95fe-9180-49e6-b297-fb508aa97855" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/es/iesmz/ed/algoritmes/AnyTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/es/iesmz/ed/algoritmes/DividirFactorial.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/es/iesmz/ed/algoritmes/DividirFactorialTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Algoritmes/es/iesmz/ed/algoritmes/DividirFactorial.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Algoritmes/es/iesmz/ed/algoritmes/DividirFactorial.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +40,8 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "create.test.in.the.same.root": "true"
+    "create.test.in.the.same.root": "true",
+    "last_opened_file_path": "C:/Users/troy_/OneDrive/Documentos/Algoritmes"
   }
 }]]></component>
   <component name="RecentsManager">
