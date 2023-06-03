@@ -9,6 +9,6 @@ class SumaDescendentTest {
     @Test
     void sumaDescendiente() {
         SumaDescendent sum = new SumaDescendent(4578);
-        assertEquals(5242, sum.sumaDescendiente());
+        assertEquals(5242, sum.suma());
     }
 }
